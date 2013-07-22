@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+	<title>表格</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{width: 600px;margin:30px auto;}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>表格模块</h3>
+   <p>可以在class中加入m-table-inbox或m-table-noborder分别适应不同的情况</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+<div class="m-table-container">
+    <table class="m-table"><!-- 可以在class中加入m-table-inbox或m-table-noborder分别适应不同的情况 -->
+        <thead>
+            <tr>
+                <th>创建时间</th>
+                <th>名称<em class="ft-bar">|</em>交易号</th>
+                <th>对方</th>
+                <th>金额<em class="ft-bar">|</em>明细</th>
+                <th>状态</th>
+                <th>操作</th>
+                <th>备注</th>
+            </tr>
+        </thead><!-- 表头可选 -->
+        <tbody>
+            <tr>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr class="m-table-split">
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr class="m-table-split">
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="7">表尾数据</td>
+            </tr>
+        </tfoot><!-- 表尾可选 -->
+    </table>
+</div>
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+.m-table { border-collapse: collapse; border: 1px solid #ccc; width: 100%; font-size: 12px; text-align: left }
+.m-table tr:nth-child(even), .m-table-split, .m-table-hover { background-color: #FBFBFB }
+.m-table tr { color: gray }
+.m-table thead tr { color: #666 }
+.m-table thead { color: #666; background-color: #F6F6F6; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F8F8F8', endColorstr='#F2F2F2');
+background: -webkit-gradient(linear, left top, left bottom, from(#F8F8F8), to(#F2F2F2)); background: -moz-linear-gradient(top, #F8F8F8, #F2F2F2); background: -o-linear-gradient(top, #F8F8F8, #F2F2F2); background: linear-gradient(top, #F8F8F8, #F2F2F2) }
+.m-table th { padding: 7px 9px; border-bottom: 1px solid #d9d9d9; text-align: left }
+.m-table td { padding: 8px 9px 7px; border-bottom: 1px solid #d9d9d9 }
+.m-table th { padding: 7px 9px }
+.m-table tfoot td { border-bottom: 0 }
+.m-table-noborder, .m-table-noborder td, .m-table-noborder tr, .m-table-noborder th { border: 0; outline: 0 }
+.m-table-noborder .m-table-split, .m-table-noborder .m-table-hover { background-color: #f7f7f7 }
+.m-table-inbox { border: 0; outline: 0 }
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+</body>
+</html>

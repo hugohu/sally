@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../index.css"/>
+<link rel="stylesheet" href="huTab.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="assets/sally.js"></script>
+<style>
+/*默认*/
+.alert { background-color: #FCF8E3;border: 1px solid #FBEED5;border-radius: 4px;margin-bottom: 20px;padding: 8px 35px 8px 14px;text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.506);color:#c09853;line-height: 1.6em;}
+
+/*多重颜色*/
+.alert-green{ color: #468847; background-color: #dff0d8; border-color: #d6e9c6; }
+.alert-red { color: #b94a48; background-color: #f2dede; border-color: #eed3d7; }
+.alert-blue { color: #3a87ad; background-color: #d9edf7; border-color: #bce8f1; }
+
+/*关闭按钮*/
+.alert .close{position:relative;top:-2px;right:-21px;line-height:20px}
+.close{float:right;font-size:20px;font-weight:bold;line-height:20px;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20)}
+.close:hover,.close:focus{color:#000;text-decoration:none;cursor:pointer;opacity:.4;filter:alpha(opacity=40)}
+button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-appearance:none}
+
+</style>
+<title>滑动门</title>
+</head>
+<body>
+<!--代码部分 可以任意编辑-->
+<div class="alert">
+  <button type="button" class="close" data-event="close" data-target="alert">×</button>
+  <strong>Warning!</strong>
+点击后自动查找data-target定义的名称的样式 隐藏该元素.      
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title>常用工具库</title>
+  <!-- Le styles -->
+
+  <link rel="stylesheet" href="../dist/codemirror.css" />
+  <link href="../../assets/css/docs.css" rel="stylesheet">
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+<style>
+.row{width: 600px;margin: 20px auto}
+p,h4{line-height:1.5em;}
+h4{margin-top: 20px;}
+</style>
+</head>
+<body>
+
+  <!-- Navbar
+================================================== -->
+
+  <!-- Docs nav
+================================================== -->
+  <div class="row">
+    <h4>焦点图小标样式</h4>
+    <p>html格式统一为div标签里直接嵌套a标签,通过修改样式达到不同的效果,可以自定义属性添加也可以采用默认的</p>
+    <div class="bs-docs-example">
+      <pre class="html" name="code">&lt;div class=&quot;u-dot&quot;&gt;
+&lt;a title=&quot;1&quot; class=&quot;active&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;
+&lt;a title=&quot;2&quot; href=&quot;#&quot; class=&quot;&quot;&gt;2&lt;/a&gt;
+&lt;a class=&quot;&quot; title=&quot;3&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;
+&lt;a title=&quot;4&quot; href=&quot;#&quot;&gt;4&lt;/a&gt;
+&lt;/div&gt;
+</pre></div>
+
+<h4>默认样式</h4>
+    <div class="bs-docs-example">
+<style>
+#demo1{position: relative;margin: 20px 0;}
+ #demo1 .u-dot{width: 100%; text-align: right; position:absolute; bottom:0; right:0; height:20px;z-index:2;background:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000')}
+#demo1  .u-dot a {text-indent: -999px; display: inline-block; cursor:pointer;line-height:15px; text-align:center; font-size:12px; width:25px; height:10px; cursor:pointer; overflow:hidden; background:#919191; margin:5px 4px 0 0; filter:alpha(opacity=80); -moz-opacity:.8; opacity:.8; -webkit-transition:All .5s ease;-moz-transition:All .5s ease;-o-transition:All .5s ease}
+#demo1  .u-dot a.active,#demo1  .u-dot a:hover { background:#fff; filter:alpha(opacity=100); -moz-opacity:1; opacity:1 }
+</style>
+<div id="demo1">
+<div class="u-dot"><a title="1" class="active" href="#">1</a><a title="2" href="#" class="">2</a><a class="" title="3" href="#">3</a><a title="4" href="#">4</a></div>
+</div>
+    </div>
+
+ <pre name="code" class="css">
+.u-dot{width: 100%; text-align: right; background:#000; position:absolute; bottom:0; right:0; height:20px;z-index:2;background:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000')}<br />
+.u-dot a {text-indent: -999px; display: inline-block; cursor:pointer;line-height:15px; text-align:center; font-size:12px; width:25px; height:10px; cursor:pointer; overflow:hidden; background:#919191; margin:5px 4px 0 0; filter:alpha(opacity=80); -moz-opacity:.8; opacity:.8; -webkit-transition:All .5s ease;-moz-transition:All .5s ease;-o-transition:All .5s ease}<br />
+.u-dot a.active { background:#fff; filter:alpha(opacity=100); -moz-opacity:1; opacity:1 }
+</pre>
+
+<h4>数字下标</h4>
+<p>数字通过图片的alt属性填写</p>
+    <div class="bs-docs-example">
+<style>
+#demo2{position: relative;margin: 20px 0;}
+#demo2 .u-dot{width: 100%; text-align: right;position:absolute; bottom:0; right:0; height:20px;z-index:2;}
+#demo2 .u-dot a {display: inline-block; cursor:pointer;line-height:20px; text-align:center; font-size:12px; width:20px;cursor:pointer; overflow:hidden; margin:5px 4px 0 0;  transition:All .5s ease;}
+
+#demo2  .u-dot a.active,#demo2  .u-dot a:hover { background:#369; color: #fff;border-color: #fff; }
+#demo2 .u-dot a{background: #fff;border: 1px solid #369;color: #369}
+</style>
+<div id="demo2">
+<div class="u-dot"><a title="1" class="active" href="#">1</a><a title="2" href="#" class="">2</a><a class="" title="3" href="#">3</a><a title="4" href="#">4</a></div>
+</div>
+    </div>
+
+ <pre name="code" class="css">
+.u-dot{width: 100%; text-align: right;position:absolute; bottom:0; right:0; height:20px;z-index:2;} <br />
+.u-dot a {display: inline-block; cursor:pointer;line-height:20px; text-align:center; font-size:12px; width:20px;cursor:pointer; overflow:hidden; margin:5px 4px 0 0;  transition:All .5s ease;} <br />
+/*定义颜色部分*/
+.u-dot a.active { background:#369; color: #fff;border-color: #fff; }<br />
+.u-dot a{background: #fff;border: 1px solid #369;color: #369}<br />
+</pre>
+
+
+<h4>标题下标</h4>
+<p>标题通过图片的alt属性填写,请固定条数否则会塌线...</p>
+    <div class="bs-docs-example">
+<style>
+#demo3{position: relative;margin: 20px 0;}
+#demo3 .u-dot{width: 100%; text-align: right;position:absolute; bottom:0; right:0; height:25px;z-index:2;}
+#demo3 .u-dot a {float: left;display: inline-block; cursor:pointer;line-height:25px; text-align:center; font-size:12px; width:25%;cursor:pointer; overflow:hidden;  transition:All .5s ease;}
+
+#demo3  .u-dot a.active,#demo3  .u-dot a:hover { background:#369; color: #fff;border-color: #fff; }
+#demo3 .u-dot a{background: #fff;color: #369}
+</style>
+<div id="demo3">
+<div class="u-dot"><a title="1" class="active" href="#">第五届玻璃展会</a><a title="2" href="#" class="">第五届玻璃展会</a><a class="" title="3" href="#">第五届玻璃展会</a><a title="4" href="#">第五届玻璃展会</a></div>
+</div>
+    </div>
+
+ <pre name="code" class="css">
+.u-dot{width: 100%; text-align: right;position:absolute; bottom:0; right:0; height:25px;z-index:2;}
+.u-dot a {float: left;display: inline-block; cursor:pointer;line-height:25px; text-align:center; font-size:12px; width:25%;cursor:pointer; overflow:hidden;  transition:All .5s ease;}
+
+.u-dot a.active { background:#369; color: #fff;border-color: #fff; }
+.u-dot a{background: #fff;color: #369}
+</pre>
+
+</div>
+
+  <!-- Le javascript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="../../assets/js/jquery.js"></script>
+ <script src="../../assets/js/hl-all.js"></script>
+</body>
+</html>

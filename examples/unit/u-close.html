@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally关闭按钮</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{width: 300px;margin:50px auto}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>关闭按钮</h3>
+   <p>关闭按钮</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+<button type="button" class="close" data-dismiss="alert">×</button>
+
+<a href="#" class="close">&times;</a>
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+/*关闭按钮*/
+.alert .close{position:relative;top:-2px;right:-21px;line-height:20px}
+
+
+.close{float:right;font-size:20px;font-weight:bold;line-height:20px;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20)}
+.close:hover,.close:focus{color:#000;text-decoration:none;cursor:pointer;opacity:.4;filter:alpha(opacity=40)}
+button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-appearance:none}
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+
+</body>
+</html>

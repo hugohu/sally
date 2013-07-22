@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally调试器</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{width: 600px;margin:50px auto}
+#demo a{margin-left: 10px;}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>sally编辑器1.0.1</h3>
+   <p>内置emmet,快捷键tab展开缩写</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+<a href="#" class="u-btn ">确定</a>
+<a href="#" class="u-btn u-btn-blue">确定</a>
+<a href="#" class="u-btn u-btn-green">确定</a>
+<a href="#" class="u-btn u-btn-orange">确定</a>
+<a href="#" class="u-btn u-btn-red">确定</a>
+<a href="#" class="u-btn u-btn-purple">确定</a>
+<a href="#" class="u-btn u-btn-red u-btn-lg">较大的</a>
+<a href="#" class="u-btn u-btn-purple u-btn-sm">娇小的</a>
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+/*原色*/
+.u-btn {background: #eee;display: inline-block;vertical-align: middle;*vertical-align: auto;zoom: 1;*overflow:visible;*display: inline;padding:0 12px;height:28px;line-height:28px;font-weight: 300;font-size: 12px;color: #666666;margin: 0;text-decoration: none;text-align: center;}
+.u-btn:hover {background-color: #eeeeee}
+.u-btn:active {background: #eeeeee;color: #bbbbbb;}
+input.u-btn,button.u-btn{height: 34px;cursor: pointer;}
+/* 蓝色 */
+.u-btn-blue {background: #00a1cb;color: white;border: none;}
+.u-btn-blue:hover {background: #00b5e5;}
+.u-btn-blue:active {background: #1495b7;color: #00647f;}
+/* 绿色 */
+.u-btn-green { box-shadow: none; background: #7db500;color: white;border: none;}
+.u-btn-green:hover {background: #8fcf00;}
+.u-btn-green:active {background: #76a312;color: #486900;}
+/* 橙色 */
+.u-btn-orange {box-shadow: none;background: #f18d05;color: white;border: none;}
+.u-btn-orange:hover {background: #fa9915;}
+.u-btn-orange:active { background: #d8891e; color: #a66103; }
+/* 红色 */
+.u-btn-red { box-shadow: none; background: #e54028; color: white; border: none; }
+.u-btn-red:hover { background: #e8543f; }
+.u-btn-red:active { background: #cd5240; color: #ac2815; }
+/* 紫色 */
+.u-btn-purple { background: #87318c; color: white; border: none; }
+.u-btn-purple:hover { background: #99389f; }
+.u-btn-purple:active { background: #764479; color: #501d53; }
+
+/* 较大 */
+.u-btn-lg{padding:0 15px;height:36px;line-height:36px;font-size:18px;}
+button.u-btn-lg{*height:38px;_line-height:33px;}
+/* 较小 */
+.u-btn-sm{padding:0 10px;height:22px;line-height:22px;}
+button.u-btn-sm{*height:24px;_line-height:19px;}
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+</body>
+</html>

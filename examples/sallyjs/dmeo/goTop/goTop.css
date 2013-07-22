@@ -1,0 +1,4 @@
+﻿@charset "utf-8";
+/*返回顶部*/
+#gotop{height:54px;width:54px;display:block;position:fixed; bottom:45px;right:25px;display:none;_position:absolute;background:url(goTop.gif) no-repeat 0 0;}
+#gotop:hover{background-position:0 -55px;}

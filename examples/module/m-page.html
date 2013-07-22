@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally调试器</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>sally编辑器1.0.1</h3>
+   <p>内置emmet,快捷键tab展开缩写</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+<div class="m-page">
+    <a href="#" class="first pageprv z-dis"><span class="pagearr">&lt;</span></a>
+    <a href="#">1</a>
+    <a href="#" class="z-crt">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <i>...</i>
+    <a href="#">10</a>
+    <a href="#" class="last pagenxt"><span class="pagearr">&gt;</span></a>
+</div>
+<div class="m-page">
+    <a href="#" class="first">1</a>
+    <a href="#" class="z-crt">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <i>...</i>
+    <a href="#" class="last">10</a>
+</div>
+<div class="m-page">
+    <a href="#" class="first pageprv z-dis"><span class="pagearr">&lt;</span>上一页</a>
+    <a href="#" class="last pagenxt">下一页<span class="pagearr">&gt;</span></a>
+</div>
+<div class="m-page m-page-lt">
+    <a href="#" class="first pageprv"><span class="pagearr">&lt;</span>上一页</a>
+    <a href="#">1</a>
+    <a href="#" class="z-crt">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <i>...</i>
+    <a href="#">10</a>
+    <a href="#" class="last pagenxt z-dis">下一页<span class="pagearr">&gt;</span></a>
+</div>
+<div class="m-page m-page-rt">
+    <a href="#" class="first pageprv z-dis"><span class="pagearr">&lt;</span>上一页</a>
+    <a href="#">1</a>
+    <a href="#" class="z-crt">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <i>...</i>
+    <a href="#">10</a>
+    <a href="#" class="last pagenxt">下一页<span class="pagearr">&gt;</span></a>
+</div>
+<div class="m-page m-page-rt m-page-sr">
+    <a href="#" class="first pageprv z-dis"><span class="pagearr">&lt;</span>上一页</a>
+    <a href="#">1</a>
+    <a href="#" class="z-crt">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <i>...</i>
+    <a href="#">10</a>
+    <a href="#" class="last pagenxt">下一页<span class="pagearr">&gt;</span></a>
+</div>
+<div class="m-page m-page-sr m-page-sm">
+    <a href="#" class="first pageprv z-dis"><span class="pagearr">&lt;</span>上一页</a>
+    <a href="#">1</a>
+    <a href="#" class="z-crt">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <i>...</i>
+    <a href="#">10</a>
+    <a href="#" class="last pagenxt">下一页<span class="pagearr">&gt;</span></a>
+</div>
+
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+/* 普通翻页器-默认居中 */
+.m-page{margin:10px 0 0;text-align:center;line-height:32px;font-size:0;letter-spacing:-0.307em;*letter-spacing:normal;*word-spacing:-1px;word-wrap:normal;white-space:nowrap;color:#999;}
+.m-page a,.m-page i{display:inline-block;*display:inline;*zoom:1;vertical-align:top;padding:0 12px;margin-left:-1px;border:1px solid #ddd;font-size:12px;letter-spacing:normal;word-spacing:normal;text-shadow:0 1px #fff;background:#fff;-webkit-transition:background-color 0.3s;-moz-transition:background-color 0.3s;-ms-transition:background-color 0.3s;transition:background-color 0.3s;}
+.m-page a,.m-page a:hover{text-decoration:none;color:#39c;}
+.m-page a.first{margin-left:0;border-top-left-radius:5px;border-bottom-left-radius:5px;}
+.m-page a.last{margin-right:0;border-top-right-radius:5px;border-bottom-right-radius:5px;}
+.m-page a .pagearr{font-weight:bold;font-family:\5b8b\4f53;vertical-align:top;*vertical-align:middle;}
+.m-page a.pageprv .pagearr{margin-right:3px;}
+.m-page a.pagenxt .pagearr{margin-left:3px;}
+.m-page a:hover{background:#f5f5f5;}
+.m-page a:active{background:#f0f0f0;}
+.m-page a.z-crt,.m-page a.z-crt:hover,.m-page a.z-crt:active{cursor:default;color:#999;background:#f5f5f5;}
+.m-page a.z-dis,.m-page a.z-dis:hover,.m-page a.z-dis:active{cursor:default;color:#ccc;background:#fff;}
+/* 居左 */
+.m-page-lt{text-align:left;}
+/* 居右 */
+.m-page-rt{text-align:right;}
+/* 较小 */
+.m-page-sm{line-height:22px;}
+.m-page-sm a,.m-page-sm i{padding:0 8px;}
+/* 分离 */
+.m-page-sr a,.m-page-sr i{margin:0 3px;border-radius:5px;}
+.m-page-sr i{border:0;}
+.m-page-sr a.first,.m-page-sr a.last{border-radius:5px;}
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+</body>
+</html>

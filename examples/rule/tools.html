@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>常用工具库</title>
+    <!-- Le styles -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../../assets/css/docs.css" rel="stylesheet">
+    <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Docs nav
+================================================== -->
+        <div class="row">
+            <div class="span3 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav">
+                    <li>
+                        <a href="#emmet"><i class="icon-chevron-right"></i>
+                            emmet智能展开缩写
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#ycombo"><i class="icon-chevron-right"></i>
+                          ycombo  文件打包工具
+                        </a>
+                    </li>
+                    <li>   <a href="#others"><i class="icon-chevron-right"></i>
+                         其他开发工具
+                        </a></li>
+                </ul>
+            </div>
+            <div class="span9">
+<div id="emmet">
+                        <h3>开发工具之emmet</h3>
+                <p>emmet(原zencoding)是前端开发的利器,他的最大作用就是样式或者html结构展开缩写展开缩写:</p>
+               <p>比如:我们要输入样式出样式display:block;在emmet的辅助下我们只需要输入d:b然后点击展开按键就ok了.</p>
+                  <pre class="prettyprint linenums">
+&lt;div class=&quot;demo&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</pre>
+               <p>只需要输入:.demo>p>a 然后按下tab或者展开快捷键就可以了.</p>
+                <p>在线体验: <a href="../../examples/emmet.html">sallyeidt编辑器集成emmet</a></p>
+                <p>进入官网下载: <a href="http://docs.emmet.io/">http://docs.emmet.io/</a></p>
+</div>
+
+
+<div id="ycombo">
+                    <h3>开发工具之YcomboUI</h3>
+                <p>YcomboUI是一个window下图形界面打包css跟js的软件</p>
+                <h4>使用说明</h4>
+                <p>YcomboUI的打包依赖于配置文件,配置文件为xx.js.seed跟xx.css.seed的形式.我们要做的就是写好配置文件,然后把配置文件拖入软件点击combo.如图所示:</p>
+                <p><img src="../../assets/img/ycombo.png" alt="" /></p>
+                <p>会自动在同名的目录下生成跟配置文件同名的合并后的文件.</p>
+                 <h4>配置文件说明</h4>
+                 <p>配置文件的写法为// #require "files".路径相对于配置文件,例子如下:</p>
+                 <pre class="prettyprint linenums">
+/* 组件 */
+// #require "moudle/scroll-trigger.js"
+// #require "moudle/view-history.js"
+/* 插件 */
+// #require "plugin/wp-recentcomments/wp-recentcomments-jquery.dev.js"
+ 
+/* 共用代码 */
+// #require "common/social.js"
+// #require "common/comments.js"
+ 
+/* 页面初始化 */
+// #require "biz/domready.js"
+
+/* Rating 初始化 */
+// #require "common/ratings.js"
+                 </pre>
+<p>文件下载地址: <a href="../../assets/ycombogui-latest.rar">ycombogui</a></p>
+<p><a href="http://www.neoease.com/minimize-javascript-files-using-ycombo/">更多详情可以查看这里</a></p>
+</div>
+<div id="others">
+    <h4>modjs</h4>
+    <p>图片合并,文件管理,快速构建起手价.地址: <a href="https://github.com/modulejs/modjs">https://github.com/modulejs/modjs</a></p>
+    <h4>FIS</h4>
+    <p>前端集成方案.地址: <a href="http://fis.baidu.com/">http://fis.baidu.com/</a></p>
+    <h4>cssgaga</h4>
+    <p>css精灵,css文件压缩管理.确定是对目录有硬性要求,地址: <a href="http://www.99css.com/archives/542/">http://www.99css.com/archives/542</a></p>
+        <h4>less</h4>
+    <p>css编译器,其实我个人更加喜欢sass一些.介绍地址: <a href="http://www.lesscss.net/">http://www.lesscss.net/</a></p>
+    <p>编译软件: <a href="http://winless.org/">winless</a></p>
+     <h4>sublime text2</h4>
+    <p>非常非常非常非常强大的编辑器,丰富的插件系统,具体请百度</p>
+      <h4>WebStorm</h4>
+    <p>不得不说这个编辑器才是最强大的起前端开发利器,各种方便,各种顺心,唯一不满的地方就是代码提醒没有自动选中有点小遗憾</p>
+    <h3>前端小工具</h3>
+    <p><a href="http://www.getmarkman.com/">设计稿标注&测量神器</a></p>
+    <p><a href="http://cdc.tencent.com/?p=3268">CDC出品的UI标注工具</a></p>
+    <p>UltraMon 分屏开发</p>
+    <p><a href="http://hi.baidu.com/vickeychen/item/7e0938cefd60db16b67a249c">SuperApp</a></p>
+    <p><a href="http://hi.baidu.com/vickeychen/item/c12142b5cd46ebea4ec7fd28">LinrF5</a></p>
+</div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Le javascript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/google-code-prettify/prettify.js"></script>
+    <script src="../../assets/js/bootstrap-affix.js"></script> 
+    <script src="../../assets/js/application.js"></script>
+</body>
+</html>

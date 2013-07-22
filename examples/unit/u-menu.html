@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally调试器</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{width: 300px;margin: 50px auto;position: relative;}
+ul.u-menu-min { 
+top: 150px;
+}
+ul.u-menu-max { 
+top: 300px;
+}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>sally编辑器1.0.1</h3>
+   <p>内置emmet,快捷键tab展开缩写</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+<ul class="u-menu u-menu-show">
+    <li><a href="#">下拉式菜单</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+</ul>
+<ul class="u-menu u-menu-rt u-menu-gp u-menu-show">
+    <li><a href="#">分组，右对齐</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+    <li class="menusep"><span class="menuline"></span></li>
+    <li><a href="#">下拉式菜单项</a></li>
+</ul>
+<ul class="u-menu u-menu-min u-menu-gp u-menu-show">
+    <li><a href="#">至少撑满，分组</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+</ul>
+<ul class="u-menu u-menu-max u-menu-show">
+    <li><a href="#">最多撑满</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+    <li><a href="#">下拉式菜单项下拉式菜单项下拉式菜单项下拉式菜单项</a></li>
+    <li><a href="#">下拉式菜单项</a></li>
+</ul>
+
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+/* 下拉式菜单-默认左对齐 */
+.u-menu{display:none;position:absolute;z-index:100;top:100%;left:0;*zoom:1;*width:100px;margin:1px 0 0;overflow:hidden;border:1px solid #d0d0d0;border-width:1px 0;border-radius:5px;line-height:1.5;font-size:12px;box-shadow:0 5px 15px rgba(0,0,0,0.05);background:#fff;}
+.u-menu li{border:1px solid #d0d0d0;border-width:0 1px;*vertical-align:top;}
+.u-menu li a{display:block;*zoom:1;padding:7px 12px 6px;margin:-1px 0;border-top:1px solid #e8e8e8;overflow:hidden;*vertical-align:top;word-wrap:normal;white-space:nowrap;_white-space:normal;text-overflow:ellipsis;color:#333;}
+.u-menu li:first-child,.u-menu li:first-child a{border-top:0;border-radius:5px 5px 0 0;}
+.u-menu li:last-child,.u-menu li:last-child a{border-radius:0 0 5px 5px;}
+.u-menu li a:hover{color:#333;background:#f7f7f7;}
+.u-menu li a:active{background:#f0f0f0;}
+/* 显示 */
+.u-menu-show{display:block;}
+/* 分组 */
+.u-menu-gp li.menusep,.u-menu-gp li.menusep .menuline{height:0;line-height:0;font-size:0;overflow:hidden;}
+.u-menu-gp li.menusep{padding:5px 0;}
+.u-menu-gp li.menusep .menuline{display:block;border:0;border-top:1px solid #e8e8e8;}
+.u-menu-gp li a{border:0;}
+/* 宽度限制 */
+.u-menu-min{min-width:100%;}
+.u-menu-max{max-width:100%;}
+/* 右对齐 */
+.u-menu-rt{left:auto;right:0;}
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+</body>
+</html>

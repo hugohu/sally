@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally调试器</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{margin-top: 50px;}
+.g-row{width: 990px;margin: 0 auto}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>sally编辑器1.0.1</h3>
+   <p>内置emmet,快捷键tab展开缩写</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+  <div id="m-nav">
+    <div class="g-row">
+      <div class="m-nav">
+        <a href="http://www.glass.com.cn/" class="active" title="首页">首页</a>
+        <a href="/glassnews/" title="资讯">资讯</a>
+        <a href="http://www.glass.com.cn/supply/" title="产品">产品</a>
+        <a href="http://www.glass.com.cn/buy/" title="订单">订单</a>
+        <a href="http://www.glass.com.cn/glasscompany/" title="企业">企业</a>
+        <a href="http://www.glass.com.cn/glassmeeting/" title="展会">展会</a>
+        <a href="http://job.glass.com.cn/">人才</a>
+        <a href="http://bst.glass.com.cn/">百事通</a>
+      </div>
+      <p class="m-nav-r">
+        <a href="http://www.glass.com.cn/rongyudiantang/" title="活动推广" rel="nofollow">荣誉殿堂</a>
+        <a href="http://www.glass.com.cn/activity/">活动中心</a>
+        <a href="http://www.jctc.cn/">玻璃检验</a>
+      </p>
+    </div>
+  </div>
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+#m-nav{height:35px;margin-top:5px;background:#458fce;}
+.m-nav,.m-nav a{float: left;}
+.m-nav a{display:block;padding:0 20px;line-height: 30px;font-size:14px;font-weight:700;color:#fff;border-top: 3px solid #458fce;text-shadow: 1px 1px 0px #333;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAALAQMAAABvd86vAAAABlBMVEUEeccimu7We5C5AAAAC0lEQVR4XmNwwAYBHlYCwWctoNIAAAAASUVORK5CYII=) no-repeat right  10px;}
+.m-nav a:hover{border-color: #ffa500;opacity:.7;filter: alpha(opacity=70);color: #fff}
+.m-nav a.active,.m-nav a.active:hover{background:#0071bc;border-color:#ffa500;border-right: 1px solid #1a93eb;}
+.m-nav-r{float: right;}
+.m-nav-r a{color: #fff;line-height: 32px;padding-left: 10px;}
+.m-nav-r a:hover{color: #ff0;}
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+</body>
+</html>

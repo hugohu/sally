@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>sally - HTML规范</title>
+    <!-- Le styles -->
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../../assets/css/docs.css" rel="stylesheet">
+    <link href="../../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="container">
+        <!-- Docs nav
+================================================== -->
+        <div class="row">
+            <div class="span3 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav">
+                    <li class="active">
+                        <a href="#all"> <i class="icon-chevron-right"></i>
+                            整体结构
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#code"> <i class="icon-chevron-right"></i>
+                            代码语义
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#made">
+                            <i class="icon-chevron-right"></i>
+                            模块组织
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#doc">
+                            <i class="icon-chevron-right"></i>
+                            文件组织
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="span9">
+                <div id="all">
+                    <h2>整体结构</h2>
+                    <dl>
+                        <dt>HTML基础设施</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    文件应以“&lt;!DOCTYPE ......&gt;”首行顶格开始，推荐使用“&lt;!DOCTYPE html&gt;”。
+                                </li>
+                                <li>
+                                    必须申明文档的编码charset，且与文件本身编码保持一致，推荐使用UTF-8编码&lt;meta charset="utf-8"/&gt;。
+                                </li>
+                                <li>根据页面内容和需求填写适当的keywords和description。</li>
+                                <li>页面title是极为重要的不可缺少的一项。</li>
+                            </ul>
+                            <pre class="prettyprint linenums">&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;meta charset="utf-8"/&gt; 
+&lt;title&gt;NEC：更好的CSS方案&lt;/title&gt; 
+&lt;meta name="keywords" content=""/&gt; 
+&lt;meta name="description" content=""/&gt; 
+&lt;meta name="viewport" content="width=device-width"/&gt; 
+&lt;link rel="stylesheet" href="css/style.css"/&gt; 
+&lt;link rel="shortcut icon" href="img/favicon.ico"/&gt; 
+&lt;link rel="apple-touch-icon" href="img/touchicon.png"/&gt; 
+&lt;/head&gt; 
+&lt;body&gt; 
+ 
+&lt;/body&gt; 
+&lt;/html&gt; 
+</pre>
+                        </dd>
+                        <dt>结构顺序和视觉顺序基本保持一致</dt>
+                        <dd>
+                            <ul>
+                                <li>按照从上至下、从左到右的视觉顺序书写HTML结构。</li>
+                                <li>有时候为了便于搜索引擎抓取，我们也会将重要内容在HTML结构顺序上提前。</li>
+                                <li>用div代替table布局，可以使HTML更具灵活性，也方便利用CSS控制。</li>
+                                <li>table不建议用于布局，但表现具有明显表格形式的数据，table还是首选。</li>
+                            </ul>
+                        </dd>
+                        <dt>结构、表现、行为三者分离，避免内联</dt>
+                        <dd>
+                            <ul>
+                                <li>使用link将css文件引入，并置于head中。</li>
+                                <li>使用script将js文件引入，并置于body底部。</li>
+                            </ul>
+                        </dd>
+                        <dt>保持良好的简洁的树形结构</dt>
+                        <dd>
+                            <ul>
+                                <li>每一个块级元素都另起一行，每一行都使用Tab缩进对齐（head和body的子元素不需要缩进）。删除冗余的行尾的空格。</li>
+                                <li>使用4个空格代替1个Tab（大多数编辑器中可设置）。</li>
+                                <li>对于内容较为简单的表格，建议将tr写成单行。</li>
+                                <li>你也可以在大的模块之间用空行隔开，使模块更清晰。</li>
+                            </ul>
+                            <pre class="prettyprint linenums">&lt;body&gt; 
+&lt;!-- 侧栏内容区 --&gt; 
+&lt;div class="m-side"&gt; 
+    &lt;div class="side"&gt; 
+        &lt;div class="sidein"&gt; 
+            &lt;!-- 热门标签 --&gt; 
+            &lt;div class="sideblk"&gt; 
+                &lt;div class="m-hd3"&gt;&lt;h3 class="tit"&gt;热门标签&lt;/h3&gt; &lt;/div&gt; 
+                ... 
+            &lt;/div&gt; 
+ 
+            &lt;!-- 最热TOP5 --&gt; 
+            &lt;div class="sideblk"&gt; 
+                &lt;div class="m-hd3"&gt;&lt;h3 class="tit"&gt;最热TOP5&lt;/h3&gt; &lt;a href="#" class="s-fc02 f-fr"&gt;更多&raquo;&lt;/a&gt;&lt;/div&gt; 
+                ... 
+            &lt;/div&gt; 
+        &lt;/div&gt; 
+    &lt;/div&gt; 
+&lt;/div&gt; 
+&lt;!-- /侧栏内容区 --&gt; 
+&lt;/body&gt; 
+</pre>
+                        </dd>
+                        <dt>另外，请做到以下几点</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    结构上如果可以并列书写，就不要嵌套。
+                                    <p>
+                                        如果可以写成&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;那么就不要写成&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+                                    </p>
+                                </li>
+                                <li>
+                                    如果结构已经可以满足视觉和语义的要求，那么就不要有额外的冗余的结构。
+                                    <p>
+                                        比如&lt;div&gt;&lt;h2&gt;&lt;/h2&gt;&lt;/div&gt;已经能满足要求，那么就不要再写成&lt;div&gt;&lt;div&gt;&lt;h2&gt;&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;
+                                    </p>
+                                </li>
+                                <li>
+                                    一个标签上引用的className不要过多，越少越好。
+                                    <p>
+                                        比如不要出现这种情况：&lt;div class="class1 class2 class3 class4"&gt;&lt;/div&gt;
+                                    </p>
+                                </li>
+                                <li>
+                                    对于一个语义化的内部标签，应尽量避免使用className。
+                                    <p>
+                                        比如在这样一个列表中，li标签中的itm应去除：&lt;ul class="m-help"&gt;&lt;li class="itm"&gt;&lt;/li&gt;&lt;li class="itm"&gt;&lt;/li&gt;&lt;/ul&gt;
+                                    </p>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+
+                </div>
+                <div id="code">
+                    <h2>代码语义</h2>
+                    <dl>
+                        <dt>说明文案的注释方法</dt>
+                        <dd>
+                            <p>采用类似标签闭合的写法，与HTML统一格式；注释文案两头空格，与CSS注释统一格式。</p>
+                            <ul>
+                                <li>开始注释：&lt;!--&nbsp;注释文案&nbsp;--&gt;（文案两头空格）。</li>
+                                <li>结束注释：&lt;!--&nbsp;/注释文案&nbsp;--&gt;（文案前加“/”符号，类似标签的闭合）。</li>
+                                <li>允许只有开始注释！</li>
+                            </ul>
+                            <pre class="prettyprint linenums">&lt;!-- 头部 --&gt; 
+&lt;div class="g-hd"&gt; 
+    &lt;!-- LOGO --&gt; 
+    &lt;h1 class="m-logo"&gt;&lt;a href="#"&gt;LOGO&lt;/a&gt;&lt;/h1&gt; 
+    &lt;!-- /LOGO --&gt; 
+    &lt;!-- 导航 --&gt; 
+    &lt;ul class="m-nav"&gt; 
+        &lt;li&gt;&lt;a href="#"&gt;NAV1&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href="#"&gt;NAV2&lt;/a&gt;&lt;/li&gt; 
+        &lt;!-- 更多导航项 --&gt; 
+    &lt;/ul&gt; 
+    &lt;!-- /导航 --&gt; 
+&lt;/div&gt; 
+&lt;!-- /头部 --&gt; 
+</pre>
+                        </dd>
+                        <dt>代码本身的注释方法</dt>
+                        <dd>
+                            <p>单行代码的注释也保持同行，两端空格；多行代码的注释起始和结尾都另起一行并左缩进对齐。</p>
+                            <pre class="prettyprint linenums">&lt;!-- &lt;h1 class="m-logo"&gt;&lt;a href="#"&gt;LOGO&lt;/a&gt;&lt;/h1&gt; --&gt; 
+&lt;!-- 
+&lt;ul class="m-nav"&gt; 
+    &lt;li&gt;&lt;a href="#"&gt;NAV1&lt;/a&gt;&lt;/li&gt; 
+    &lt;li&gt;&lt;a href="#"&gt;NAV2&lt;/a&gt;&lt;/li&gt; 
+&lt;/ul&gt; 
+--&gt; 
+</pre>
+                        </dd>
+                        <dt>HTML注释在IE6中的BUG</dt>
+                        <dd>
+                            <ul>
+                                <li>如果两个浮动元素之间存在注释，那么可能导致布局错位或文字的BUG。</li>
+                                <li>所以，这种情况下，我们通常将注释去掉，或者索性采用模板语言（ftl、vm）的注释。</li>
+                            </ul>
+                        </dd>
+                        <dt>严格的嵌套</dt>
+                        <dd>
+                            <ul>
+                                <li>尽可能以最严格的xhtml strict标准来嵌套，比如内联元素不能包含块级元素等等。</li>
+                                <li>正确闭合标签且必须闭合。</li>
+                            </ul>
+                        </dd>
+                        <dt>严格的属性</dt>
+                        <dd>
+                            <ul>
+                                <li>属性和值全部小写，每个属性都必须有一个值，每个值必须加双引号。</li>
+                                <li>没有值的属性必须使用自己的名称做为值（checked、disabled、readonly、selected等等）。</li>
+                                <li>可以省略style标签和script标签的type属性。</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>内容类型决定使用的语义标签</dt>
+                        <dd>
+                            <p>在网页中某种类型的内容必定需要某种特定的HTML标签来承载，也就是我们常常提到的根据你的内容语义化HTML结构。</p>
+                        </dd>
+                        <dt>加强“资源型”内容的可访问性和可用性</dt>
+                        <dd>
+                            <p>在资源型的内容上加入描述文案，比如给img添加alt属性，在audio内加入文案和链接等等。</p>
+                        </dd>
+                        <dt>加强“不可见”内容的可访问性</dt>
+                        <dd>
+                            <p>
+                                背景图上的文字应该同时写在html中，并使用css使其不可见，有利于搜索引擎抓取你的内容，也可以在css失效的情况下看到内容。
+                            </p>
+                        </dd>
+                    </dl>
+
+                </div>
+                <div id="made"></div>
+
+                <div id="doc">
+                    <p>这一块主要参考豆瓣的</p>
+                    <h3>3.文件的目录管理</h3>
+                    <p>所有的CSS分为两大类：通用类和业务类。</p>
+                    <h4>* 3-1. 通用的CSS文件，放在如下目录中：</h4>
+                    <p>基本样式库    /css/core</p>
+                    <p>通用UI元素样式库   /css/lib</p>
+                    <p>JS组件相关样式库   /css/ui</p>
+                    <p>
+                        * 3-2. 业务类的CSS是指和具体产品（如音乐、读书等）相关的文件，放在如下目录中：
+ 读书     /css/book/
+                        <br />
+                        电影      /css/movie/
+                        <br />
+                        音乐      /css/music/
+                        <br />
+                        社区      /css/sns/
+                        <br />
+                        小站      /css/site/
+                        <br />
+                        同城      /css/location/
+                        <br />
+                        电台      /css/radio/ 
+ 九点      /css/newnine/
+                        <br />
+                        商务      /css/biz/
+                        <br />
+                        …   /css/产品名称
+                    </p>
+                    <h4>* 3-3. 外联CSS文件适用于全站级和产品级通用的大文件。</h4>
+                    <p>js文件的组织同理</p>
+                    <p>图片文件放在对应样式文件的同级目录,好处就是方便读取.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Le javascript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/google-code-prettify/prettify.js"></script>
+    <script src="../../assets/js/bootstrap-affix.js"></script>
+    <script src="../../assets/js/application.js"></script>
+</body>
+</html>
