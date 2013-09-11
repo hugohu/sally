@@ -18,11 +18,13 @@
       var e = $(this),
         oli = e.children("dt").children("ul").children("li");
       var odd = e.children("dd");
-      oli.bind(options.events, function() {
+      oli.bind(options.events, function(e) {
         var index = oli.index(this),
           $this = $(this);
         $this.addClass("active").siblings().removeClass("active").end();
         odd.eq(index).addClass("active").siblings("dd").removeClass("active").end();
+        e.preventDefault();
+        e.stopPropagation();
       });
     });
   };
@@ -80,23 +82,40 @@ $(function() {
         oli.each(function(index, elem) {
           var link = $(this).find("a").attr("href");
           var title = $(this).find("img").attr("alt");
-          tmp += index == 0 ? '<a href="' + link + '" class="active" title=' + title + '>' + title + '</a>' : '<a href="' + link + '"  title=' + title + '>' + title + '</a>';
+          tmp += index == 0 ? '<li class="active" ><a href="' + link + '" title=' + title + '>' + title + '</li></a>' : '<li><a href="' + link + '"  title=' + title + '>' + title + '</li></a>';
         });
-        $this.append('<div class="u-dot">' + tmp + '</div>');
+        $this.append('<div class="u-dot"><ul>' + tmp + '</ul></div><a href="javascript:" class="next"></a><a href="javascript:" class="prev"></a>');
       }
-
       //设置自动轮播
       $this.ind = 0;
       $this.stime = setInterval(autoplay, 3000);
       var odot = $this.children("div");
-      var oa = odot.find("a");
+      var oa = odot.find("li");
       //定义鼠标经过事件
-      oa.hover(function() {
+      $this.hover(function() {
         clearInterval($this.stime);
-        $this.ind = oa.index(this);
-        move($this.ind);
       }, function() {
         $this.stime = setInterval(autoplay, 3000);
+      });
+
+      //定义鼠标经过事件
+      oa.mouseenter(function() {
+        $this.ind = oa.index(this);
+        move($this.ind);
+      });
+      //定义 上一页 下一页
+      var onext=$this.find(".next");
+      var oprev=$this.find(".prev");
+      onext.bind("click",function(e){
+          autoplay();
+        e.preventDefault();
+        e.stopPropagation();
+      });
+      oprev.bind("click",function(e){
+          $this.ind = $this.ind <= 0 ? mlen-1 :--$this.ind;
+        move($this.ind);
+        e.preventDefault();
+        e.stopPropagation();
       });
 
       function autoplay() {
@@ -113,6 +132,7 @@ $(function() {
         });
         oa.eq(index).addClass("active").siblings().removeClass("active").end();
       }
+
     });
   };
 })(jQuery);　
@@ -260,12 +280,21 @@ $(function() {
     return a[0].offsetHeight + css(a, 'marginTop') + css(a, 'marginBottom')
   }
 })(jQuery);　 /*  DARA API  */
+ /*  DARA API 
+    增加 是否滚动的判断属性auto 0 为不滚动;
+  */
 $(function() {
   var $oscroll = $('[data-event="scroll"]');
   $oscroll.each(function(index, elem) {
     var $this = $(this);
     var mum = $this.attr("data-mum") >>> 0;
-    if ($this.find("img").length != 0) {
+    var auto = $this.attr("data-auto");
+    var osl;
+        //当auto为空的时候undefined,不为0所以默认4000滚动
+    auto==0?(auto=false,osl=mum):(auto=auto>>>0 || 4000);
+     if($this.find("li").length == 0){
+        return ;
+    }else if($this.find("img").length != 0) {
       var next = $this.find(".next"),
         prev = $this.find(".prev");
       var oscroll = $this.children("div");
@@ -273,19 +302,19 @@ $(function() {
         btnNext: next,
         btnPrev: prev,
         visible: mum,
-        scroll: 1,
+        scroll: osl || 1,
         speed: 350,
-        auto: 4000,
+        auto: auto,
         mouseOver: true
 
       });
-    } else {
+    } else{
       $this.jCarouselLite({
         vertical: true,
         visible: mum,
         scroll: 1,
         speed: 350,
-        auto: 3000,
+        auto: auto,
         mouseOver: true
       });
     };
@@ -347,7 +376,7 @@ $(function() {
   }
 })(jQuery);　 /*  DARA API  */
 $(function() {
-  $("img").lazyload();
+  $("img[data-url]").lazyload();
 });
 /* =========================================================
  * closed 0.2
@@ -387,7 +416,7 @@ $(function() {
             clearTimeout($this.ctimes);
             $this.ctimes=setTimeout(function(){
                $this.removeClass(tar);
-             },150);
+             },0);
            
           });
         },
@@ -460,4 +489,42 @@ var input=$("input[placeholder]");
 if (!("placeholder" in document.createElement("input"))) {
 input.placeholder();
   };
+});
+/* =========================================================
+ * gotop 0.2
+ * http://huugle.org/
+ * =========================================================
+ * Copyright (c) 2013 Huugle
+ *
+ * Date: 2013-08-28
+ * 返回顶部
+ * ========================================================= */
+ (function($) {
+  $.fn.gotop = function(options) {
+    var defaults = {
+      //插件默认参数  
+    }
+    var options = $.extend(defaults, options);
+    this.each(function() {
+      var time;
+      //返回顶部
+      var $float=$(this);
+        $float.live("click",function() {
+          $("html, body").animate({ scrollTop: 0 }, 120);
+          return false;
+          });
+      $(window).bind("scroll",function() {
+        clearTimeout(time);
+        time=setTimeout(function(){
+        var st = $(document).scrollTop();
+        //返回顶部
+        (st > 0)? $float.fadeIn(): $float.fadeOut();
+        },0);
+      });
+    });
+  };
+})(jQuery);
+　/*  DARA API  */
+$(function() {
+   $('[data-event="gotop"]').gotop();
 });

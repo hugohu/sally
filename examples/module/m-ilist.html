@@ -18,8 +18,12 @@ h4{margin-top: 20px;}
     </style>
 
     <style> 
-.u-img{display:table-cell;width:150px;height:150px;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*font-size:150px;*line-height:1;}
-.u-img img {vertical-align:middle;max-width:150px;max-height:150px;_width:100%;_height:100%;}
+.u-img{display:table-cell;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*line-height:1;}
+.u-img img {vertical-align:middle;_width:100%;_height:100%;}
+
+/*可以配置的大小选项*/
+.u-img{width:150px;height:150px;*font-size:125px;/*正常大小的0.84差不多*/}
+.u-img img{max-width:150px;max-height:150px;}
 
 .m-ilist-w li{width: 150px;}
 .m-ilist-w strong,.m-ilist-w p {display: block;width:100%;height:18px;overflow:hidden;margin:5px 0 0;line-height:18px;}
@@ -32,7 +36,7 @@ h4{margin-top: 20px;}
 .m-ilist-l li{width:300px;}
 
 .m-ilist-l .txt{float:right;width:100%;height:95px;overflow:hidden;margin-left:-160px;}
-.m-ilist-l strong,.m-ilist-l p{margin-left:160px;overflow:hidden;line-height:18px;width: auto!importnat}
+.m-ilist-l strong,.m-ilist-l p{display:block;margin-left:160px;overflow:hidden;line-height:18px;width: auto!importnat}
 .m-ilist-l .u-img{float: left;}
 
     </style>
@@ -87,8 +91,12 @@ h4{margin-top: 20px;}
 .m-ilist li:hover{border-color: #08c;box-shadow: 0px 1px 4px rgba(0, 105, 214, 0.251);transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
 
 /*!依赖于图片居中元件*/
-.u-img{display:table-cell;width:150px;height:150px;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*font-size:150px;*line-height:1;}
-.u-img img {vertical-align:middle;max-width:150px;max-height:150px;_width:100%;_height:100%;}   
+.u-img{display:table-cell;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*line-height:1;}
+.u-img img {vertical-align:middle;_width:100%;_height:100%;}
+
+/*可以配置的大小选项*/
+.u-img{width:150px;height:150px;*font-size:125px;/*正常大小的0.84差不多*/}
+.u-img img{max-width:150px;max-height:150px;}   
 
 </pre>
 
@@ -164,8 +172,12 @@ h4{margin-top: 20px;}
 .m-ilist li:hover{border-color: #08c;box-shadow: 0px 1px 4px rgba(0, 105, 214, 0.251);transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
 
 /*!依赖于图片居中元件*/
-.u-img{display:table-cell;width:150px;height:150px;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*font-size:150px;*line-height:1;}
-.u-img img {vertical-align:middle;max-width:150px;max-height:150px;_width:100%;_height:100%;}          
+.u-img{display:table-cell;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*line-height:1;}
+.u-img img {vertical-align:middle;_width:100%;_height:100%;}
+
+/*可以配置的大小选项*/
+.u-img{width:150px;height:150px;*font-size:125px;/*正常大小的0.84差不多*/}
+.u-img img{max-width:150px;max-height:150px;}          
         </pre>
 
         <h4>右侧图文列表</h4>
@@ -173,9 +185,21 @@ h4{margin-top: 20px;}
         <div class="bs-docs-example">
             <ul class="m-ilist m-ilist-l clearfix">
                 <li>
-                    <a href="#" class="u-img">
+                    <div class="fl">
+                        <a href="#" class="u-img">
+                            <img src="http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg" alt="名称" />                
+                        </a>
+                    </div>
+                    <div class="txt"> <strong><a href="#">有标题</a></strong> 
+                        <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="fl">
+                        <a href="#" class="u-img">
                         <img src="http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg" alt="名称" />
                     </a>
+                </div>
                     <div class="txt">
                         <strong>
                             <a href="#">有标题</a>
@@ -184,9 +208,11 @@ h4{margin-top: 20px;}
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="u-img">
+                <div class="fl">
+                        <a href="#" class="u-img">
                         <img src="http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg" alt="名称" />
                     </a>
+                </div>
                     <div class="txt">
                         <strong>
                             <a href="#">有标题</a>
@@ -195,20 +221,11 @@ h4{margin-top: 20px;}
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="u-img">
+                 <div class="fl">
+                        <a href="#" class="u-img">
                         <img src="http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg" alt="名称" />
                     </a>
-                    <div class="txt">
-                        <strong>
-                            <a href="#">有标题</a>
-                        </strong>
-                        <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" class="u-img">
-                        <img src="http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg" alt="名称" />
-                    </a>
+                 </div>
                     <div class="txt">
                         <strong>
                             <a href="#">有标题</a>
@@ -221,22 +238,8 @@ h4{margin-top: 20px;}
         <h4>页面结构部分</h4>
         <pre name="code" class="html">
 &lt;ul class=&quot;m-ilist m-ilist-l clearfix&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;
-&lt;div class=&quot;txt&quot;&gt; &lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
-&lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;
-&lt;div class=&quot;txt&quot;&gt; &lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
-&lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;
-&lt;div class=&quot;txt&quot;&gt; &lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
-&lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;
+&lt;li&gt;
+&lt;div class=&quot;fl&quot;&gt; &lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt; &lt;img src=&quot;http://a4.att.hudong.com/23/87/19300001104356129947874776203.jpg&quot; alt=&quot;名称&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
 &lt;div class=&quot;txt&quot;&gt; &lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
 &lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
 &lt;/div&gt;
@@ -255,12 +258,16 @@ h4{margin-top: 20px;}
 /*!图文形式的 li宽度设100%即可*/
 .m-ilist-l li{width:300px;}
 .m-ilist-l .txt{float:right;width:100%;height:95px;overflow:hidden;margin-left:-160px;}
-.m-ilist-l strong,.m-ilist-l p{margin-left:160px;overflow:hidden;line-height:18px;}
+.m-ilist-l strong,.m-ilist-l p{display:block;margin-left:160px;overflow:hidden;line-height:18px;}
 .m-ilist-l .u-img{float: left;}
 
 /*!依赖于图片居中元件*/
-.u-img{display:table-cell;width:150px;height:150px;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*font-size:150px;*line-height:1;}
-.u-img img {vertical-align:middle;max-width:150px;max-height:150px;_width:100%;_height:100%;}</pre>
+.u-img{display:table-cell;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*line-height:1;}
+.u-img img {vertical-align:middle;_width:100%;_height:100%;}
+
+/*可以配置的大小选项*/
+.u-img{width:150px;height:150px;*font-size:125px;/*正常大小的0.84差不多*/}
+.u-img img{max-width:150px;max-height:150px;}</pre>
     </div>
 
     <!-- Le javascript
