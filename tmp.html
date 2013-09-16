@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+ <title>sally - 通用样式库</title>
+  <link href="assets/css/docs.css" rel="stylesheet">
+  <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Docs nav
+================================================== -->
+    <div class="g-row">
+      <div class="m-sidebar">
+        <ul>
+          <li>
+            <a href="#module">
+              module模块
+            </a>
+          </li>
+          <li>
+            <a href="#unit">
+              unit元件
+            </a>
+          </li>
+           <li>
+            <a href="#formwork">
+              formwork模板
+            </a>
+          </li>
+           <li>
+            <a href="#made">
+              工具
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="m-main">
+
+        <div id="module" class="clearfix">
+          <h4>module模块</h4>
+          <p>这里描述了一些页面上通用模块</p>
+          <script src="examples/module/module.js"></script>
+        </div>
+        <div id="unit" class="clearfix">
+          <h4>unit元件</h4>
+          <p>这里描述了一些页面上通用模块</p>
+          <script src="examples/unit/module.js"></script>
+        </div>
+        <div id="formwork" class="clearfix">
+          <h4>formwork模板</h4>
+          <p>这里放置了一些可能用到的固定块的版式,模板由模块跟元件构成</p>
+          <script src="examples/formwork/module.js"></script>
+        </div>
+          <div id="made" class="clearfix">
+          <h4>工具</h4>
+          <p>创建了一些快捷构建html的工具</p>
+          <script src="examples/made/module.js"></script>
+        </div>      
+
+      </div>
+    </div>
+  
+  <!-- Le javascript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/application.js"></script>
+  <script>
+  /* =========================================================
+ * lazyload 0.2
+ * http://huugle.org/
+ * =========================================================
+ * Copyright (c) 2013 Huugle
+ *
+ * Date: 2013-07-11
+ *
+ * ========================================================= */
+ (function($) {
+   $.fn.scrollspy = function(options) {
+     var defaults = {};
+     var options = $.extend(defaults, options);
+     var scrollTimer = null;
+     var aele=[];
+     this.each(function() {
+       //code...
+       var $this=$(this);
+       var ele=$this.find("a");
+     
+       for(var i=0,len=ele.length;i<len;i+=1){
+        var href=ele[i].href;
+        var href=href.slice(href.indexOf("#"),href.length);
+
+         var temp = {
+         ele: ele.eq(i),
+         top: $(href).offset().top >>> 0,
+           };
+          aele.push(temp);
+       };     
+     });
+     
+     $(window).bind("scroll.scrollspy", function() {
+       if (scrollTimer) {
+         clearTimeout(scrollTimer);
+       }
+       scrollTimer = setTimeout(function() {
+         var _scrollTop = $(window).scrollTop();
+          for(var i=0,len=aele.length;i<len;i+=1){
+            var _top=aele[i].top-10;
+            if(_scrollTop>=_top){
+              aele[i].ele.parents("li").addClass("active").siblings().removeClass("active").end();
+            }
+
+          }
+
+       },0);
+     });
+     $(window).trigger("scroll.scrollspy");
+   };
+ })(jQuery);　
+ /*  DARA API  */
+ $(function() {
+   $(".m-sidebar").scrollspy();
+ });
+  </script>
+</body>
+</html>

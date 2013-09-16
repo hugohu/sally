@@ -3,7 +3,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 /* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
 /* 要注意表单元素并不继承父级 font 的问题 */
-body, button, input, select, textarea { font:12px/1.5 arial,tahoma,"Hiragino Sans GB",\5b8b\4f53; }
+body, button, input, select, textarea { font:12px/1.8 arial,tahoma,"Hiragino Sans GB",\5b8b\4f53; }
 input, select, textarea { font-size:100%; }
 /* 去掉各Table  cell 的边距并让其边重合 */
 table { border-collapse:collapse; border-spacing:0; }

@@ -1,123 +1,56 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta charset="utf-8">
-    <title>sally - javascript插件</title>
-    <!-- Le styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="assets/css/docs.css" rel="stylesheet">
-    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<meta charset="utf-8">
+<title>sally - javascript插件</title>
+<link href="assets/css/docs.css" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-
-        <!-- Docs nav
+<!-- Docs nav
 ================================================== -->
-        <div class="row">
-            <div class="span3 bs-docs-sidebar">
-                <ul class="nav nav-list bs-docs-sidenav">
-                                        <li>
-                        <a href="#all"> <i class="icon-chevron-right"></i>
-                            概述
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#tab"> <i class="icon-chevron-right"></i>
-                            滑动门
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#scroll"> <i class="icon-chevron-right"></i>
-                            图片文字滚动
-                        </a>
-                    </li>
-                     <li>
-                        <a href="#carousel"> <i class="icon-chevron-right"></i>
-                           焦点轮播
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#lazyload"> <i class="icon-chevron-right"></i>
-                           图片懒加载
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#close"> <i class="icon-chevron-right"></i>
-                           关闭提示框
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#hover"> <i class="icon-chevron-right"></i>
-                           鼠标滑过
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#dropdown"> <i class="icon-chevron-right"></i>
-                           下拉菜单
-                        </a>
-                    </li>
-                     <li>
-                        <a href="#layer"> <i class="icon-chevron-right"></i>
-                           弹出层
-                        </a>
-                    </li>
-                      <li>
-                        <a href="#fixed"> <i class="icon-chevron-right"></i>
-                           跟随滚动
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#gotop"> <i class="icon-chevron-right"></i>
-                           添加返回顶部
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#more"> <i class="icon-chevron-right"></i>
-                           更多特效
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="span9">
-
-<div id="all">
-     <div class="page-header">
-  <h1>sally中的JavaScript</h1>
-</div>
-<h3>引入单个插件还是一次性引入所有插件</h3>
-<p>
-  每个插件都可以单独的引入到页面中（注意插件间的依赖关系），或者一次性引入。
-  <strong><a href="examples/sallyjs/assets/sally.js">sally.js</a></strong> 和<strong><a href="examples/sallyjs/assets/sally.min.js">sally.min.js</a></strong>
-   文件都将所有插件包含在一个文件中了（前者是未压缩版，后者是压缩版）。
-</p>
-<h3>Data 属性</h3>
-<p>你可以仅仅通过data属性API就能使用所有sally中的插件，而且不用写一行JavaScript代码。这是sally中的一等API，并且是你的首选方式。</p>
-<p>data api的使用方法:对需要执行事件的对象添加自定义属性 data-event 定义事件类型</p>
-<h3>编程API</h3>
-<pre class="prettyprint linenums">
+<div class="g-row">
+  <div class="m-sidebar">
+    <ul >
+      <li> <a href="#all"> 概述 </a> </li>
+      <li> <a href="#tab"> 滑动门 </a> </li>
+      <li> <a href="#scroll"> 图片文字滚动 </a> </li>
+      <li> <a href="#carousel"> 焦点轮播 </a> </li>
+      <li> <a href="#lazyload"> 图片懒加载 </a> </li>
+      <li> <a href="#close"> 关闭提示框 </a> </li>
+      <li> <a href="#hover"> 鼠标滑过 </a> </li>
+      <li> <a href="#dropdown"> 下拉菜单 </a> </li>
+      <li> <a href="#layer"> 弹出层 </a> </li>
+      <li> <a href="#fixed"> 跟随滚动 </a> </li>
+      <li> <a href="#gotop"> 添加返回顶部 </a> </li>
+      <li> <a href="#more"> 更多特效 </a> </li>
+    </ul>
+  </div>
+  <div class="m-main">
+    <div id="all">
+      <div class="page-header">
+        <h1>sally中的JavaScript</h1>
+      </div>
+      <h3>引入单个插件还是一次性引入所有插件</h3>
+      <p> 每个插件都可以单独的引入到页面中（注意插件间的依赖关系），或者一次性引入。 <strong><a href="examples/sallyjs/assets/sally.js">sally.js</a></strong> 和<strong><a href="examples/sallyjs/assets/sally.min.js">sally.min.js</a></strong> 文件都将所有插件包含在一个文件中了（前者是未压缩版，后者是压缩版）。 </p>
+      <h3>Data 属性</h3>
+      <p>你可以仅仅通过data属性API就能使用所有sally中的插件，而且不用写一行JavaScript代码。这是sally中的一等API，并且是你的首选方式。</p>
+      <p>data api的使用方法:对需要执行事件的对象添加自定义属性 data-event 定义事件类型</p>
+      <!-- <h3>编程API</h3>
+      <pre name="code" class="js">
 $(".btn.danger").button("toggle").addClass("fat");
-</pre>
-<p>sally的插件部分主要放置了一些常用的有特定场景的需要重新制作.可以通过更多来进行添加插件,全局定义的选中样式名称为active 所以注意不要覆盖这个样式名,并且通过层级来实现特定的效果</p>
-
-</div>
-               
-<div id="tab">
-     <div class="page-header">
-  <h2>滑动门</h2>
-</div>
-<p>
-查看案列:
-</p>
-  <div class="bs-docs-example">
-<iframe src="examples/sallyjs/tab.html" frameborder="0" style="width: 100%;" ></iframe>
-   </div>
-<pre class="prettyprint linenums">
+</pre> -->
+      <p>sally的插件部分主要放置了一些常用的有特定场景的需要重新制作.可以通过更多来进行添加插件,全局定义的选中样式名称为active 所以注意不要覆盖这个样式名,并且通过层级来实现特定的效果</p>
+    </div>
+    <div id="tab">
+      <div class="page-header">
+        <h2>滑动门</h2>
+      </div>
+      <p> 查看案列: </p>
+      <div class="bs-docs-example">
+        <iframe src="examples/sallyjs/tab.html" frameborder="0" style="width: 100%;" ></iframe>
+      </div>
+      <pre name="code" class="html">
 &lt;dl class=&quot;m-tab&quot; data-event=&quot;tab&quot;&gt;
   &lt;dt class=&quot;m-hd&quot;&gt; 
     &lt;ul&gt;
@@ -133,24 +66,21 @@ $(".btn.danger").button("toggle").addClass("fat");
   &lt;dd&gt;   4&lt;/dd&gt;
 &lt;/dl&gt;
 </pre>
- <h3>通过一个dl列表,dt里定义ul切换对象的下面切换,这种结构是最简介的方式,dt部分可以参考tab模块进行修改添加</h3>
-<p>如果要转换成个点击事件,可以添加data-type="click" 来进行转行,例如</p>
-<pre class="prettyprint linenums">
+      <h3>通过一个dl列表,dt里定义ul切换对象的下面切换,这种结构是最简介的方式,dt部分可以参考tab模块进行修改添加</h3>
+      <p>如果要转换成个点击事件,可以添加data-type="click" 来进行转行,例如</p>
+      <pre name="code" class="html">
 &lt;dl class=&quot;m-tab&quot; data-event=&quot;tab&quot; data-type=&quot;click&quot; &gt;
-</pre>   
-</div>
-
-<div id="scroll">
-     <div class="page-header">
-  <h2>图片滚动</h2>
-</div>
-<p>
-图片滚动:
-</p>
-  <div class="bs-docs-example">
-<iframe src="examples/sallyjs/scroll.html" frameborder="0" style="width: 100%;" ></iframe>
-   </div>
-<pre class="prettyprint linenums">
+</pre>
+    </div>
+    <div id="scroll">
+      <div class="page-header">
+        <h2>图片滚动</h2>
+      </div>
+      <p> 图片滚动: </p>
+      <div class="bs-docs-example">
+        <iframe src="examples/sallyjs/scroll.html" frameborder="0" style="width: 100%;" ></iframe>
+      </div>
+      <pre name="code" class="html">
 &lt;div class=&quot;carousel&quot;  data-event=&quot;scroll&quot; data-mum=&quot;5&quot;&gt;
   &lt;span class=&quot;prev&quot;&gt;&lt;/span&gt;
   &lt;div class=&quot;jCarouselLite&quot;&gt;
@@ -164,10 +94,9 @@ $(".btn.danger").button("toggle").addClass("fat");
     &lt;span class=&quot;next&quot;&gt;&lt;/span&gt;
 &lt;/div&gt;
 </pre>
-<p>li内容可以填充为任意,图片或者文图</p>
-
-<p>文字列表同理</p>
-<pre class="prettyprint linenums">
+      <p>li内容可以填充为任意,图片或者文图</p>
+      <p>文字列表同理</p>
+      <pre name="code" class="html">
 &lt;div class=&quot;m-box&quot;  data-event=&quot;scroll&quot; data-mum=&quot;5&quot;&gt;
   &lt;ul class=&quot;m-list&quot;&gt;
     &lt;li&gt;湖北大红马建材发展有限公司&lt;/li&gt;
@@ -175,20 +104,17 @@ $(".btn.danger").button("toggle").addClass("fat");
     &lt;li&gt; &lt;a href=&quot;#&quot;&gt;鹤山市米奇涂料有限公司&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
-</pre>   
-</div>
-
-<div id="carousel">
-     <div class="page-header">
-  <h2>焦点轮播</h2>
-</div>
-<p>
-查看案列:
-</p>
-  <div class="bs-docs-example">
-<iframe src="examples/sallyjs/carousel.html" frameborder="0" style="width: 100%;height:300px" ></iframe>
-   </div>
-<pre class="prettyprint linenums">
+</pre>
+    </div>
+    <div id="carousel">
+      <div class="page-header">
+        <h2>焦点轮播</h2>
+      </div>
+      <p> 查看案列: </p>
+      <div class="bs-docs-example">
+        <iframe src="examples/sallyjs/carousel.html" frameborder="0" style="width: 100%;height:300px" ></iframe>
+      </div>
+      <pre name="code" class="html">
 &lt;div id=&quot;demo&quot; data-event=&quot;carousel&quot;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://image.zcool.com.cn/20/5/m_1279858953774.jpg&quot; alt=&quot;1&quot;&gt;&lt;/a&gt;&lt;/li&gt;
@@ -198,53 +124,48 @@ $(".btn.danger").button("toggle").addClass("fat");
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-<p>通过更改不同的样式来是实现不同的效果,具体可以参考<a href="examples/unit/u-dot.html">数字小标元件</a></p>
-<pre class="prettyprint linenums">
+      <p>通过更改不同的样式来是实现不同的效果,具体可以参考<a href="examples/unit/u-dot.html">数字小标元件</a></p>
+      <pre name="code" class="html">
 &lt;a title=&quot;1&quot; class=&quot;active&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;
 &lt;a title=&quot;2&quot; href=&quot;#&quot; class=&quot;&quot;&gt;2&lt;/a&gt;
 &lt;a class=&quot;&quot; title=&quot;3&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;
 &lt;a title=&quot;4&quot; href=&quot;#&quot;&gt;4&lt;/a&gt;
-</pre>  
-<p>可以省略的小标值,此区块可以省略,但是为了满足有些场景下的要求,可以自行添加到页面更改对应的样式</p> 
-</div>
-<div id="lazyload">
-     <div class="page-header">
-  <h2>图片懒加载</h2>
-</div>
-<p>这种处理方式主要是为了减少链接并发数,图片的src地址初始状态放置一张临时图片,然后data-url的自定义属性里放着真实的地址.跟随滚动条动态加载图片</p>
-<pre class="prettyprint linenums">
+</pre>
+      <p>可以省略的小标值,此区块可以省略,但是为了满足有些场景下的要求,可以自行添加到页面更改对应的样式</p>
+    </div>
+    <div id="lazyload">
+      <div class="page-header">
+        <h2>图片懒加载</h2>
+      </div>
+      <p>这种处理方式主要是为了减少链接并发数,图片的src地址初始状态放置一张临时图片,然后data-url的自定义属性里放着真实的地址.跟随滚动条动态加载图片</p>
+      <pre name="code" class="html">
 &lt;img alt=&quot;博洛尼&quot; src=&quot;http://meta.bmlink.com/images/d.png&quot; data-url=&quot;http://img1.bmlink.com/customizepage/2013/5/15/9/280303170103721.gif&quot; height=&quot;70&quot; width=&quot;185&quot; /&gt;
 
 </pre>
-</div>
-<div id="close">
-     <div class="page-header">
-  <h2>关闭提醒</h2>
-</div>
-<p>
-查看案列:
-</p>
-  <div class="bs-docs-example">
-<iframe src="examples/sallyjs/close.html" frameborder="0" style="width: 100%;height:80px;" ></iframe>
-   </div>
-<p>通过查找data-target定义的父元素样式来进行隐藏</p>
-<pre class="prettyprint linenums">
+    </div>
+    <div id="close">
+      <div class="page-header">
+        <h2>关闭提醒</h2>
+      </div>
+      <p> 查看案列: </p>
+      <div class="bs-docs-example">
+        <iframe src="examples/sallyjs/close.html" frameborder="0" style="width: 100%;height:80px;" ></iframe>
+      </div>
+      <p>通过查找data-target定义的父元素样式来进行隐藏</p>
+      <pre name="code" class="html">
 &lt;a href=&quot;javascript:&quot; data-event=&quot;close&quot; data-target=&quot;alert&quot;&gt;&amp;amp;times;&lt;/a&gt;
 </pre>
-</div>
-
-<div id="hover">
-     <div class="page-header">
-  <h2>鼠标滑过</h2>
-</div>
-<p>
-查看案列:
-</p>
-  <div class="bs-docs-example">
-<iframe src="examples/sallyjs/hover.html" frameborder="0" style="height: 200px;" ></iframe>
-   </div>
-<p>通过鼠标滑过后为当前元素添加data-target里定义的样式</p>
-<pre class="prettyprint linenums">
+    </div>
+    <div id="hover">
+      <div class="page-header">
+        <h2>鼠标滑过</h2>
+      </div>
+      <p> 查看案列: </p>
+      <div class="bs-docs-example">
+        <iframe src="examples/sallyjs/hover.html" frameborder="0" style="height: 200px;" ></iframe>
+      </div>
+      <p>通过鼠标滑过后为当前元素添加data-target里定义的样式</p>
+      <pre name="code" class="html">
 &lt;div class=&quot;demo clearfix&quot;  data-event=&quot;hover&quot; data-target=&quot;demo-hover&quot;&gt;
   &lt;a href=&quot;javascript:&quot; class=&quot;btn&quot;&gt;菜单&lt;/a&gt;
   &lt;ul class=&quot;u-menu&quot;&gt;
@@ -255,19 +176,38 @@ $(".btn.danger").button("toggle").addClass("fat");
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-</div>
-<div id="dropdown">
-     <div class="page-header">
-  <h2>下拉菜单</h2>
-</div>
-<p>
-查看案列:
-</p>
-  <div class="bs-docs-example">
-<iframe src="examples/sallyjs/dropdown.html" frameborder="0" style="height: 200px;" ></iframe>
-   </div>
-<p>点击后展开data-target定义的隐藏的子元素,再次点击或者点击其他区域自动隐藏</p>
-<pre class="prettyprint linenums">
+    </div>
+    <div id="dropdown">
+      <div class="page-header">
+        <h2>下拉菜单</h2>
+      </div>
+      <p> 查看案列: </p>
+      <div class="bs-docs-example">
+        <iframe src="examples/sallyjs/dropdown.html" frameborder="0" style="height: 200px;" ></iframe>
+      </div>
+      <p>点击后展开data-target定义的隐藏的子元素,再次点击或者点击其他区域自动隐藏</p>
+      <pre name="code" class="html">
+&lt;div class=&quot;demo clearfix&quot;  data-event=&quot;click&quot; data-target=&quot;u-menu&quot;&gt;
+  &lt;a href=&quot;javascript:&quot; class=&quot;btn&quot;&gt;下拉菜单&lt;/a&gt;
+  &lt;ul class=&quot;u-menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下拉式菜单&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下拉式菜单项&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下拉式菜单项&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下拉式菜单项&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+    <div id="layer">
+      <div class="page-header">
+        <h2>弹出层</h2>
+      </div>
+      <p> 查看案列: </p>
+      <div class="bs-docs-example">
+        <iframe src="examples/sallyjs/layer.html" frameborder="0" style="height:250px;width: 100%;" ></iframe>
+      </div>
+      <p>点击后弹出id为data-target指定的元素,注意id命名规范,配合关闭按钮可以很方便的实现弹窗</p>
+      <pre name="code" class="html">
 &lt;div class=&quot;demo clearfix&quot;  data-event=&quot;hover&quot; data-target=&quot;u-menu&quot;&gt;
   &lt;a href=&quot;javascript:&quot; class=&quot;btn&quot;&gt;下拉菜单&lt;/a&gt;
   &lt;ul class=&quot;u-menu&quot;&gt;
@@ -278,41 +218,17 @@ $(".btn.danger").button("toggle").addClass("fat");
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-</div>
-<div id="layer">
-     <div class="page-header">
-  <h2>弹出层</h2>
-</div>
-<p>
-查看案列:
-</p>
-  <div class="bs-docs-example">
-<iframe src="examples/sallyjs/layer.html" frameborder="0" style="height:250px;width: 100%;" ></iframe>
-   </div>
-<p>点击后弹出id为data-target指定的元素,注意id命名规范,配合关闭按钮可以很方便的实现弹窗</p>
-<pre class="prettyprint linenums">
-&lt;div class=&quot;demo clearfix&quot;  data-event=&quot;hover&quot; data-target=&quot;u-menu&quot;&gt;
-  &lt;a href=&quot;javascript:&quot; class=&quot;btn&quot;&gt;下拉菜单&lt;/a&gt;
-  &lt;ul class=&quot;u-menu&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下拉式菜单&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下拉式菜单项&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下拉式菜单项&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;下拉式菜单项&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</pre>
-</div>
-
-<div id="gotop">
-     <div class="page-header">
-  <h2>返回顶部</h2>
-</div>
-<p>添加自定义属性 data-event="gotop" 返回顶部隐藏的效果,具体的html可以自己灵活的进行拼接,比如增加评测或者其他的模块,定位信息在css里编写</p>
-<pre class="prettyprint linenums">
-
+    </div>
+    <div id="gotop">
+      <div class="page-header">
+        <h2>返回顶部</h2>
+      </div>
+      <p>添加自定义属性 data-event="gotop" 返回顶部隐藏的效果,具体的html可以自己灵活的进行拼接,比如增加评测或者其他的模块,定位信息在css里编写</p>
+      <pre name="code" class="html">
 &lt;a href=&quot;javascript:&quot; id=&quot;gotop&quot; data-event=&quot;gotop&quot; title=&quot;&amp;#36820;&amp;#22238;&amp;#39030;&amp;#37096;&quot;&gt;&lt;/a&gt; 
-<br />
-<br />
+</pre>
+<p></p>
+      <pre name="code" class="css">
 /*css部分*/
 * html body{background-image: url(about:blank);background-attachment: fixed;}
 #gotop {display: none;
@@ -326,19 +242,16 @@ _top:expression(eval(document.documentElement.scrollTop+document.documentElement
 opacity:1;filter: alpha(opacity=1);
 }
 </pre>
+
+    </div>
+  </div>
 </div>
 
-
-            </div>
-        </div>
-    </div>
-    
-    <!-- Le javascript
-================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/google-code-prettify/prettify.js"></script>
-    <script src="assets/js/bootstrap-affix.js"></script> 
-     <script src="assets/js/application.js"></script>
+<!-- Le javascript
+================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/hl-all.js"></script> 
+<script src="assets/js/application.js"></script>
 </body>
 </html>

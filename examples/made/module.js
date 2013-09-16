@@ -5,21 +5,34 @@
 		"version": "1.0",
 		"description": "用于快速的构建表单"
 	},{
-		"name": "图片列表构造器",
-		"link": "m-ilist.html",
-		"version": "1.0",
-		"description": "方便快捷的构建图片列表"
-	},{
-		"name": "页面构建器",
-		"link": "sallymade.html",
-		"version": "1.0",
-		"description": "用于快速的构建页面"
-	},{
 		"name": "渐变生成器",
 		"link": "gradual.html",
 		"version": "1.0",
 		"description": "用于生成渐变颜色"
 	}
+	,{
+		"name": "箭头生成器",
+		"link": "arr.html",
+		"version": "1.0",
+		"description": "用于个个方向的箭头"
+	}
+	,{
+		"name": "透明背景生成器",
+		"link": "op.html",
+		"version": "1.0",
+		"description": "用于透明度背景"
+	}
+	// ,{
+	// 	"name": "页面构建器",
+	// 	"link": "sallymade.html",
+	// 	"version": "1.0",
+	// 	"description": "用于快速的构建页面"
+	// },{
+	// 	"name": "图片列表构造器",
+	// 	"link": "m-ilist.html",
+	// 	"version": "1.0",
+	// 	"description": "方便快捷的构建图片列表"
+	// }
 ];
 
 
