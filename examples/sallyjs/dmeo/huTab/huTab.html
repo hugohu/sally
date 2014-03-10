@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../index.css"/>
+<link rel="stylesheet" href="huTab.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="huTab.js"></script>
+<style>
+  *{padding: 0;margin: 0;}
+/* 含标题和Tab的模块头部-默认不定宽 */
+.m-hd{height:35px;line-height:35px;padding:1px 0 0;border-bottom:1px solid #ddd;}
+.m-hd strong,.m-hd ul,.m-hd li{float:left;display:inline;}
+.m-hd strong{margin:0 20px 0 0;font-size:16px;}
+.m-hd ul{margin-left:-2px;}
+.m-hd li{position:relative;margin:-1px 0 0 2px;}
+.m-hd li a,.m-hd li a:hover{text-decoration:none;color:#666;}
+.m-hd li a{float:left;padding:0 15px;border:1px solid #ddd;border-bottom:0;border-radius:5px 5px 0 0;text-align:center;font-size:14px;background:#f8f8f8;background:-webkit-gradient(linear,0% 0%,0% 100%,from(#fdfdfd),to(#f8f8f8));background:-webkit-linear-gradient(#fdfdfd,#f8f8f8);background:-moz-linear-gradient(#fdfdfd,#f8f8f8);background:-ms-linear-gradient(#fdfdfd,#f8f8f8);background:linear-gradient(#fdfdfd,#f8f8f8);}
+.m-hd li a:hover{background:#fff;}
+.m-hd li.active a{position:relative;padding-bottom:1px;margin-bottom:-1px;background:#fff;}
+.m-hd .more{float:right;margin-left:10px;}
+/*m-tab部分样式*/
+.m-tab{display: block;}
+.m-tab dd{display: none;}
+.m-tab dd.active{display: block;}
+</style>
+<title>滑动门</title>
+</head>
+<body>
+<!--滑动门-->
+<dl class="m-tab" data-event="tab">
+	<dt class="m-hd"> 
+
+		<ul>
+        <li class="active"><a href="#">默认：居左，不定宽</a></li>
+        <li><a href="#">“标题”和“更多”可删</a></li>
+        <li><a href="#">扩展类可以自由组合</a></li>
+        <li><a href="#">标签标签</a></li>
+    </ul> 
+
+  </dt>
+	<dd class="active">
+		1
+	</dd>
+	<dd>
+		2
+	</dd>
+	<dd>
+		3
+	</dd>
+	<dd>
+		4
+	</dd>
+</dl>
+<dl class="m-tab" data-event="tab" data-type="click">
+	<dt class="m-hd"> 
+
+		<ul>
+        <li class="active"><a href="javascript:">默认：居左，不定宽</a></li>
+        <li><a href="javascript:">“标题”和“更多”可删</a></li>
+        <li><a href="javascript:">扩展类可以自由组合</a></li>
+        <li><a href="javascript:">标签标签</a></li>
+    </ul> 
+
+  </dt>
+	<dd class="active">
+		1
+	</dd>
+	<dd>
+		2
+	</dd>
+	<dd>
+		3
+	</dd>
+	<dd>
+		4
+	</dd>
+</dl>
+</body>
+</html>

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>常用工具库</title>
+<link href="../../assets/css/docs.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+<!-- Docs nav
+================================================== -->
+<div class="g-row">
+  <div class="m-sidebar">
+    <ul>
+      <li> <a href="#name"> <i class="icon-chevron-right"></i> 分类方法 </a> </li>
+      <li> <a href="#mode"> <i class="icon-chevron-right"></i> 代码格式 </a> </li>
+      <li> <a href="#norm"> <i class="icon-chevron-right"></i> 标准方案 </a> </li>
+    </ul>
+  </div>
+  <div class="m-main">
+    <div id="name">
+      <h4>1,分类方法</h4>
+      <p>我们按照功能进行分类然后采取前缀方便表示</p>
+      <ol>
+        <li>布局（grid）（.g-）：将页面分割为几个大块，通常有头部、主体、主栏、侧栏、尾部等.</li>
+        <li>模块（module）（.m-）：通常是一个语义化的可以重复使用的较大的整体！比如导航、登录、注册、各种列表、评论、搜索等！</li>
+        <li>元件（unit）（.u-）：通常是一个不可再分的较为小巧的个体，通常被重复用于各种模块中！比如按钮、输入框、loading、图标等！</li>
+        <li>功能（function）（.f-）：为方便一些常用样式的使用，我们将这些使用率较高的样式剥离出来，按需使用，通常这些选择器具有固定样式表现，比如左浮动(.f-fl),右浮动(.f-fr)等等,不可滥用！</li>
+        <li>皮肤（skin）（.s-）：如果你需要把皮肤型的样式抽离出来，通常为文字色、背景色（图）、边框色等，非换肤型网站通常只提取文字色！非换肤型网站不可滥用此类！</li>
+      </ol>
+      <p> 注：在你样式中的选择器总是要以上面前五类开头，然后在里面使用后代选择器。<br />
+        这五类只是大致的范围,其他一些细小的没办法分类的你可以自定义一个字母大类或者只用其他方法,但是必须要记住不能太长而且要尽量语义化. <br />
+        分类的目的是为了让代码结构更加的易懂便于维护,所以希望大家能大块上遵循原则. </p>
+      <h4>统一语义的命名</h4>
+      <style type="text/css">
+.table{width:auto;}
+</style>
+      <strong>布局（.g-）</strong>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>语义</th>
+            <th>命名</th>
+            <th>简写</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>文档</td>
+            <td>doc</td>
+            <td>doc</td>
+          </tr>
+          <tr>
+            <td>头部</td>
+            <td>head</td>
+            <td>hd</td>
+          </tr>
+          <tr>
+            <td>主体</td>
+            <td>body</td>
+            <td>bd</td>
+          </tr>
+          <tr>
+            <td>尾部</td>
+            <td>foot</td>
+            <td>ft</td>
+          </tr>
+          <tr>
+            <td>主栏</td>
+            <td>main</td>
+            <td>mn</td>
+          </tr>
+          <tr>
+            <td>主栏子容器</td>
+            <td>mainc</td>
+            <td>mnc</td>
+          </tr>
+          <tr>
+            <td>侧栏</td>
+            <td>side</td>
+            <td>sd</td>
+          </tr>
+          <tr>
+            <td>侧栏子容器</td>
+            <td>sidec</td>
+            <td>sdc</td>
+          </tr>
+          <tr>
+            <td>盒容器</td>
+            <td>wrap/box</td>
+            <td>wrap/box</td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <table class="table table-bordered table-striped">
+        <strong>模块（.m-）、元件（.u-）</strong>
+        <thead>
+          <tr>
+            <th>语义</th>
+            <th>命名</th>
+            <th>简写</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>导航</td>
+            <td>nav</td>
+            <td>nav</td>
+          </tr>
+          <tr>
+            <td>子导航</td>
+            <td>subnav</td>
+            <td>snav</td>
+          </tr>
+          <tr>
+            <td>面包屑</td>
+            <td>crumb</td>
+            <td>crm</td>
+          </tr>
+          <tr>
+            <td>菜单</td>
+            <td>menu</td>
+            <td>menu</td>
+          </tr>
+          <tr>
+            <td>选项卡</td>
+            <td>tab</td>
+            <td>tab</td>
+          </tr>
+          <tr>
+            <td>标题区</td>
+            <td>head/title</td>
+            <td>hd/tt</td>
+          </tr>
+          <tr>
+            <td>内容区</td>
+            <td>body/content</td>
+            <td>bd/ct</td>
+          </tr>
+          <tr>
+            <td>列表</td>
+            <td>list</td>
+            <td>lst</td>
+          </tr>
+          <tr>
+            <td>表格</td>
+            <td>table</td>
+            <td>tb</td>
+          </tr>
+          <tr>
+            <td>表单</td>
+            <td>form</td>
+            <td>fm</td>
+          </tr>
+          <tr>
+            <td>热点</td>
+            <td>hot</td>
+            <td>hot</td>
+          </tr>
+          <tr>
+            <td>排行</td>
+            <td>top</td>
+            <td>top</td>
+          </tr>
+          <tr>
+            <td>登录</td>
+            <td>login</td>
+            <td>log</td>
+          </tr>
+          <tr>
+            <td>标志</td>
+            <td>logo</td>
+            <td>logo</td>
+          </tr>
+          <tr>
+            <td>广告</td>
+            <td>advertise</td>
+            <td>ad</td>
+          </tr>
+          <tr>
+            <td>搜索</td>
+            <td>search</td>
+            <td>sch</td>
+          </tr>
+          <tr>
+            <td>幻灯</td>
+            <td>slide</td>
+            <td>sld</td>
+          </tr>
+          <tr>
+            <td>提示</td>
+            <td>tips</td>
+            <td>tips</td>
+          </tr>
+          <tr>
+            <td>帮助</td>
+            <td>help</td>
+            <td>help</td>
+          </tr>
+          <tr>
+            <td>新闻</td>
+            <td>news</td>
+            <td>news</td>
+          </tr>
+          <tr>
+            <td>下载</td>
+            <td>download</td>
+            <td>dld</td>
+          </tr>
+          <tr>
+            <td>注册</td>
+            <td>regist</td>
+            <td>reg</td>
+          </tr>
+          <tr>
+            <td>投票</td>
+            <td>vote</td>
+            <td>vote</td>
+          </tr>
+          <tr>
+            <td>版权</td>
+            <td>copyright</td>
+            <td>cprt</td>
+          </tr>
+          <tr>
+            <td>结果</td>
+            <td>result</td>
+            <td>rst</td>
+          </tr>
+          <tr>
+            <td>标题</td>
+            <td>title</td>
+            <td>tt</td>
+          </tr>
+          <tr>
+            <td>按钮</td>
+            <td>button</td>
+            <td>btn</td>
+          </tr>
+          <tr>
+            <td>输入</td>
+            <td>input</td>
+            <td>ipt</td>
+          </tr>
+        </tbody>
+      </table>
+      <strong>功能（.f-）</strong>
+      <p></p>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>语义</th>
+            <th>命名</th>
+            <th>简写</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>浮动清除</td>
+            <td>clearboth</td>
+            <td>cb</td>
+          </tr>
+          <tr>
+            <td>向左浮动</td>
+            <td>floatleft</td>
+            <td>fl</td>
+          </tr>
+          <tr>
+            <td>向右浮动</td>
+            <td>floatright</td>
+            <td>fr</td>
+          </tr>
+          <tr>
+            <td>内联块级</td>
+            <td>inlineblock</td>
+            <td>ib</td>
+          </tr>
+          <tr>
+            <td>文本居中</td>
+            <td>textaligncenter</td>
+            <td>tac</td>
+          </tr>
+          <tr>
+            <td>文本居右</td>
+            <td>textalignright</td>
+            <td>tar</td>
+          </tr>
+          <tr>
+            <td>文本居左</td>
+            <td>textalignleft</td>
+            <td>tal</td>
+          </tr>
+          <tr>
+            <td>垂直居中</td>
+            <td>verticalalignmiddle</td>
+            <td>vam</td>
+          </tr>
+          <tr>
+            <td>溢出隐藏</td>
+            <td>overflowhidden</td>
+            <td>oh</td>
+          </tr>
+          <tr>
+            <td>完全消失</td>
+            <td>displaynone</td>
+            <td>dn</td>
+          </tr>
+          <tr>
+            <td>字体大小</td>
+            <td>fontsize</td>
+            <td>fs</td>
+          </tr>
+          <tr>
+            <td>字体粗细</td>
+            <td>fontweight</td>
+            <td>fw</td>
+          </tr>
+        </tbody>
+      </table>
+      <strong>皮肤（.s-）</strong>
+      <p></p>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>语义</th>
+            <th>命名</th>
+            <th>简写</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>字体颜色</td>
+            <td>fontcolor</td>
+            <td>fc</td>
+          </tr>
+          <tr>
+            <td>背景</td>
+            <td>background</td>
+            <td>bg</td>
+          </tr>
+          <tr>
+            <td>背景颜色</td>
+            <td>backgroundcolor</td>
+            <td>bgc</td>
+          </tr>
+          <tr>
+            <td>背景图片</td>
+            <td>backgroundimage</td>
+            <td>bgi</td>
+          </tr>
+          <tr>
+            <td>背景定位</td>
+            <td>backgroundposition</td>
+            <td>bgp</td>
+          </tr>
+          <tr>
+            <td>边框颜色</td>
+            <td>bordercolor</td>
+            <td>bdc</td>
+          </tr>
+        </tbody>
+      </table>
+      <strong>状态（.z-）</strong>
+      <p></p>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>语义</th>
+            <th>命名</th>
+            <th>简写</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>选中</td>
+            <td>selected</td>
+            <td>sel</td>
+          </tr>
+          <tr>
+            <td>当前</td>
+            <td>current</td>
+            <td>crt</td>
+          </tr>
+          <tr>
+            <td>显示</td>
+            <td>show</td>
+            <td>show</td>
+          </tr>
+          <tr>
+            <td>隐藏</td>
+            <td>hide</td>
+            <td>hide</td>
+          </tr>
+          <tr>
+            <td>打开</td>
+            <td>open</td>
+            <td>open</td>
+          </tr>
+          <tr>
+            <td>关闭</td>
+            <td>close</td>
+            <td>close</td>
+          </tr>
+          <tr>
+            <td>出错</td>
+            <td>error</td>
+            <td>err</td>
+          </tr>
+          <tr>
+            <td>不可用</td>
+            <td>disabled</td>
+            <td>dis</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="mode">
+      <h3>代码格式</h3>
+      <dl>
+        <dt>选择器、属性和值都使用小写</dt>
+        <dd>
+          <p>在xhtml标准中规定了所有标签、属性和值都小写，CSS也是如此。</p>
+        </dd>
+        <dt>单行写完一个选择器定义</dt>
+        <dd>
+          <p>便于选择器的寻找和阅读，也便于插入新选择器和编辑，便于模块等的识别。去除多余空格，使代码紧凑减少换行。</p>
+          <p>如果有嵌套定义，可以采取内部单行的形式。</p>
+          <pre name="code" class="css">/* 单行定义一个选择器 */ 
+.m-list li,.m-list h3{width:100px;padding:10px;border:1px solid #ddd;} 
+/* 这是一个有嵌套定义的选择器 */ 
+@media all and (max-width:600px){ 
+    .m-class1 .itm{height:17px;line-height:17px;font-size:12px;} 
+    .m-class2 .itm{width:100px;overflow:hidden;} 
+} 
+@-webkit-keyframes showitm{ 
+    0%{height:0;opacity:0;} 
+    100%{height:100px;opacity:1;} 
+} 
+</pre>
+        </dd>
+        <dt>最后一个值也以分号结尾</dt>
+        <dd>
+          <p>通常在大括号结束前的值可以省略分号，但是这样做会对修改、添加和维护工作带来不必要的失误和麻烦。</p>
+        </dd>
+        <dt>省略值为0时的单位</dt>
+        <dd>
+          <p>为节省不必要的字节同时也使阅读方便，我们将0px、0em、0%等值缩写为0。</p>
+          <pre name="code" class="css">.m-box{margin:0 10px;background-position:50% 0;} 
+</pre>
+        </dd>
+        <dt>使用单引号</dt>
+        <dd>
+          <p>省略url引用中的引号，其他需要引号的地方使用单引号。</p>
+          <pre name="code" class="css">.m-box{background:url(bg.png);} 
+.m-box:after{content:'.';} 
+</pre>
+        </dd>
+        <dt>使用16进制表示颜色值</dt>
+        <dd>
+          <p>除非你需要透明度而使用rgba，否则都使用#f0f0f0这样的表示方法，并尽量缩写。</p>
+          <pre name="code" class="css">.m-box{color:#f00;background:rgba(0,0,0,0.5);} 
+</pre>
+        </dd>
+        <dt>根据属性的重要性按顺序书写</dt>
+        <dd>
+          <p>只遵循横向顺序即可，先显示定位布局类属性，后盒模型等自身属性，最后是文本类及修饰类属性。</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>&rarr;</th>
+                <th>显示属性</th>
+                <th>自身属性</th>
+                <th>文本属性和其他修饰</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&nbsp;</td>
+                <td>display</td>
+                <td>width</td>
+                <td>font</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>visibility</td>
+                <td>height</td>
+                <td>text-align</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>position</td>
+                <td>margin</td>
+                <td>text-decoration</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>float</td>
+                <td>padding</td>
+                <td>vertical-align</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>clear</td>
+                <td>border</td>
+                <td>white-space</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>list-style</td>
+                <td>overflow</td>
+                <td>color</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>top</td>
+                <td>min-width</td>
+                <td>background </td>
+              </tr>
+            </tbody>
+          </table>
+          <pre name="code" class="css">.m-box{position:relative;width:600px;margin:0 auto 10px;text-align:center;color:#000;} 
+</pre>
+          <p>如果属性间存在关联性，则不要隔开写。</p>
+          <pre name="code" class="css">/* 这里的height和line-height有关联性 */ 
+.m-box{position:relative;height:20px;line-height:20px;padding:5px;color:#000;} 
+</pre>
+        </dd>
+        <dt>私有在前，标准在后</dt>
+        <dd>
+          <p>先写带有浏览器私有标志的，后写W3C标准的。</p>
+          <pre name="code" class="css">.m-box{-webkit-box-shadow:0 0 0 #000;-moz-box-shadow:0 0 0 #000;box-shadow:0 0 0 #000;} 
+</pre>
+        </dd>
+        <dt>注释格式：/* 注释文字 */</dt>
+        <dd>
+          <p>对选择器的注释统一写在被注释对象的上一行，对属性及值的注释写于分号后。</p>
+          <p>注释内容两端需空格，已确保即使在编码错误的情况下也可以正确解析样式。</p>
+          <p>在必要的情况下，可以使用块状注释，块状注释保持统一的缩进对齐。</p>
+          <p>原则上每个系列的样式都需要有一个注释，言简意赅的表明名称、用途、注意事项等。</p>
+          <pre name="code" class="css">/* 块状注释文字 
+ * 块状注释文字 
+ * 块状注释文字 
+ */ 
+.m-list{width:500px;} 
+.m-list li{height:20px;line-height:20px;/* 这里是对line-height的一个注释 */overflow:hidden;} 
+.m-list li a{color:#333;} 
+/* 单行注释文字 */ 
+.m-list li em{color:#666;} 
+</pre>
+        </dd>
+        <dt>原则上不允许使用Hack</dt>
+        <dd>
+          <p>很多不兼容问题可以通过改变方法和思路来解决，并非一定需要Hack，根据经验你完全可以绕过某些兼容问题。</p>
+          <p>一种合理的结构和合理的样式，是极少会碰到兼容问题的。</p>
+          <p>由于浏览器自身缺陷，我们无法避开的时候，可以允许使用适当的Hack。</p>
+        </dd>
+        <dt>统一Hack方法</dt>
+        <dd>
+          <p>统一使用“*”和“_”分别对IE7和6进行Hack。如下代码所示：</p>
+          <pre name="code" class="css">/* IE7会显示灰色#888，IE6会显示白色#fff，其他浏览器显示黑色#000 */ 
+.m-list{color:#000;*color:#888;_color:#fff;} 
+</pre>
+        </dd>
+        <dt>建议并适当缩写值</dt>
+        <dd>
+          <p>“建议并适当”是因为缩写总是会包含一系列的值，而有时候我们并不希望设置某一值，反而造成了麻烦，那么这时候你可以不缩写，而是分开写。</p>
+          <p>当然，在一切可以缩写的情况下，请务必缩写，它最大的好处就是节省了字节，便于维护，并使阅读更加一目了然。</p>
+          <p>缩写方法请查阅css手册。</p>
+        </dd>
+        <dt>选择器顺序</dt>
+        <dd>
+          <p>请综合考虑以下顺序依据：</p>
+          <ul>
+            <li>从大到小（以选择器的范围为准）</li>
+            <li>从低到高（以等级上的高低为准）</li>
+            <li>从先到后（以结构上的先后为准）</li>
+            <li>从父到子（以结构上的嵌套为准）</li>
+          </ul>
+          <p>以下仅为简单示范：</p>
+          <pre name="code" class="css">/* 从大到小 */ 
+.m-list p{margin:0;padding:0;} 
+.m-list p.part{margin:1px;padding:1px;} 
+/* 从低到高 */ 
+.m-logo a{color:#f00;} 
+.m-logo a:hover{color:#fff;} 
+/* 从先到后 */ 
+.g-hd{height:60px;} 
+.g-bd{height:60px;} 
+.g-ft{height:60px;} 
+/* 从父到子 */ 
+.m-list{width:300px;} 
+.m-list .itm{float:left;} 
+</pre>
+        </dd>
+        <dt>选择器等级</dt>
+        <dd>
+          <p>a = 行内样式style。</p>
+          <p>b = ID选择器的数量。</p>
+          <p>c = 类、伪类和属性选择器的数量。</p>
+          <p>d = 类型选择器和伪元素选择器的数量。</p>
+          <table class="table table-bordered table-striped">
+            <tr>
+              <th>选择器</th>
+              <th>等级(a,b,c,d)</th>
+            </tr>
+            <tr>
+              <td>style=”” </td>
+              <td>1,0,0,0</td>
+            </tr>
+            <tr>
+              <td>#wrapper #content {}</td>
+              <td>0,2,0,0</td>
+            </tr>
+            <tr>
+              <td>#content .dateposted {}</td>
+              <td>0,1,1,0</td>
+            </tr>
+            <tr>
+              <td>div#content {}</td>
+              <td>0,1,0,1</td>
+            </tr>
+            <tr>
+              <td>#content p {}</td>
+              <td>0,1,0,1</td>
+            </tr>
+            <tr>
+              <td>#content {}</td>
+              <td>0,1,0,0</td>
+            </tr>
+            <tr>
+              <td>p.comment .dateposted {}</td>
+              <td>0,0,2,1</td>
+            </tr>
+            <tr>
+              <td>div.comment p {}</td>
+              <td>0,0,1,2</td>
+            </tr>
+            <tr>
+              <td>.comment p {}</td>
+              <td>0,0,1,1</td>
+            </tr>
+            <tr>
+              <td>p.comment {}</td>
+              <td>0,0,1,1</td>
+            </tr>
+            <tr>
+              <td>.comment {}</td>
+              <td>0,0,1,0</td>
+            </tr>
+            <tr>
+              <td>div p {}</td>
+              <td>0,0,0,2</td>
+            </tr>
+            <tr>
+              <td>p {}</td>
+              <td>0,0,0,1</td>
+            </tr>
+          </table>
+        </dd>
+      </dl>
+      <div id="norm">
+        <h2>标准方案</h2>
+        <h3>背景图优化合并</h3>
+        <h4>图片本身的优化：</h4>
+        <ul>
+          <li>图像质量要求和图像文件大小决定你用什么格式的图片，用较小的图片文件呈现较好的图像质量。</li>
+          <li>当图片色彩过于丰富且无透明要求时，建议采用jpg格式并保存为较高质量。</li>
+          <li>当图片色彩过于丰富又有透明或半透明要求或阴影效果时，建议采用png24格式，并对IE6进行png8退化（或在不得已情况下使用滤镜）。</li>
+          <li>当图片色彩不太丰富时无论有无透明要求，请采用png8格式，大多数情况下建议采用这种格式。</li>
+          <li>当图片有动画时，只能使用gif格式。</li>
+          <li>你可以使用工具对图片进行再次压缩，但前提是不会影响色彩和透明。</li>
+        </ul>
+        <h4>多张图片的合并：</h4>
+        <ul>
+          <li>单个图标之间必须保留空隙，空隙大小由容器大小及显示方式决定。这样做的好处是既考虑了“容错性”又提高了图片的可维护性。</li>
+          <li>图标的排列方式，也由容器大小及显示方式决定。排列方式分为以下几种：横向排列（容器宽度有限）、纵向排列（容器高度有限）、斜线排列（容器宽高不限），靠左排列（容器背景居左）、靠右排列（容器背景居右）、水平居中排列（容器背景水平居中）、垂直居中排列（容器背景垂直居中）。</li>
+          <li>合并后图片大小不宜超过50K，建议大小在20K-50K之间。</li>
+          <li>为保证多次修改后的图片质量，请保留一份PSD原始图，修改和添加都在PSD中进行，最后导出png。</li>
+        </ul>
+        <h4>分类合并：</h4>
+        <p>并不是把所有的图标都合并在一张图片里就是最好的，除了要控制图片大小之外还要注意以下方法。</p>
+        <ul>
+          <li>按照图片排列方式，把排列方式一样的图片进行合并，便于样式控制。</li>
+          <li>按照模块或元件，把同属于一个模块或元件的图片进行合并，方便模块或元件的维护。</li>
+          <li>按照图片大小，把大小一致或差不多的图片进行合并，可充分利用图片空间。</li>
+          <li>按照图片色彩，把色彩一致或差不多的图片进行合并，保证合并后图片的色彩不过于丰富，可防止色彩失真。</li>
+          <li>综合以上方法进行合并。</li>
+        </ul>
+        <h4>避免耗性能的属性</h4>
+        <p>以下所举列的属性可能造成渲染性能问题。不过有时候需求大于一切……</p>
+        <pre name="code" class="css">  /* expression */
+.class{width:expression(this.width>100?'100px':'auto');} 
+/* filter */
+.class{filter:alpha(opacity=50);}</pre>
+        <p><strong>9. 避免滥用CSS Hack</strong> <br>
+          &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+          推荐使用下面的：</p>
+        <p>区别属性：</p>
+        <table  class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td> IE6 </td>
+              <td> _property:value </td>
+            </tr>
+            <tr>
+              <td> IE6/7 </td>
+              <td > *property:value </td>
+            </tr>
+            <tr>
+              <td> IE6/7/8/9 </td>
+              <td > property:value\9 </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>区别规则：</p>
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td> IE6 </td>
+              <td style="text-align:left;"> * html selector { &#8230; } </td>
+            </tr>
+            <tr>
+              <td> IE7 </td>
+              <td style="text-align:left;"> *:first-child+html selector { &#8230; } </td>
+            </tr>
+            <tr>
+              <td> 非IE6 </td>
+              <td style="text-align:left;"> html&gt;body selector { &#8230; } </td>
+            </tr>
+            <tr>
+              <td> firefox only </td>
+              <td style="text-align:left;"> @-moz-document url-prefix() { &#8230; } </td>
+            </tr>
+            <tr>
+              <td> saf3+/chrome1+ </td>
+              <td style="text-align:left;"> @media all and (-webkit-min-device-pixel-ratio:0) { &#8230; } </td>
+            </tr>
+            <tr>
+              <td> opera only </td>
+              <td style="text-align:left;"> @media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { &#8230; } </td>
+            </tr>
+            <tr>
+              <td> iPhone/mobile webkit </td>
+              <td style="text-align:left;"> @media screen and (max-device-width: 480px) { &#8230; } </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>注意：SCSS会自动转换一些不标准CSS写法，会破坏CSS Hack。 <strong></p>
+        <p> 10. 使用after或overflow的方式清浮动，不要在html里增加多余的标签</strong><br />
+          &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+          <strong>11. CSS必须放在head里</strong><br />
+          &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+          <strong>12. 避免使用低效的选择器</strong><br />
+          &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+          如：</p>
+        <pre name="code" class="css">
+    body > * {...}
+    ul > li > a {...}
+    #footer > h3 {...}
+    ul#top_blue_nav {...}
+    #searbar span.submit a { ... }
+    .target #target-node { ... }
+</pre>
+        <p><strong>13. 避免使用filter</strong> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; <strong><br />
+          14. 避免直接定义标签的样式。</strong>如： div { &#8230; }<br />
+          &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+          <strong>15. 避免在标签上直接写样式。</strong>如：</p>
+        <div style="margin-bottom:30px;"> &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+          <strong>16. 避免在CSS中使用expression</strong><br />
+          &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+          <strong>17. 避免在CSS中使用@import</strong><br />
+          &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+          <strong>18. 尽量不要在CSS中使用!important</strong><br />
+          &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+          <strong>19. 绝对不要在CSS中使用&#8221;*&#8221;选择符</strong><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Le javascript
+================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="../../assets/js/jquery.js"></script> 
+<script src="../../assets/js/hl-all.js"></script> 
+<script src="../../assets/js/bootstrap-affix.js"></script> 
+<script src="../../assets/js/application.js"></script>
+</body>
+</html>

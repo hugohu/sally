@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally调试器</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+  
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{margin-top: 50px;}
+.g-row{width: 990px;margin: 0 auto}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>sally编辑器1.0.1</h3>
+   <p>内置emmet,快捷键tab展开缩写</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+  <div id="m-topnav">
+  <div class="g-row">
+    <script type="text/javascript" src="/ascxproxy.aspx?path=logins"></script>
+    <div class="tnl">
+      欢迎来到中国卫浴网!   
+      <a href="/login.aspx">登录</a>
+      <a href="/reg/">注册</a>
+    </div>
+    <dl class="tnr clearfix">
+      <dt>
+        <a href="http://wpa.qq.com/msgrd?V=1&Site=中国卫浴网&Uin=648558800&Menu=yes" target="_blank">在线客服</a>
+      </dt>
+      <dd data-event="hover" data-target="active">
+        <a href="javascript:void(0);" target="_blank">快速入口</a>
+        <i class="ifont">ǋ</i>
+        <ul class="u-menu">
+          <li>
+            <a href="http://bst.wyw.cn/bstIndex/Login.aspx?url=/bstAsk/AddAsk.aspx">我要提问</a>
+          </li>
+          <li>
+            <a href="/invite/daili/">我要代理</a>
+          </li>
+          <li>
+            <a href="/buy/addfast.aspx">我要求购</a>
+          </li>
+        </ul>
+      </dd>
+      <dd data-event="hover" data-target="active">
+        <a href="javascript:void(0);" target="_blank">产品服务</a>
+        <i class="ifont">ǋ</i>
+        <ul class="u-menu">
+          <li>
+            <a href="/fuwu/wyt/">卫浴通</a>
+          </li>
+          <li>
+            <a href="/fuwu/3jia/default.html">排名三甲</a>
+          </li>
+          <li>
+            <a href="/fuwu/hjad/hjad.htm">黄金广告</a>
+          </li>
+          <li>
+            <a href="http://www.59137.cn/">商优宝</a>
+          </li>
+        </ul>
+      </dd>
+      <dd data-event="hover" data-target="active">
+        <a href="javascript:" class="u-a">网站导航</a>
+        <i class="ifont">ǋ</i>
+        <div class="u-menu u-menu-end">
+          <p class="wl2">
+            <strong>
+              <a href="javascript:">资讯导航</a>
+            </strong>
+            <a href="/news/">资讯</a>
+            <a href="/special/">专题</a>
+            <a href="/Video/">视频</a>
+            <a href="/Albums/">视觉</a>
+            <a href="http://bst.wyw.cn">问答</a>
+            <a href="http://bbs.wyw.cn/">论坛</a>
+            <a href="http://zt.wyw.cn/2013weekly/List/">测评</a>
+            <a href="/meeting/">展会</a>
+          </p>
+          <p>
+            <strong>
+              <a href="javascript:" rel="nofollow">商机导航</a>
+            </strong>
+            <a href="/guide/">导购</a>
+            <a href="/buy/">求购</a>
+            <a href="/invite/daili/">代理</a>
+            <a href="/invite/">招商</a>
+            <a href="/invite/invt/">经销商</a>
+            <a href="/company/?mcocy=4">电商</a>
+            <a href="/street/">卫浴一条街</a>
+          </p>
+          <p>
+            <strong>
+              <a href="javascript:" rel="nofollow">产品导航</a>
+            </strong>
+            <a href="/sell/c%c3%e6%c5%e8/">面盆</a>
+            <a href="/sell/c%b1%e3%c6%f7/">便器</a>
+            <a href="/sell/c%d4%a1%b8%d7/">浴缸</a>
+            <a href="/sell/c%c1%dc%d4%a1%b7%bf/">淋浴房</a>
+            <a href="/sell/c%d4%a1%ca%d2%b9%f1/">浴室柜</a>
+            <a href="/sell/c%c1%fa%cd%b7%bb%a8%c8%f7/">龙头花洒</a>
+            <a href="/sell/c%d4%a1%ca%d2%c5%e4%bc%fe/">浴室配件</a>
+          </p>
+          <p class="wlr">服务热线：0571-89937575</p>
+        </div>
+      </dd>
+    </dl>
+  </div>
+</div>
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+#m-topnav{width:100%;background-color:#fff;color:#666;height:24px;padding-top: 3px;border-bottom: 1px solid #eee;}
+.tnl,#m-topnav dt,#m-topnav dd{float:left;}
+.tnr{float:right;display: block;}
+#m-topnav dt{line-height: 24px;}
+#m-topnav dd{position: relative;height: 22px;line-height: 22px; border: 1px solid #fff;margin:0 -2px 0 5px;padding:0 16px 0 6px;}
+#m-topnav .u-menu{z-index: 1;display: none;position: absolute;left:-1px;top:24px;min-width: 100%;border: 1px solid #ddd;border-top: 0;padding-bottom:5px; background: #fff;*width:100px}
+#m-topnav .u-menu li{padding-left: 10px;}
+#m-topnav i {	
+	position: absolute;
+	right:5px;
+	top:1px;
+		transform-origin: 50% 50% 0;
+    transition: transform 0.2s ease-in 0s;
+	font-size: 8px;color:#ccc;
+	-webkit-text-size-adjust:none;
+}
+#m-topnav .u-menu-end{width:160px;left:-111px;padding:0 10px}
+#m-topnav .u-menu-end p{border-bottom: 1px solid #eee;padding:6px 0}
+#m-topnav .u-menu-end p a{display:inline-block;padding-right:7px;}
+#m-topnav .u-menu-end p strong{display:block;}
+#m-topnav .u-menu-end p.wlr{border: 0;color: #333;}
+/**Details to set up*/
+#m-topnav .tnr dt{padding-right: 10px;}
+/*status*/
+#m-topnav .active .u-menu{display: block;}
+#m-topnav .active{background: #fff;border-color: #ddd;border-bottom: 0;height: 25px;}
+#m-topnav .active i {transform: rotate(180deg);}
+
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+</body>
+</html>

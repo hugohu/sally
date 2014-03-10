@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+    <meta charset="utf-8">
+    <title>Sally - 偷懒的页面仔</title>
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <style>
+.banner { background: #000 url(assets/img/sally.png) center no-repeat; height: 200px; width: 100% }
+.pao { width: 485px; height: 200px; position: absolute; left: 50%; margin-left: -240px; margin-top: 0px; overflow: hidden; }
+.paoit i { background: url(assets/img/pao.png) no-repeat scroll -9999px -9999px transparent; }
+.paoit { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.paoit i { position: absolute; z-index: 3; top: 100%; width: 53px; height: 56px; overflow: hidden; text-indent: -2000px; background-position: 0 0; -webkit-animation: paoi 7s 2s infinite; -moz-animation: paoi 7s 2s infinite; -ms-animation: paoi 7s 2s infinite; animation: paoi 7s 2s infinite; }
+.paoit i:nth-child(1) { left: 25px; -webkit-animation-delay: 3s; -moz-animation-delay: 3s; -ms-animation-delay: 3s; animation-delay: 3s; }
+.paoit i:nth-child(2) { left: 85px; -webkit-animation-duration: 6s; -moz-animation-duration: 6s; -ms-animation-duration: 6s; animation-duration: 6s; -webkit-animation-delay: 6s; -moz-animation-delay: 6s; -ms-animation-delay: 6s; animation-delay: 6s; background-position: 0 -64px; }
+.paoit i:nth-child(3) { left: 148px; -webkit-animation-duration: 5s; -moz-animation-duration: 5s; -ms-animation-duration: 5s; animation-duration: 5s; -webkit-animation-delay: 7s; -moz-animation-delay: 7s; -ms-animation-delay: 7s; animation-delay: 7s; }
+.paoit i:nth-child(4) { left: 190px; -webkit-animation-delay: 4s; -moz-animation-delay: 4s; -ms-animation-delay: 4s; animation-delay: 4s; background-position: 0 -140px; }
+.paoit i:nth-child(5) { left: 285px; -webkit-animation-duration: 5s; -moz-animation-duration: 5s; -ms-animation-duration: 5s; animation-duration: 5s; -webkit-animation-delay: 8s; -moz-animation-delay: 8s; -ms-animation-delay: 8s; animation-delay: 8s; }
+.paoit i:nth-child(6) { left: 350px; background-position: 0 -64px; }
+.paoit i:nth-child(7) { left: 400px; -webkit-animation-delay: 5s; -moz-animation-delay: 5s; -ms-animation-delay: 5s; animation-delay: 5s; }
+ @-webkit-keyframes paoi {  0% {
+top:186px;
+}
+100% {
+top:-56px;
+}
+}
+@-moz-keyframes paoi {  0% {
+top:186px;
+}
+100% {
+top:-56px;
+}
+}
+@-ms-keyframes paoi {  0% {
+top:186px;
+}
+100% {
+top:-56px;
+}
+}
+@keyframes paoi {  0% {
+top:186px;
+}
+100% {
+top:-56px;
+}
+}
+.box { width: 600px; margin: 15px auto }
+</style>
+    </head>
+    <body>
+
+<!-- centont
+================================================== -->
+<div class="banner">
+      <div class="pao"> <span class="paoit"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span> </div>
+    </div>
+<div class="box">
+      <h4>关于sally</h4>
+      <p>其实就是一套前端开发的规范,里面定义了一些扯淡的东西,为了更加轻松的干完活.</p>
+      <p>那为什么叫slly呢?</p>
+      <p>支付宝的规范叫阿拉蕾,咱们也要弄个文气点的名字,于是我脑海里冒出了oasis的那句歌词:so sally can wait.于是就顺理成章的有了sally这个名字.sally.</p>
+      <p>其实她并没有什么含义,如果硬要加个含义的话,我觉得可以用歌名来代替:</p>
+      <p>Don't Look Back In Anger 不要为过去的事而愤怒</p>
+    </div>
+
+<!-- Le javascript
+================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/hl-all.js"></script> 
+<script src="assets/js/application.js"></script>
+</body>
+</html>

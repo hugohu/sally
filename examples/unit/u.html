@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally调试器</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>sally编辑器1.0.1</h3>
+   <p>内置emmet,快捷键tab展开缩写</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+<span class="btn"></span>
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+.btn{display: block;width: 100px;height: 100px;border: 1px solid #000;}
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+
+</body>
+</html>

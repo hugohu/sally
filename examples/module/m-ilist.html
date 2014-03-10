@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>常用工具库</title>
+    <!-- Le styles -->
+
+    <link rel="stylesheet" href="../dist/codemirror.css" />
+    <link href="../../assets/css/docs.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+.row{width: 800px;margin: 20px auto}
+p,h4{line-height:1.5em;margin-bottom: 15px;}
+h4{margin-top: 20px;}
+    </style>
+
+    <style> 
+.u-img{display:table-cell;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*line-height:1;}
+.u-img img {vertical-align:middle;_width:100%;_height:100%;}
+
+/*可以配置的大小选项*/
+.u-img{width:150px;height:150px;*font-size:125px;/*正常大小的0.84差不多*/}
+.u-img img{max-width:150px;max-height:150px;}
+
+.m-ilist-w li{width: 150px;}
+.m-ilist-w strong,.m-ilist-w p {display: block;width:100%;height:18px;overflow:hidden;margin:5px 0 0;line-height:18px;}
+
+
+.m-ilist {margin-right:-10px;}
+.m-ilist li{float: left;margin: 10px 10px  0 0;border: 1px solid #DDDDDD;border-radius: 4px;box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.055);display: block;line-height: 20px;padding: 4px;transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+.m-ilist li:hover{border-color: #08c;box-shadow: 0px 1px 4px rgba(0, 105, 214, 0.251);transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+/*合理应用负边距*/
+.m-ilist-l li{width:300px;}
+
+.m-ilist-l .txt{float:right;width:100%;height:95px;overflow:hidden;margin-left:-160px;}
+.m-ilist-l strong,.m-ilist-l p{display:block;margin-left:160px;overflow:hidden;line-height:18px;width: auto!importnat}
+.m-ilist-l .u-img{float: left;}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar
+================================================== -->
+
+    <!-- Docs nav
+================================================== -->
+    <div class="row">
+        <h4>图片列表</h4>
+        <p>不带任何修饰文字列表,换行自动截取全兼容</p>
+        <div class="bs-docs-example">
+            <ul class="m-ilist clearfix">
+                <li>
+                    <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+         <h4>html结构</h4>
+        <pre name="code" class="css">
+&lt;ul class=&quot;m-ilist clearfix&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+ <h4>css结构</h4>
+        <pre name="code" class="css">
+.m-ilist {margin-right:-10px;}
+.m-ilist li{float: left;margin: 0 10px 10px 0;border: 1px solid #DDDDDD;border-radius: 4px;box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.055);display: block;line-height: 20px;padding: 4px;transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+.m-ilist li:hover{border-color: #08c;box-shadow: 0px 1px 4px rgba(0, 105, 214, 0.251);transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+
+/*!依赖于图片居中元件*/
+.u-img{display:table-cell;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*line-height:1;}
+.u-img img {vertical-align:middle;_width:100%;_height:100%;}
+
+/*可以配置的大小选项*/
+.u-img{width:150px;height:150px;*font-size:125px;/*正常大小的0.84差不多*/}
+.u-img img{max-width:150px;max-height:150px;}   
+
+</pre>
+
+        <h4>图文列表</h4>
+        <p>不带任何修饰文字列表,换行自动截取全兼容</p>
+        <div class="bs-docs-example">
+            <ul class="m-ilist m-ilist-w clearfix">
+                <li>
+                    <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a> <strong><a href="#">有标题</a></strong> 
+                    <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                </li>
+                <li>
+                    <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a> <strong><a href="#">有标题</a></strong> 
+                    <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                </li>
+                <li>
+                    <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                    <strong>
+                        <a href="#">有标题</a>
+                    </strong>
+                    <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                </li>
+                <li>
+                    <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                    <strong>
+                        <a href="#">有标题</a>
+                    </strong>
+                    <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                </li>
+            </ul>
+        </div>
+        <h4>html结构</h4>
+        <pre name="code" class="css">
+&lt;ul class=&quot;m-ilist m-ilist-w clearfix&quot;&gt;
+&lt;li&gt;
+&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;
+&lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
+&lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;
+&lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
+&lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;
+&lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
+&lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt;&lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt;&lt;/a&gt;
+&lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
+&lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;     
+        </pre>
+        <h4>css样式部分</h4>
+        <pre name="code" class="css">
+/*添加特定样式*/
+.m-ilist-w li{width: 150px;}
+.m-ilist-w strong,.m-ilist-w p {display: block;width:100%;height:18px;overflow:hidden;margin:5px 0 0;line-height:18px;}
+/*通用部分*/
+.m-ilist {margin-right:-10px;}
+.m-ilist li{float: left;margin: 0 10px 10px 0;border: 1px solid #DDDDDD;border-radius: 4px;box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.055);display: block;line-height: 20px;padding: 4px;transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+.m-ilist li:hover{border-color: #08c;box-shadow: 0px 1px 4px rgba(0, 105, 214, 0.251);transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+
+/*!依赖于图片居中元件*/
+.u-img{display:table-cell;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*line-height:1;}
+.u-img img {vertical-align:middle;_width:100%;_height:100%;}
+
+/*可以配置的大小选项*/
+.u-img{width:150px;height:150px;*font-size:125px;/*正常大小的0.84差不多*/}
+.u-img img{max-width:150px;max-height:150px;}          
+        </pre>
+
+        <h4>右侧图文列表</h4>
+        <p>不带任何修饰文字列表,换行自动截取全兼容</p>
+        <div class="bs-docs-example">
+            <ul class="m-ilist m-ilist-l clearfix">
+                <li>
+                    <div class="fl">
+                        <a href="#" class="u-img">
+                            <img src="http://placekitten.com/150/150" alt="名称" />                
+                        </a>
+                    </div>
+                    <div class="txt"> <strong><a href="#">有标题</a></strong> 
+                        <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="fl">
+                        <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                </div>
+                    <div class="txt">
+                        <strong>
+                            <a href="#">有标题</a>
+                        </strong>
+                        <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                    </div>
+                </li>
+                <li>
+                <div class="fl">
+                        <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                </div>
+                    <div class="txt">
+                        <strong>
+                            <a href="#">有标题</a>
+                        </strong>
+                        <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                    </div>
+                </li>
+                <li>
+                 <div class="fl">
+                        <a href="#" class="u-img">
+                        <img src="http://placekitten.com/150/150" alt="名称" />
+                    </a>
+                 </div>
+                    <div class="txt">
+                        <strong>
+                            <a href="#">有标题</a>
+                        </strong>
+                        <p class="f-toe">有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <h4>页面结构部分</h4>
+        <pre name="code" class="html">
+&lt;ul class=&quot;m-ilist m-ilist-l clearfix&quot;&gt;
+&lt;li&gt;
+&lt;div class=&quot;fl&quot;&gt; &lt;a href=&quot;#&quot; class=&quot;u-img&quot;&gt; &lt;img src=&quot;http://placekitten.com/150/150&quot; alt=&quot;名称&quot; /&gt; &lt;/a&gt; &lt;/div&gt;
+&lt;div class=&quot;txt&quot;&gt; &lt;strong&gt;&lt;a href=&quot;#&quot;&gt;有标题&lt;/a&gt;&lt;/strong&gt;
+&lt;p class=&quot;f-toe&quot;&gt;有内容描述内容描述内容描述内容描述内容描述内容描述内容描述内容描述&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+        <h4>css样式部分</h4>
+        <pre name="code" class="css">
+/*图片*/
+.m-ilist {margin-right:-10px;}
+.m-ilist li{float: left;margin: 0 10px 10px 0;border: 1px solid #DDDDDD;border-radius: 4px;box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.055);display: block;line-height: 20px;padding: 4px;transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+.m-ilist li:hover{border-color: #08c;box-shadow: 0px 1px 4px rgba(0, 105, 214, 0.251);transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0;}
+
+/*合理应用负边距*/
+/*!图文形式的 li宽度设100%即可*/
+.m-ilist-l li{width:300px;}
+.m-ilist-l .txt{float:right;width:100%;height:95px;overflow:hidden;margin-left:-160px;}
+.m-ilist-l strong,.m-ilist-l p{display:block;margin-left:160px;overflow:hidden;line-height:18px;}
+.m-ilist-l .u-img{float: left;}
+
+/*!依赖于图片居中元件*/
+.u-img{display:table-cell;vertical-align:middle;text-align:center;*float:left;*font-family:simsun;*line-height:1;}
+.u-img img {vertical-align:middle;_width:100%;_height:100%;}
+
+/*可以配置的大小选项*/
+.u-img{width:150px;height:150px;*font-size:125px;/*正常大小的0.84差不多*/}
+.u-img img{max-width:150px;max-height:150px;}</pre>
+    </div>
+
+    <!-- Le javascript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="../../assets/js/hl-all.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title>常用工具库</title>
+  <!-- Le styles -->
+
+  <link rel="stylesheet" href="../dist/codemirror.css" />
+  <link href="../../assets/css/docs.css" rel="stylesheet">
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+<style>
+.row{width: 600px;margin: 20px auto}
+p,h4{line-height:1.5em;}
+h4{margin-top: 20px;}
+</style>
+</head>
+<body>
+
+  <!-- Navbar
+================================================== -->
+
+  <!-- Docs nav
+================================================== -->
+  <div class="row">
+    <h4>焦点图小标样式</h4>
+    <p>html格式统一为div标签里直接嵌套a标签,通过修改样式达到不同的效果,可以自定义属性添加也可以采用默认的</p>
+    <div class="bs-docs-example">
+      <pre class="html" name="code">&lt;div class="u-dot"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="#" title="1"&gt;1&lt;/a&gt;&lt;/li&gt;
+		&lt;li class="active"&gt;&lt;a href="#" title="2"&gt;2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" title="3"&gt;3&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#" title="4"&gt;4&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+      </pre>
+    </div>
+
+<h4>默认样式</h4>
+    <div class="bs-docs-example">
+<style>
+#demo1 .u-dot{width: 100%;position:absolute; bottom:0; right:0; height:20px;z-index:2;background:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000')}
+#demo1 .u-dot ul{float: right;}
+
+ #demo1:root .u-dot{filter:none}
+#demo1 .u-dot li{display: inline-block;*display: inline;*zoom:1; width:25px;height:10px; cursor:pointer; overflow:hidden; background:#919191; margin:5px 4px 0 0;filter:alpha(opacity=80); -moz-opacity:.8; opacity:.8;}
+#demo1 .u-dot li a{width: 0;display: block;height:10px; text-indent: -999px; background:#fff; filter:alpha(opacity=100); -moz-opacity:1; opacity:1}
+ #demo1 .u-dot li.active a{
+ 	width: 25px;
+	-webkit-transition: width 4s cubic-bezier(0, 0, 0.58, 1);
+	-moz-transition: width 4s cubic-bezier(0, 0, 0.58, 1);
+	-ms-transition: width 4s cubic-bezier(0, 0, 0.58, 1);
+	transition:width 4s cubic-bezier(0, 0, 0.58, 1);
+}
+
+</style>
+<div id="demo1">
+<div class="u-dot"><ul><li class=""><a href="#" title="1">1</a></li><li class="active"><a href="#" title="2">2</a></li><li class=""><a href="#" title="3">3</a></li><li class=""><a href="#" title="4">4</a></li></ul></div>
+</div>
+    </div>
+
+ <pre name="code" class="css">
+.u-dot{width: 100%;position:absolute; bottom:0; right:0; height:20px;z-index:2;background:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000')}
+.u-dot ul{float: right;}
+ #demo:root .u-dot{filter:none}
+.u-dot li{display: inline-block;*display: inline;*zoom:1; width:25px;height:10px; cursor:pointer; overflow:hidden; background:#919191; margin:5px 4px 0 0;filter:alpha(opacity=80); -moz-opacity:.8; opacity:.8;}
+.u-dot li a{width: 0;display: block;height:10px; text-indent: -999px; background:#fff; filter:alpha(opacity=100); -moz-opacity:1; opacity:1}
+.u-dot li.active a{
+ 	width: 25px;
+	-webkit-transition: width 4s cubic-bezier(0, 0, 0.58, 1);
+	-moz-transition: width 4s cubic-bezier(0, 0, 0.58, 1);
+	-ms-transition: width 4s cubic-bezier(0, 0, 0.58, 1);
+	transition:width 4s cubic-bezier(0, 0, 0.58, 1);
+}
+</pre>
+
+<h4>数字下标</h4>
+<p>数字通过图片的alt属性填写</p>
+    <div class="bs-docs-example">
+<style>
+#demo2{position: relative;margin: 20px 0;}
+#demo2 .u-dot{width: 100%; text-align: right;position:absolute; bottom:0; right:0; height:20px;z-index:2;}
+#demo2 .u-dot a {display: inline-block; cursor:pointer;}
+#demo2 .u-dot li{display: inline-block;*display: inline;*zoom:1;cursor:pointer;line-height:20px; text-align:center; font-size:12px; width:20px;cursor:pointer; overflow:hidden; margin:5px 4px 0 0;  transition:All .5s ease;background: #fff;border: 1px solid #369;color: #369}
+#demo2 .u-dot li.active ,#demo2 .u-dot li:hover { background:#369; color: #fff;border-color: #fff; }
+#demo2 .u-dot li.active a,#demo2 .u-dot li:hover a{color:#fff;}
+</style>
+<div id="demo2">
+<div class="u-dot"><ul><li class=""><a href="#" title="1">1</a></li><li class="active"><a href="#" title="2">2</a></li><li class=""><a href="#" title="3">3</a></li><li class=""><a href="#" title="4">4</a></li></ul></div>
+</div>
+    </div>
+
+ <pre name="code" class="css">
+.u-dot{width: 100%; text-align: right;position:absolute; bottom:0; right:0; height:20px;z-index:2;}
+.u-dot a {display: inline-block; cursor:pointer;}
+.u-dot li{display: inline-block;*display: inline;*zoom:1;cursor:pointer;line-height:20px; text-align:center; font-size:12px; width:20px;cursor:pointer; overflow:hidden; margin:5px 4px 0 0;  transition:All .5s ease;background: #fff;border: 1px solid #369;color: #369}
+
+/*定义颜色部分*/
+.u-dot li.active , .u-dot li:hover { background:#369; color: #fff;border-color: #fff; }
+.u-dot li.active a.u-dot li:hover a{color:#fff;}
+</pre>
+
+
+<h4>标题下标</h4>
+<p>标题通过图片的alt属性填写,请固定条数否则会塌线...</p>
+    <div class="bs-docs-example">
+<style>
+#demo3{position: relative;margin: 20px 0;}
+#demo3 .u-dot{width: 100%; text-align: right;position:absolute; bottom:0; right:0; height:25px;z-index:2;}
+#demo3 .u-dot a {float: left;display: inline-block; cursor:pointer;line-height:25px; text-align:center; font-size:12px; width:25%;cursor:pointer; overflow:hidden;  transition:All .5s ease;}
+
+#demo3 .u-dot li.active a,#demo3 .u-dot a:hover { background:#369; color: #fff;border-color: #fff; }
+#demo3 .u-dot a{background: #fff;color: #369}
+</style>
+<div id="demo3">
+<div class="u-dot"><ul><li class=""><a href="#" title="1">1</a></li><li class="active"><a href="#" title="2">2</a></li><li class=""><a href="#" title="3">3</a></li><li class=""><a href="#" title="4">4</a></li></ul></div>
+</div>
+    </div>
+
+ <pre name="code" class="css">
+.u-dot{width: 100%; text-align: right;position:absolute; bottom:0; right:0; height:25px;z-index:2;}
+.u-dot a {float: left;display: inline-block; cursor:pointer;line-height:25px; text-align:center; font-size:12px; width:25%;cursor:pointer; overflow:hidden;  transition:All .5s ease;}
+
+.u-dot .u-dot li.active a,.u-dot a:hover { background:#369; color: #fff;border-color: #fff; }
+.u-dot a{background: #fff;color: #369}
+</pre>
+
+</div>
+
+  <!-- Le javascript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="../../assets/js/jquery.js"></script>
+ <script src="../../assets/js/hl-all.js"></script>
+</body>
+</html>
