@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="carousel.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="carousel.js"></script>
+
+	<title>焦点图切换</title>
+</head>
+<body>
+	<style>
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+img{border: 0;}
+/**相关样式***/
+.m-banner{width: 600px;overflow: hidden;position: relative;background:url(img/loading.gif) center center no-repeat;}
+.m-banner .mod{display: block;width: 100%;white-space: nowrap;font-size: 0;}
+.m-banner .mod li{display: inline-block; *display: inline; *zoom:1;width: 100%}
+.m-banner .dot{display: block;position:absolute; bottom:0;right:10px;height:25px;z-index:2;}
+.m-banner .dot i{display: inline-block; width:20px;height:8px; cursor:pointer; overflow:hidden; background:#b7b7b7;margin:5px 4px 0 0;*display:inline;*zoom:1;*float: left;}
+.m-banner .dot i.active{background: #F15C22;}
+.m-banner .dot i:hover{background: #ddd;}
+.prev,.next{background:url(img/i-icon-arr.png) no-repeat;cursor: pointer;}
+.m-banner .next, .m-banner .prev{display: block;visibility: hidden;opacity:0;height:50px;width:50px;position: absolute;z-index:2;top:50%;margin-top:-20px;}
+.m-banner .prev{background-position: 15px 4px;left:0}
+.m-banner .next{background-position: -65px 4px;right:0}
+.m-banner .prev:hover,.m-banner .next:hover{background-color: #fff;}
+.m-banner:hover .next,.m-banner:hover .prev{visibility:visible;opacity: 1;}
+.m-banner:hover .next{right:10px;}
+.m-banner:hover .prev{left:10px;}
+
+.m-banner .mod,.m-banner .next, .m-banner .prev{
+-webkit-transition: 0.5s;
+-moz-transition: 0.5s;
+-ms-transition: 0.5s;
+-o-transition: 0.5s;
+transition: 0.5s;
+}
+
+/**Animation can be deleted**/
+.m-banner .dot i.active{
+	-webkit-transition-delay: 4s;
+	-moz-transition-delay: 4s;
+	-ms-transition-delay: 4s;
+	-o-transition-delay: 4s;
+	transition-delay: 4s;
+}
+.m-banner .dot i:before {content: "";width: 0;display: block;height:20px;background:#F15C22;opacity:1;}
+.m-banner .dot i.active:before{width: 20px;
+ 	-webkit-transition: 4s;
+ 	-moz-transition: 4s;
+ 	-ms-transition: 4s;
+ 	-o-transition: 4s;
+ 	transition: 4s;
+}
+.m-banner:hover .dot i.active:before{
+-webkit-transition: 0;
+-moz-transition: 0;
+-ms-transition: 0;
+-o-transition: 0;
+transition: 0;
+}
+</style>
+	<div class="m-banner" data-event="carousel">
+		<ul class="mod">
+			<li>
+				<img src="http://t-1.tuzhan.com/8171b9fc1bd3/upn1/l/2010-03-16/14/penghongguan.tuzhan.com_09e8613338dd404f91f82b59e2202ed4.gif" alt="" />
+			</li>
+			<li>
+				<img src="http://image.zcool.com.cn/2013/58/22/m_1373519174195.jpg" alt="" />
+			</li>
+			<li>
+				<img src="http://img1.base.yxdown.com/2012-6/392489914598305.jpg" alt="" />
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -22,6 +22,12 @@
 		"version": "1.0",
 		"description": "用于透明度背景"
 	}
+	,{
+		"name": "动画制作器",
+		"link": "cssanimate/index.html",
+		"version": "1.0",
+		"description": "用于制作css关键帧动画"
+	}
 	// ,{
 	// 	"name": "页面构建器",
 	// 	"link": "sallymade.html",

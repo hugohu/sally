@@ -31,7 +31,7 @@
 })(jQuery);
 
 　 /*  DARA API  */
-$(function() {
+jQuery(function($) {
   var $otab = $('[data-event="tab"]');
   $otab.each(function(index, elem) {
     var $this = $(this);
@@ -137,7 +137,7 @@ $(function() {
   };
 })(jQuery);　
 /*  DARA API  */
-$(function() {
+jQuery(function($) {
  $('[data-event="carousel"]').carousel();
 });
 
@@ -283,7 +283,7 @@ $(function() {
  /*  DARA API 
     增加 是否滚动的判断属性auto 0 为不滚动;
   */
-$(function() {
+jQuery(function($) {
   var $oscroll = $('[data-event="scroll"]');
   $oscroll.each(function(index, elem) {
     var $this = $(this);
@@ -375,7 +375,7 @@ $(function() {
     a(window).bind("scroll", e)
   }
 })(jQuery);　 /*  DARA API  */
-$(function() {
+jQuery(function($) {
   $("img[data-url]").lazyload();
 });
 /* =========================================================
@@ -448,7 +448,7 @@ $(function() {
   };
 })(jQuery);　 
 /*  DARA API  */
-$(function() {
+jQuery(function($) {
   $('[data-target]').sallytoggle();
 });
 /* =========================================================
@@ -484,7 +484,7 @@ $(function() {
 })(jQuery);
 
 　/*  DARA API  */
-$(function() {
+jQuery(function($) {
 var input=$("input[placeholder]");
 if (!("placeholder" in document.createElement("input"))) {
 input.placeholder();
@@ -525,6 +525,6 @@ input.placeholder();
   };
 })(jQuery);
 　/*  DARA API  */
-$(function() {
+jQuery(function($) {
    $('[data-event="gotop"]').gotop();
 });

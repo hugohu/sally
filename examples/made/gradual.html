@@ -87,7 +87,9 @@ textarea{margin-top: 15px;display: block;width: 100%;height: 200px;overflow: hid
     background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');
     background:-o-linear-gradient(top, #fcfcfc, #f9f9f9);
+    background: -ms-linear-gradient(top, #fcfcfc, #f9f9f9);
     background: linear-gradient(top, #fcfcfc, #f9f9f9);
+
   </textarea>
 </div>
   </div>
@@ -150,7 +152,7 @@ $("#ipt").click(function(){
 var input=$(".out").find("input");
 var frist_color=input.eq(0).val();
 var end_color=input.eq(1).val();
-var text_color="background: -webkit-gradient(linear, left top, left bottom, from("+frist_color+"), to("+end_color+"));\nbackground: -moz-linear-gradient(top, "+frist_color+", "+end_color+");\nfilter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"+frist_color+"', endColorstr='"+end_color+"');\nbackground:-o-linear-gradient(top, "+frist_color+", "+end_color+");\nbackground: linear-gradient(top, "+frist_color+", "+end_color+");"
+var text_color="background: -webkit-gradient(linear, left top, left bottom, from("+frist_color+"), to("+end_color+"));\nbackground: -moz-linear-gradient(top, "+frist_color+", "+end_color+");\nfilter: progid:DXImageTransform.Microsoft.gradient(startColorstr='"+frist_color+"', endColorstr='"+end_color+"');\nbackground:-o-linear-gradient(top, "+frist_color+", "+end_color+");\nbackground:-ms-linear-gradient(top, "+frist_color+", "+end_color+");\nbackground: linear-gradient(top, "+frist_color+", "+end_color+");"
 $("#css").html(".color{"+text_color+"}");
 $("textarea")[0].value=text_color;
 })

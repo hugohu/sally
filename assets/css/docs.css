@@ -76,9 +76,9 @@ padding: 0px;
 .m-nav a:hover,.m-nav a.active{color:#fff}
 /*cent*/
 .g-row{margin-top:60px;position: relative;}
-.m-sidebar{background: #F7F5FA;width:200px;position: fixed;line-height: 30px;padding:20px 0;font-size: 14px;}
-.m-sidebar a{color: #716B7A;display: block;padding: 5px 20px;border-right: 2px solid #F7F5FA}
-.m-sidebar a:hover,.m-sidebar li.active a{background:#E5E3E9;border-color: #121212;}
+.m-sidebar{background: #f6f6f6;width:200px;position: fixed;line-height: 30px;padding:20px 0;font-size: 14px;}
+.m-sidebar a{color: #716B7A;display: block;padding: 5px 20px;border-right: 2px solid #f6f6f6}
+.m-sidebar a:hover,.m-sidebar li.active a{background:#ddd;border-color: #121212;}
 .m-main{margin-left:230px;}
 
 .gquote { 
