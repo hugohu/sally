@@ -1,29 +1,52 @@
-Using this tool
----------------
+###概述
 
-This page lets you create HTML by entering text in a simple format that's easy to read and write.
+重置样式，清除浏览器默认样式，并配置适合设计的基础样式（强调文本是否大多是粗体、主文字色，主链接色，主字体等）。
 
-  - Type Markdown text in the left window
-  - See the HTML in the right
+```css
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { margin:0; padding:0; }
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea { font:12px/1.5 tahoma, SimSun, \5b8b\4f53; }
+input, select, textarea { font-size:100%; }
+/* 去掉各Table  cell 的边距并让其边重合 */
+table { border-collapse:collapse; border-spacing:0; }
+/* IE bug fixed: th 不继承 text-align*/
+th { text-align:inherit; }
+/* 去除默认边框 */
+fieldset, img { border:0; vertical-align:middle; }
+iframe { display:block; }
+/* 去掉列表前的标识, li 会继承 */
+ol, ul { list-style:none; }
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:500; }
+/* ie6 7 8(q) bug 显示为行内表现 */
+q:before, q:after { content:''; }
+/* 让链接在 hover 状态下显示下划线 */
+a:hover { text-decoration:underline; }
+/* 默认不显示下划线，保持页面简洁 */
+ins, a { text-decoration:none; }
+/* 清理浮动 */
+.clearfix { *zoom: 1;}
+.clearfix:before,
+.clearfix:after {display: table;line-height: 0;content: "";}
+.clearfix:after {clear: both;}
+```
+详情参见<a href="assets/reset.css">reset.css</a>文件
 
-Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site] [1]:
+###grid 布局系统:990像素定宽25栅格布局。
 
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable 
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
+分栏系统简介：把990的页面分为25栏。进行快速页面布局。
 
-This document is written in Markdown; you can see the plain-text version on the left.  To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.  You can see a Markdown syntax guide by switching the right-hand window from *Preview* to *Syntax Guide*.
+###使用说明
 
-Showdown is a Javascript port of Markdown.  You can get the full [source code] by clicking on the version number at the bottom of the page.
+**.g-row**
 
-**Start with a [blank page] or edit this document in the left window.**
+表示一行，用于包裹*.g-{{number}}*。一行内的栅格数不要超过 25。
 
-  [john gruber]: http://daringfireball.net/
-  [1]: http://daringfireball.net/projects/markdown/
-  [source code]: http://www.attacklab.net/showdown-v0.9.zip
-  [blank page]: ?blank=1 "Clear all text"
+*.g-{{number}}*
 
+表示区域跨越了多少列。数字从 1 到 25，例如g-18。
+
+最右侧的请添加.g-r

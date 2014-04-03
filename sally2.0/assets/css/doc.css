@@ -20,11 +20,10 @@ h6{font-size:11.9px;}
 h1,h2,h3,h4,h5,h6{font-weight:700;margin:10px 0;}
 p{margin:10px;}
 ol{margin:0 0 10px 25px;padding:0;}
-.row,.g-row{max-width:1180px;margin:0 auto;zoom:1;}
-.row:after,.g-row:after{clear:both;content:" ";display:block;font-size:0;height:0;visibility:hidden;}
+.row{max-width:1180px;margin:0 auto;*zoom:1;}
+.row:after{clear:both;content:" ";display:block;font-size:0;height:0;visibility:hidden;}
 .fl{float:left;}
 .fr{float:right;}
-.hide{display:none!important;}
 /* 清理浮动 */
 .clearfix:after{content:"";display:block;clear:both;height:0;}
 .clearfix{*zoom:1;}
@@ -35,16 +34,15 @@ ol{margin:0 0 10px 25px;padding:0;}
 .m-nav a:hover,.m-nav a.active{color:#fff}
 
 /*cent*/
-.g-row{margin-top:60px;position:relative;}
+#row{margin-top:60px;position:relative;}
 .m-sidebar{background:#f6f6f6;width:200px;position:fixed;line-height:30px;padding:20px 0;font-size:14px;}
 .m-sidebar a{color:#716B7A;display:block;padding:5px 20px;border-right:2px solid #f6f6f6}
 .m-sidebar a:hover,.m-sidebar li.active a{background:#ddd;border-color:#121212;}
 .m-main{margin-left:230px;}
 .gquote{border-bottom:1px solid #DDDDDD;display:none;margin:10px 0;padding:10px;}
-.bs-docs-example{position:relative;margin:15px 0;padding:39px 19px 14px;*padding-top:19px;background-color:#fff;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
-
+.example{position:relative;margin:15px 0;padding:39px 19px 14px;*padding-top:19px;background-color:#fff;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
 /* Echo out a label for the example */
-.bs-docs-example:after{content:"Example";position:absolute;top:-1px;left:-1px;padding:3px 7px;font-size:12px;font-weight:bold;background-color:#f5f5f5;border:1px solid #ddd;color:#9da0a4;-webkit-border-radius:4px 0 4px 0;-moz-border-radius:4px 0 4px 0;border-radius:4px 0 4px 0;}
+.example:after{content:"Example";position:absolute;top:-1px;left:-1px;padding:3px 7px;font-size:12px;font-weight:bold;background-color:#f5f5f5;border:1px solid #ddd;color:#9da0a4;-webkit-border-radius:4px 0 4px 0;-moz-border-radius:4px 0 4px 0;border-radius:4px 0 4px 0;}
 .module{background:none repeat scroll 0 0 #FFFFFF;border-left:5px solid #B4D0EE;box-shadow:0 0 1px rgba(0,0,0,0.3);color:#999999;display:inline;float:left;font-family:tahoma;min-height:60px;margin-bottom:15px;margin-right:20px;overflow:hidden;padding:4px 6px 6px 10px;position:relative;width:170px;
 /* border-radius: 6px;*/
  box-shadow:1px 1px 0 rgba(0,0,0,0.05);}
@@ -69,29 +67,133 @@ a.module-name{display:inline-block;font-size:18px;line-height:1;max-width:145px;
 .side-area a:hover .iconfont{color:#AAAAAA;}
 
 /*
- * Code snippets
- *
- * Generated via Pygments and Jekyll, these are snippets of HTML, CSS, and JS.
- */
-.html,.css,.js{padding:9px 14px;margin-bottom:14px;background-color:#f7f7f9;border:1px solid #e1e1e8;border-radius:4px;max-width: 800px}
-pre code{display:block;padding:.5em;color:#333;}
-pre .comment,pre .template_comment,pre .diff .header,pre .javadoc{color:#998;font-style:italic}
-pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status{color:#333;font-weight:bold}
-pre .number,pre .hexcolor,pre .ruby .constant{color:#099}
-pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula{color:#d14}
-pre .title,pre .id{color:#900;font-weight:bold}
-pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst{font-weight:normal}
-pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command{color:#458;font-weight:bold}
-pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword{color:#000080;font-weight:normal}
-pre .attribute,pre .variable,pre .lisp .body{color:#008080}
-pre .regexp{color:#009926}
-pre .class{color:#458;font-weight:bold}
-pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt{color:#990073}
-pre .built_in,pre .lisp .title,pre .clojure .built_in{color:#0086b3}
-pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata{color:#999;font-weight:bold}
-pre .deletion{background:#fdd}
-pre .addition{background:#dfd}
-pre .diff .change{background:#0086b3}
-pre .chunk{color:#aaa}
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+	display: block;
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.diff .hljs-header,
+.hljs-javadoc {
+  color: #998;
+  font-style: italic
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.javascript .hljs-title,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #099;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-phpdoc,
+.tex .hljs-formula {
+  color: #d14
+}
+
+.hljs-title,
+.hljs-id,
+.coffeescript .hljs-params,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold
+}
+
+.javascript .hljs-title,
+.lisp .hljs-title,
+.clojure .hljs-title,
+.hljs-subst {
+  font-weight: normal
+}
+
+.hljs-class .hljs-title,
+.haskell .hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rules .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body {
+  color: #008080
+}
+
+.hljs-regexp {
+  color: #009926
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073
+}
+
+.hljs-built_in,
+.lisp .hljs-title,
+.clojure .hljs-built_in {
+  color: #0086b3
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold
+}
+
+.hljs-deletion {
+  background: #fdd
+}
+
+.hljs-addition {
+  background: #dfd
+}
+
+.diff .hljs-change {
+  background: #0086b3
+}
+
+.hljs-chunk {
+  color: #aaa
+}
+
 
 

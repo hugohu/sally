@@ -1,9 +1,25 @@
 {
 	"nav": [{
 		"id": "nav",
-		"title":"首页"
-	},{
+		"title": "首页"
+	}, {
 		"id": "base",
-		"title":"框架页"
+		"title": "框架页"
+	}],
+	"base": [{
+		"id": "base",
+		"title": "重置样式"
+	}, {
+		"id": "grid",
+		"title": "分栏布局系统"
+	}, {
+		"id": "iconfont",
+		"title": "iconfont"
+	}, {
+		"id": "func",
+		"title": "功能型样式"
+	}, {
+		"id": "animate",
+		"title": " CSS3 Animate"
 	}]
 }
