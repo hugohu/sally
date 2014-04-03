@@ -23,7 +23,5 @@ a:hover { text-decoration:underline; }
 /* 默认不显示下划线，保持页面简洁 */
 ins, a { text-decoration:none; }
 /* 清理浮动 */
-.clearfix { *zoom: 1;}
-.clearfix:before,
-.clearfix:after {display: table;line-height: 0;content: "";}
-.clearfix:after {clear: both;}
+.clearfix:after {content: " ";display: block;clear: both;height: 0;}
+.clearfix {*zoom: 1;}
