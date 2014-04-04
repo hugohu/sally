@@ -21,9 +21,10 @@ h1,h2,h3,h4,h5,h6{font-weight:700;margin:10px 0;}
 p{margin:10px;}
 ol{margin:0 0 10px 25px;padding:0;}
 .row{max-width:1180px;margin:0 auto;*zoom:1;}
-.row:after{clear:both;content:" ";display:block;font-size:0;height:0;visibility:hidden;}
+.row:after{clear:both;content:"";display:block;font-size:0;height:0;visibility:hidden;}
 .fl{float:left;}
 .fr{float:right;}
+
 /* 清理浮动 */
 .clearfix:after{content:"";display:block;clear:both;height:0;}
 .clearfix{*zoom:1;}
@@ -41,6 +42,7 @@ ol{margin:0 0 10px 25px;padding:0;}
 .m-main{margin-left:230px;}
 .gquote{border-bottom:1px solid #DDDDDD;display:none;margin:10px 0;padding:10px;}
 .example{position:relative;margin:15px 0;padding:39px 19px 14px;*padding-top:19px;background-color:#fff;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+
 /* Echo out a label for the example */
 .example:after{content:"Example";position:absolute;top:-1px;left:-1px;padding:3px 7px;font-size:12px;font-weight:bold;background-color:#f5f5f5;border:1px solid #ddd;color:#9da0a4;-webkit-border-radius:4px 0 4px 0;-moz-border-radius:4px 0 4px 0;border-radius:4px 0 4px 0;}
 .module{background:none repeat scroll 0 0 #FFFFFF;border-left:5px solid #B4D0EE;box-shadow:0 0 1px rgba(0,0,0,0.3);color:#999999;display:inline;float:left;font-family:tahoma;min-height:60px;margin-bottom:15px;margin-right:20px;overflow:hidden;padding:4px 6px 6px 10px;position:relative;width:170px;
@@ -71,129 +73,23 @@ a.module-name{display:inline-block;font-size:18px;line-height:1;max-width:145px;
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
-
-.hljs {
-	display: block;
-  padding: 9px 14px;
-  margin-bottom: 14px;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
-  border-radius: 4px;
-}
-
-.hljs-comment,
-.hljs-template_comment,
-.diff .hljs-header,
-.hljs-javadoc {
-  color: #998;
-  font-style: italic
-}
-
-.hljs-keyword,
-.css .rule .hljs-keyword,
-.hljs-winutils,
-.javascript .hljs-title,
-.nginx .hljs-title,
-.hljs-subst,
-.hljs-request,
-.hljs-status {
-  color: #333;
-  font-weight: bold
-}
-
-.hljs-number,
-.hljs-hexcolor,
-.ruby .hljs-constant {
-  color: #099;
-}
-
-.hljs-string,
-.hljs-tag .hljs-value,
-.hljs-phpdoc,
-.tex .hljs-formula {
-  color: #d14
-}
-
-.hljs-title,
-.hljs-id,
-.coffeescript .hljs-params,
-.scss .hljs-preprocessor {
-  color: #900;
-  font-weight: bold
-}
-
-.javascript .hljs-title,
-.lisp .hljs-title,
-.clojure .hljs-title,
-.hljs-subst {
-  font-weight: normal
-}
-
-.hljs-class .hljs-title,
-.haskell .hljs-type,
-.vhdl .hljs-literal,
-.tex .hljs-command {
-  color: #458;
-  font-weight: bold
-}
-
-.hljs-tag,
-.hljs-tag .hljs-title,
-.hljs-rules .hljs-property,
-.django .hljs-tag .hljs-keyword {
-  color: #000080;
-  font-weight: normal
-}
-
-.hljs-attribute,
-.hljs-variable,
-.lisp .hljs-body {
-  color: #008080
-}
-
-.hljs-regexp {
-  color: #009926
-}
-
-.hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.lisp .hljs-keyword,
-.tex .hljs-special,
-.hljs-prompt {
-  color: #990073
-}
-
-.hljs-built_in,
-.lisp .hljs-title,
-.clojure .hljs-built_in {
-  color: #0086b3
-}
-
-.hljs-preprocessor,
-.hljs-pragma,
-.hljs-pi,
-.hljs-doctype,
-.hljs-shebang,
-.hljs-cdata {
-  color: #999;
-  font-weight: bold
-}
-
-.hljs-deletion {
-  background: #fdd
-}
-
-.hljs-addition {
-  background: #dfd
-}
-
-.diff .hljs-change {
-  background: #0086b3
-}
-
-.hljs-chunk {
-  color: #aaa
-}
-
+.hljs{display:block;padding:9px 14px;margin-bottom:14px;background-color:#f7f7f9;border:1px solid #e1e1e8;border-radius:4px;}
+.hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}
+.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}
+.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099;}
+.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.tex .hljs-formula{color:#d14}
+.hljs-title,.hljs-id,.coffeescript .hljs-params,.scss .hljs-preprocessor{color:#900;font-weight:bold}
+.javascript .hljs-title,.lisp .hljs-title,.clojure .hljs-title,.hljs-subst{font-weight:normal}
+.hljs-class .hljs-title,.haskell .hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}
+.hljs-tag,.hljs-tag .hljs-title,.hljs-rules .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}
+.hljs-attribute,.hljs-variable,.lisp .hljs-body{color:#008080}
+.hljs-regexp{color:#009926}
+.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}
+.hljs-built_in,.lisp .hljs-title,.clojure .hljs-built_in{color:#0086b3}
+.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}
+.hljs-deletion{background:#fdd}
+.hljs-addition{background:#dfd}
+.diff .hljs-change{background:#0086b3}
+.hljs-chunk{color:#aaa}
 
 

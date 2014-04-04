@@ -5,9 +5,7 @@
    */
 var build = {
   subNav: function() {
-    var nav = $(".nav"),
-      state = nav.attr("data-state");
-    if (state == "ok") return false;
+    var nav = $(".nav");
     $.getJSON("mod/nav.json", function(data) {
       var html = "";
       $.each(data.nav, function(i, n) {
@@ -16,7 +14,6 @@ var build = {
         html += "<a href=?p=" + name + ">" + title + "</a>";
       });
       nav.html(html);
-      nav.attr("data-state", "ok");
       $("a", nav).on("click", function(e) {
         var $this = $(this);
         build.setPage($this);
@@ -24,23 +21,10 @@ var build = {
       })
     })
   },
-  setPage: function(e) {
-    var page = e.attr("href").slice(3);
-    this.setSid(page);
-    //生成主体内容
-    this.setMain(page);
-    return false;
-  },
-  mdToHtml: function(md) {
-    // require showdown.js 
-    var converter = new Showdown.converter();
-    return converter.makeHtml(md);
-  },
   setSid: function(s) {
     $.getJSON("mod/nav.json", function(data) {
       var sid = $(".m-sidebar");
       var html = '';
-
       if (data[s] === undefined) {
         $("body").addClass("f-page");
         return false;
@@ -57,6 +41,18 @@ var build = {
       sid.html(html);
     })
   },
+  setPage: function(e) {
+    var page = e.attr("href").slice(3);
+    this.setSid(page);
+    //生成主体内容
+    this.setMain(page);
+    return false;
+  },
+  mdToHtml: function(md) {
+    // require showdown.js 
+    var converter = new Showdown.converter();
+    return converter.makeHtml(md);
+  },
   setMain: function(s) {
     var main = $(".m-main");
     main.load("mod/html/" + s + ".md", function() {
@@ -64,9 +60,9 @@ var build = {
       main.html(html);
 
       // Highlight syntax
-      $("code").each(function(i){
+      $("code").each(function(i) {
         hljs.highlightBlock(this);
-            }); 
+      });
     });
   },
   init: function() {
@@ -82,3 +78,11 @@ var build = {
   }
 };
 build.init();
+
+$.getJSON("mod/code.json", function(data) {
+  console.log(data)
+  $.each(data.modoel, function(i, n) {
+    var name = n.id;
+    var title = n.title;
+  });
+})
