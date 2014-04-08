@@ -7,7 +7,19 @@
 		"title": "首页"
 	}, {
 		"id": "base",
-		"title": "框架页"
+		"title": "基础框架"
+	}, {
+		"id": "widget",
+		"title": "通用样式库"
+	}, {
+		"id": "js",
+		"title": "JavaScript插件"
+	}, {
+		"id": "rule",
+		"title": "规范"
+	}, {
+		"id": "snippet",
+		"title": "代码片段"
 	}],
 	"base": [{
 		"id": "base",

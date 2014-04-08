@@ -50,3 +50,44 @@ ins, a { text-decoration:none; }
 表示区域跨越了多少列。数字从 1 到 25，例如g-18。
 
 最右侧的请添加.g-r
+
+```html
+<div class="g-row">
+    <div class="g-5">g-5</div>
+    <div class="g-15">g-15</div>
+    <div class="g-5">g-5 g-r</div>
+</div>
+```
+ps：可以观察出，所有一栏的数字相加为25.
+
+具体分栏细节:
+```css
+.g-1 {width:30px;}
+.g-2 {width:70px;}
+.g-3 {width:110px;}
+.g-4 {width:150px;} /* 右侧推广位的宽度 */
+.g-5 {width:190px;} /* 左侧边栏的宽度 */
+.g-6 {width:230px;}
+.g-7 {width:270px;}
+.g-8 {width:310px;}
+.g-9 {width:350px;}
+.g-10 {width:390px;}
+.g-11 {width:430px;}
+.g-12 {width:470px;}
+.g-13 {width:510px;}
+.g-14 {width:550px;}
+.g-15 {width:590px;} /* 中央区域宽度 */
+.g-16 {width:630px;}
+.g-17 {width:670px;}
+.g-18 {width:710px;}
+.g-19 {width:750px;}
+.g-20 {width:790px;}
+.g-21 {width:830px;} /* 交易明细表区域的宽度 */
+.g-22 {width:870px;}
+.g-23 {width:910px;}
+.g-24 {width:950px;}
+.g-25 {width:990px;} /* 最大页面宽度 */
+```
+
+###<a href="examples/g-row.html" >查看具体演示 </a>
+
