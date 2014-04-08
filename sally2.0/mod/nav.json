@@ -1,6 +1,9 @@
-{"state":"导航资源",
+{
+	"state": "导航资源",
+	"data": "2014.04.09",
+	"htmlfile": "mod/html/",
 	"nav": [{
-		"id": "nav",
+		"id": "index",
 		"title": "首页"
 	}, {
 		"id": "base",

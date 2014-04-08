@@ -1,12 +1,14 @@
 {
 	"state": "代码资源",
-	"modoles": [{
-		"name":"m-box",
-		"title": "通用盒子",
-		"version": "1.0",
-		"description": "通用的盒子模型,快速构建模块",
-		"style" : "u-btn;u-db"
-	}]
-
-
+	"htmlfile": "mod/code/",
+	"cssfile": "mod/libs/",
+	"m": {
+		"box": {
+			"name": "box",
+			"title": "通用盒子",
+			"version": "1.0",
+			"description": "通用的盒子模型,快速构建模块",
+			"style": "btn;db"
+		}
+	}
 }
