@@ -94,8 +94,8 @@ var build = {
         sid.html(html);
       },
       main: function(data) {
-        if (data == undefined) {
-          data = "##载入失败..."
+        if (!data) {
+          data = "#error..."
         }
         var main = $("#main");
         var html = build.mdToHtml(data);
