@@ -1,5 +1,5 @@
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
-body,button,input,select,textarea{font:14px/1.8 arial,tahoma,"Hiragino Sans GB",\5b8b\4f53;}
+body,button,input,select,textarea{font:14px/1.8 arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;}
 input,select,textarea{font-size:100%;}
 table{border-collapse:collapse;border-spacing:0;}
 th{text-align:inherit;}
@@ -8,7 +8,7 @@ iframe{display:block;}
 ol,ul{list-style:none;}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
 a{color:#0088cc;text-decoration:none;}
-a:hover,a:focus{color:#005580;text-decoration:underline;}
+a:hover,a:focus{color:#f84858;text-decoration:underline;}
 ins,a,a:hover{text-decoration:none;}
 h1,h2,h3{line-height:40px;}
 h1{font-size:38.5px;}
@@ -28,19 +28,19 @@ ol{margin:0 0 10px 25px;padding:0;}
 /* 清理浮动 */
 .clearfix:after{content:"";display:block;clear:both;height:0;}
 .clearfix{*zoom:1;}
-
+body{background: #f1f2f6;color: #6f6f6f}
 /*nav*/
-.m-nav{height:42px;background:#121212;line-height:40px;position:fixed;top:0;z-index:999;width:100%}
-.m-nav a{display:inline-block;margin-right:30px;color:#999}
-.m-nav a:hover,.m-nav a.active{color:#fff}
+.m-nav{height:40px;background:#dd4250;line-height:40px;position:fixed;top:0;z-index:999;width:100%}
+.m-nav a{display:inline-block;padding:0 15px;color:#fff}
+.m-nav a:hover,.m-nav a.active{background: #ed5466;}
 
 /*cent*/
 #row{margin-top:60px;position:relative;}
 .sid{float: right;width:200px;position: absolute;right: 0;top: 0}
-.m-sidebar{background:#f6f6f6;width:200px;position:fixed;line-height:30px;padding:20px 0;font-size:14px;}
+.m-sidebar{background:#fff;width:200px;position:fixed;line-height:25px;padding:20px 0;font-size:14px;}
 .m-sidebar a{color:#716B7A;display:block;padding:5px 20px;border-right:2px solid #f6f6f6}
-.m-sidebar a:hover,.m-sidebar li.active a{background:#ddd;border-color:#121212;}
-.m-main{margin-right:230px;}
+.m-sidebar a:hover,.m-sidebar li.active a{background:#E0E0E0;}
+.m-main{margin-right:230px; background: #fff;padding:20px;border: 1px solid #EBEBEB;border-radius: 5px}
 .gquote{border-bottom:1px solid #DDDDDD;display:none;margin:10px 0;padding:10px;}
 .example{position:relative;margin:15px 0;padding:39px 19px 14px;*padding-top:19px;background-color:#fff;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
 
@@ -79,7 +79,7 @@ a.module-name{display:inline-block;font-size:18px;line-height:1;max-width:145px;
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
-.hljs{display:block;padding:9px 14px;margin-bottom:14px;background-color:#f7f7f9;border:1px solid #e1e1e8;border-radius:4px;overflow-y: auto;}
+.hljs{display:block;padding:9px 14px;margin-bottom:14px;background-color:#fafafa;border:1px solid #e1e1e8;border-radius:4px;overflow-y: auto;}
 .hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}
 .hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}
 .hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099;}

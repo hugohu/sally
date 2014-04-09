@@ -1,126 +1,30 @@
-##从一个轮播开始说细节的重要性
-
-严正声明:本文仅代表个人观点,如看完之后出现怀孕等迹象,本人概不负责. <br />
-偶然看到一句话:"__细节不仅仅是细节，而是设计。__"  <br />
-深有感触. <br />
-今天要说的东西很小,从几个网站的轮播图来表达一些东西,希望能引起大家的一些思考.  <br />
-
-
-
-###首先是淘宝首页的轮播图: <br />
-
-<img src="http://huugle.duapp.com/meta/img/2014316/tb.jpg" alt="" />
-
-淘宝首页地址: http://taobao.com
-
-可能很多人都会认为这不就是个稀疏平常的轮播图吗,有啥好讨论的. <br />
-那我剖析几点给您瞧瞧. <br />
-设备:谷歌浏览器 ie8浏览器 <br />
-
-
-####首先要说的是界面部分: 
-
-<img src="http://huugle.duapp.com/meta/img/2014316/tb2.jpg" alt="" />
-
-1,可以发现从原来的大圆点变成了现在的小圆点. <br />
-有什么好处呢,用户可见的范围更大了.更多的着眼点在图片本身而不是那几个数字或者圆点下标. <br />
-
-2,还有就是从hover 事件变成了click事件.有什么好处呢,给了用户自己的选择空间. <br />
-以前的hover事件不可避免避免的一个问题就是误操作.现在变成click事件是不是就少了很多了. <br />
-跟大的一个原因是现在是小圆点,间距小,如果还有hover事件的话就有可能造成不必要的误操作. <br />
-就算是加了延迟,体验上也会稍微差一点点. <br />
-
-<img src="http://huugle.duapp.com/meta/img/2014316/tb3.jpg" alt="" />
-
-3,两侧箭头只有鼠标放入区域的时候才出现.原因也是为了让用户能更加清晰的看清楚焦点图而不被干扰. <br />
-
-
-__其次是实现的方式部分.这里也是我重点要说的:__ <br />
-用谷歌浏览器打开. <br />
-
-<img src="http://huugle.duapp.com/meta/img/2014316/tb4.jpg" alt="" />
-
-f12看到.淘宝这里的轮播用的是: <br />
-css3的transition属性再加上-webkit-transform: translate3d(x,y,z); <br />
-
-这里就可见其用心之处了. 普通的轮播图基本都是通过js去改变left或者margin值的来实现动画效果. <br />
-而淘宝这里却用了css3的两个属性不得不说真的很棒. <br />
-以transform的translate3d的属性是可以开启硬件加速的. <br />
-相关知识可以百度下:css硬件加速.<br />
-
-以下是别人总结的用css3动画代替js模拟动画的好处. <br />
-
-1. 不占用js主线程;
-2. 可利用硬件加速;
-3. 浏览器可对动画做优化(元素不可见时不动画, 减少对FPS的影响).
-
-这里是不是就给我们提供一种思路呢?  <br />
-__在低版本浏览器中用js模拟动画.__ <br />
-__而高级现在浏览器 完全的有部分动画是可以用css3去代替实现的.__ <br />
-
-吐槽点: 左右箭头的显示其实可以柔和点. 
-想不明白为什么不把小圈圈放到右下角呢?不是更加符合用户习惯吗? <br />
-可能有想法在里面.暂时没想明白.
-
-
-###接下来是苏宁易购的: 
-
-<img src="http://huugle.duapp.com/meta/img/2014316/sn.jpg" alt="" />
-
-苏宁易购首页地址: http://www.suning.com/
-
-
-没错苏宁易购的轮播图最大的亮点就是右下角的等待动画.这里真的可见其用心之处. <br />
-一个圈圈转完了刚好就是下一张展示的时间. <br />
-这个圈圈动画的实现原理极其巧妙.有兴趣的同志可以自己去研究下. <br />
-我会在文章的结尾贴上我抠出来的单个部分. <br />
-
-吐槽点: <br />
-
-1. 现在的动画还只是机械的转动.如果鼠标滑进去的时候直接填满.然后鼠标移开整个区域再重新开始转,我相信不管是准确性还是体验上都会好一些.
-2. 然后是单张切换.高级浏览器其实可以用css3动画.
-
-
-###最后是一号店的:
-
-<img src="http://huugle.duapp.com/meta/img/2014316/yhd.jpg" alt="" />
-
-一号店首页地址: http://www.yhd.com/
-
-不得不说,一号店被沃尔玛收了之后体验上真的是提升了一大截. <br />
-整个轮播的动画做的非常的柔和.一些细节的很到位.真的挺用心的. <br />
-
-<img src="http://huugle.duapp.com/meta/img/2014316/yhd.gif" alt="" />
-
-首先是鼠标滑进去之后两侧淡入的 左右箭头.
-
-<img src="http://huugle.duapp.com/meta/img/2014316/yhd2.gif" alt="" />
-
-其次是下一张的进度条 给人感觉就是非常的舒服.
-
-
-最后是吐槽点.轮播进度条下方的3个图这种交互还不如学天猫右侧的商品稍微动下.太突兀了.而且感觉毫无效果. <br />
-本身这种交互方式的作用应该是集中视觉焦点现在是奇奇怪怪的感觉. <br />
-
-<img src="http://huugle.duapp.com/meta/img/2014316/tm.gif" alt="" />
-
-
--------------------------------------------------------
-
-
-最后:关于轮播图的语义化.可以去问机子..他是专家.... <br />
-最最后:如果我们把3家的有点结合下.这轮播图的体验是不是就会好很多很多呢?欢迎讨论. <br />
-
-
-福利在此: <br />
-
-__苏宁小圆圈__
-
-<iframe width="100%" height="300" src="http://jsfiddle.net/6uhej/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-__垃圾桶__
-
-<iframe width="100%" height="300" src="http://jsfiddle.net/hFaLK/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-
-后记:因为个人水平的限制,所以写出来的东西肯定也有一定的局限性.所以欢迎大家讨论吐槽以及批评.
+<style>
+body{background: #000;}
+.banner { background: #000 url(assets/css/img/sally.png) center no-repeat; height: 250px; width: 100%;margin-top: -18px; }
+.pao { width: 485px; height: 250px; position: absolute; left: 50%; margin-left: -260px; margin-top: 0px; overflow: hidden; }
+.paoit i { background: url(assets/css/img/pao.png) no-repeat scroll -9999px -9999px transparent; }
+.paoit { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.paoit i { position: absolute; z-index: 3; top: 100%; width: 53px; height: 56px; overflow: hidden; text-indent: -2000px; background-position: 0 0; -webkit-animation: paoi 7s 2s infinite; -moz-animation: paoi 7s 2s infinite; -ms-animation: paoi 7s 2s infinite; animation: paoi 7s 2s infinite; }
+.paoit i:nth-child(1) { left: 25px; -webkit-animation-delay: 3s; -moz-animation-delay: 3s; -ms-animation-delay: 3s; animation-delay: 3s; }
+.paoit i:nth-child(2) { left: 85px; -webkit-animation-duration: 6s; -moz-animation-duration: 6s; -ms-animation-duration: 6s; animation-duration: 6s; -webkit-animation-delay: 6s; -moz-animation-delay: 6s; -ms-animation-delay: 6s; animation-delay: 6s; background-position: 0 -64px; }
+.paoit i:nth-child(3) { left: 148px; -webkit-animation-duration: 5s; -moz-animation-duration: 5s; -ms-animation-duration: 5s; animation-duration: 5s; -webkit-animation-delay: 7s; -moz-animation-delay: 7s; -ms-animation-delay: 7s; animation-delay: 7s; }
+.paoit i:nth-child(4) { left: 190px; -webkit-animation-delay: 4s; -moz-animation-delay: 4s; -ms-animation-delay: 4s; animation-delay: 4s; background-position: 0 -140px; }
+.paoit i:nth-child(5) { left: 285px; -webkit-animation-duration: 5s; -moz-animation-duration: 5s; -ms-animation-duration: 5s; animation-duration: 5s; -webkit-animation-delay: 8s; -moz-animation-delay: 8s; -ms-animation-delay: 8s; animation-delay: 8s; }
+.paoit i:nth-child(6) { left: 350px; background-position: 0 -64px; }
+.paoit i:nth-child(7) { left: 400px; -webkit-animation-delay: 5s; -moz-animation-delay: 5s; -ms-animation-delay: 5s; animation-delay: 5s; }
+@-webkit-keyframes paoi {  0% {top:186px;}100% {top:-56px;}}
+@-moz-keyframes paoi {  0% {top:186px;}100% {top:-56px;}}
+@-ms-keyframes paoi {  0% {top:186px;}100% {top:-56px;}}
+@keyframes paoi {  0% {top:186px;}100% {top:-56px;}}
+</style>
+<div class="banner">
+	<div class="pao">
+		<span class="paoit"> <i></i> <i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</span>
+	</div>
+</div>

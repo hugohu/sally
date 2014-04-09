@@ -64,8 +64,9 @@ var build = {
         nav.html(html);
         $("a", nav).on("click", function(e) {
           var $this = $(this),
-            page = $this.attr("data-page")
+            page = $this.attr("data-page");
             build.setpage(page, 0);
+            $this.addClass("active").siblings().removeClass("active");
           return false;
         })
       },
