@@ -94,7 +94,7 @@ var build = {
         sid.html(html);
       },
       main: function(data) {
-        if (data == undefined) {
+        if (!data) {
           data = "##载入失败..."
         }
         var main = $("#main");

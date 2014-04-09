@@ -10,7 +10,6 @@ $(function() {
         clearTimeout(this.delay);
         this.delay = setTimeout(updatehtml, 300);
       });
-
       function updatehtml() {
         upe.innerHTML = editor.getValue();
       }
@@ -22,10 +21,9 @@ $(function() {
         url: url,
         async: false
       }).responseText;
-
     },
     params: function(s) {
-      // ?mod=modoles&name=m-box
+      // ?mod=modoles&id=m-box
       var ret = {},
         url = (s || location.search);
       if (!url) {
@@ -46,14 +44,13 @@ $(function() {
       }
       return ret;
     },
-    addCss: function(mod, name) {
-
+    addCss: function(mod, id) {
       //可能有点问题
       var cssfile = this.codedata.cssfile;
-      if (this.codedata[mod][name] == undefined) {
+      if (this.codedata[mod][id] == undefined) {
         return false;
       }
-      var a = this.codedata[mod][name].style.split(";"),
+      var a = this.codedata[mod][id].style.split(";"),
         b = [];
       $.each(a, function(i, n) {
         b[i] = cssfile + n + ".css"
@@ -70,19 +67,19 @@ $(function() {
       });
     },
     setpage: function(p, mod) {
-      var code = "mod/code.json";
+      var code = "mod/nav.json";
       var o = this.params();
       var p = p || o.p;
       var mod = mod == 0 ? undefined : o.mod;
       if (mod != undefined) {
-        var name = o.name;
+        var id = o.id;
         if (this.codedata == undefined) {
           var data = this.code(code);
           this.codedata = $.parseJSON(data);
         };
-        var htmlfile = this.codedata.htmlfile + mod + "/" + name + ".md";
-        var cssfile = this.codedata.cssfile + name + ".css"
-        this.addCss(mod, name)
+        var htmlfile = this.codedata.codefile + mod + "/" + id + ".md";
+        var cssfile = this.codedata.cssfile + id + ".css"
+        this.addCss(mod, id)
       } else {
         return false;
       }
@@ -118,10 +115,9 @@ $(".explain").on("mousedown", function(e) {
     clearTimeout("timeOut");
     var dix = dis - e.pageY;
     var timeOut = setTimeout(function() {
-      $(".CodeMirror").css("height", _h + dix)
-    }, 1)
+      $(".CodeMirror").css("height", _h + dix);
+    }, 1);
   }
-
   function over(e) {
     $(document).off("mousemove", move);
     e.preventDefault();
