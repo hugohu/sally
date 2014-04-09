@@ -2,6 +2,8 @@
 	"state": "导航资源",
 	"data": "2014.04.09",
 	"htmlfile": "mod/html/",
+	"codefile": "mod/code/",
+	"cssfile": "mod/libs/",
 	"nav": [{
 		"id": "index",
 		"title": "首页"
@@ -21,20 +23,78 @@
 		"id": "snippet",
 		"title": "代码片段"
 	}],
-	"base": [{
-		"id": "base",
-		"title": "重置样式"
-	}, {
-		"id": "grid",
-		"title": "分栏布局系统"
-	}, {
-		"id": "iconfont",
-		"title": "iconfont"
-	}, {
-		"id": "func",
-		"title": "功能型样式"
-	}, {
-		"id": "animate",
-		"title": " CSS3 Animate"
-	}]
+	"m": {
+		"box": {
+			"title": "通用盒子",
+			"version": "1.0",
+			"description": "通用的盒子模型,快速构建模块",
+			"style": "btn"
+		},
+		"form": {
+			"title": "表单模块",
+			"version": "1.0",
+			"description": "定义了基础的表单模型",
+			"style": "db"
+		},
+		"ilist": {
+			"title": "图片文字列表",
+			"version": "1.0",
+			"description": "定义了几种不同的图片列表实现",
+			"style": "btn"
+		},
+		"list": {
+			"title": "文字列表",
+			"version": "1.0",
+			"description": "定义了几种类型的文字列表",
+			"style": ""
+		},
+		"table": {
+			"title": "表格模块",
+			"version": "1.0",
+			"description": "定义了基础表格",
+			"style": ""
+		},
+		"alert": {
+			"title": "通知警告框",
+			"version": "1.0",
+			"description": "顶部通知栏",
+			"style": ""
+		},
+		"layer": {
+			"title": "操作性弹出浮层",
+			"version": "1.0",
+			"description": "配合弹窗使用",
+			"style": ""
+		},
+		"table": {
+			"title": "表格模块",
+			"version": "1.0",
+			"description": "定义了基础表格",
+			"style": ""
+		},
+		"page": {
+			"title": "分页",
+			"version": "1.0",
+			"description": "各种分页",
+			"style": ""
+		},
+		"table": {
+			"title": "表格模块",
+			"version": "1.0",
+			"description": "定义了基础表格",
+			"style": ""
+		},
+		"location": {
+			"title": "面包屑",
+			"version": "1.0",
+			"description": "定义了标签切换组件",
+			"style": ""
+		},
+		"poptip": {
+			"title": "气泡提醒",
+			"version": "1.0",
+			"description": "气泡提醒",
+			"style": ""
+		}
+	}
 }

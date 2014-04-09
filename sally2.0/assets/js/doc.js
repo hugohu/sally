@@ -11,25 +11,28 @@ var build = {
     }).responseText;
 
   },
-  addCss: function(mod, name) {
+  addCss: function(mod, id) {
     //可能有点问题
-    var cssfile = this.codedata.cssfile,
-      a = this.codedata[mod][name].style.split(";"),
+    var cssfile = this.data.cssfile;
+    if (this.data[mod][id] == undefined) {
+      return false;
+    };
+    var a = this.data[mod][id].style.split(";"),
       b = [];
     $.each(a, function(i, n) {
       b[i] = cssfile + n + ".css"
     })
-    var link = $("link");
+    $("link[class='link']").remove();
     $.each(b, function(index, value) {
       $("<link>").attr({
         rel: "stylesheet",
-        type: "text/css",
-        href: value
+        href: value,
+        class: "link"
       }).appendTo("head");
     });
   },
   params: function(s) {
-    // ?mod=modoles&name=m-box
+    // ?mod=modoles&id=m-box
     var ret = {},
       url = (s || location.search);
     if (!url) {
@@ -57,37 +60,43 @@ var build = {
           nav = $(".nav"),
           html = "";
         $.each(data, function(i, n) {
-          var name = n.id;
+          var id = n.id;
           var title = n.title;
-          html += "<a href=\"?p=" + name + "\"data-page=" + name + ">" + title + "</a>";
+          html += "<a href=\"?p=" + id + "\"data-page=" + id + ">" + title + "</a>";
         });
         nav.html(html);
         $("a", nav).on("click", function(e) {
           var $this = $(this),
             page = $this.attr("data-page");
-            build.setpage(page, 0);
-            $this.addClass("active").siblings().removeClass("active");
+          build.setpage(page, 0);
+          $this.addClass("active").siblings().removeClass("active");
           return false;
         })
       },
-      sidebar: function(data) {
+      sidebar: function() {
         var sid = $(".m-sidebar"),
           html = '';
-        if (data != undefined) {
-          $("body").removeClass("f-page");
-        } else {
+        var anchor = $("#main").find("h2");
+        if (anchor.length == 0) {
           $("body").addClass("f-page");
           return false;
+        } else {
+          $("body").removeClass("f-page");
         }
-        $.each(data, function(i, n) {
-          var name = n.id;
-          var title = n.title;
-          html += "<li><a href=#" + name + ">" + title + "</a></li>";
+        anchor.each(function(i, n) {
+          var $this = $(this);
+          var title = $this.text()
+          var anchor = "anc" + i;
+          $this.attr("id", anchor);
+          html += "<li><a href=#" + anchor + ">" + title + "</a></li>";
         });
         html = '<ul>' + html + '</ul>';
         sid.html(html);
       },
       main: function(data) {
+        if (data == undefined) {
+          data = "##载入失败..."
+        }
         var main = $("#main");
         var html = build.mdToHtml(data);
         main.html(html);
@@ -95,6 +104,10 @@ var build = {
         $("code").each(function(i) {
           hljs.highlightBlock(this);
         });
+        //add blue
+        build.setlist();
+        //add sib
+        this.sidebar();
       }
     }
     setHtml.page = page;
@@ -107,26 +120,41 @@ var build = {
     return converter.makeHtml(md);
   },
   setpage: function(p, mod) {
-    var code = "mod/code.json";
     var o = this.params();
     var p = p || o.p;
     var mod = mod == 0 ? undefined : o.mod;
     if (mod != undefined) {
-      var name = o.name;
-      if (this.codedata == undefined) {
-        var data = this.code(code);
-        this.codedata = $.parseJSON(data);
-      };
-      var htmlfile = this.codedata.htmlfile + mod + "/" + name + ".md";
-      this.addCss(mod, name)
+      var id = o.id;
+      var file = this.data.codefile + mod + "/" + id + ".md";
+      this.addCss(mod, id)
     } else {
-      var htmlfile = this.data.htmlfile + p + ".md";
+      var file = this.data.htmlfile + p + ".md";
 
     }
-    var smain = this.code(htmlfile);
-    this.html("sidebar", this.data[p]);
+    var smain = this.code(file);
     //生成主体内容
     this.html("main", smain);
+    this.html("sidebar", this.data[p]);
+
+  },
+  setlist: function() {
+    var rancolor = function() {
+      var scolor = "rgba(" + (Math.random() * 255 >>> 0) + "," + (Math.random() * 255 >>> 0) + "," + (Math.random() * 255 >>> 0) + "," + "0.65)";
+      return scolor;
+    }
+    $("[data-list]").each(function(index, elem) {
+      var $this = $(this),
+        html = "",
+        _id = $this.attr("data-list"),
+        data = build.data[_id];
+      if (data != undefined) {
+        for (p in data) {
+          html += '<a href="' + "?mod=" + _id + "&id=" + p + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
+        }
+      }
+      $(this).html(html);
+    });
+
   },
   init: function(url) {
     var data = this.code(url);

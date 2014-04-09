@@ -26,8 +26,8 @@ ol{margin:0 0 10px 25px;padding:0;}
 .fr{float:right;}
 
 /* 清理浮动 */
-.clearfix:after{content:"";display:block;clear:both;height:0;}
-.clearfix{*zoom:1;}
+.clearfix:after,.m-main:after{content:"";display:block;clear:both;height:0;}
+.clearfix,.m-main{*zoom:1;}
 body{background: #f1f2f6;color: #6f6f6f}
 /*nav*/
 .m-nav{height:40px;background:#dd4250;line-height:40px;position:fixed;top:0;z-index:999;width:100%}
