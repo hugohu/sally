@@ -20,9 +20,7 @@ var build = {
       b[i] = cssfile + n + ".css"
     })
     var link = $("link");
-    var exp=$(".explain");
     $.each(b, function(index, value) {
-      $("a").attr("href",value).html(value).appendTo(exp);
       $("<link>").attr({
         rel: "stylesheet",
         type: "text/css",

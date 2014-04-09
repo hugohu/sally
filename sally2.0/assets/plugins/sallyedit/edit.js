@@ -50,10 +50,10 @@ $(function() {
 
       //可能有点问题
       var cssfile = this.codedata.cssfile;
-        if(this.codedata[mod][name]==undefined){
-          return false;
-        }
-      var  a = this.codedata[mod][name].style.split(";"),
+      if (this.codedata[mod][name] == undefined) {
+        return false;
+      }
+      var a = this.codedata[mod][name].style.split(";"),
         b = [];
       $.each(a, function(i, n) {
         b[i] = cssfile + n + ".css"
