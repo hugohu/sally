@@ -80,8 +80,9 @@ a.module-name{display:inline-block;font-size:18px;line-height:1;max-width:145px;
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
-.hljs{display:block;padding:9px 14px;margin-bottom:14px;background-color:#fefefe;border:1px solid #eee;border-radius:4px;overflow-y: auto;word-wrap: break-word;}
-.hljs:hover{border-color: #ddd;box-shadow:0 0  3px rgba(0,0,0,0.05)}
+.hljs{display:block;padding:9px 14px;margin-bottom:14px;background-color:#fefefe;border:1px solid #eee;border-radius:4px;overflow-y: auto;word-wrap: break-word;/*box-shadow:0 0  3px rgba(0,0,0,0.05)*/}
+.hljs:hover{border-color: #ddd;}
+.hljs:focus{background: #fefcfc;outline:0;border-color: #fd8291;}
 .hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}
 .hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}
 .hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099;}

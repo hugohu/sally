@@ -66,22 +66,10 @@
 			"description": "配合弹窗使用",
 			"style": ""
 		},
-		"table": {
-			"title": "表格模块",
-			"version": "1.0",
-			"description": "定义了基础表格",
-			"style": ""
-		},
 		"page": {
 			"title": "分页",
 			"version": "1.0",
 			"description": "各种分页",
-			"style": ""
-		},
-		"table": {
-			"title": "表格模块",
-			"version": "1.0",
-			"description": "定义了基础表格",
 			"style": ""
 		},
 		"location": {

@@ -22,12 +22,12 @@ var build = {
     $.each(a, function(i, n) {
       b[i] = cssfile + n + ".css"
     })
-    $("link[class='link']").remove();
+    $("link[data-type='addcss']").remove();
     $.each(b, function(index, value) {
       $("<link>").attr({
         rel: "stylesheet",
         href: value,
-        class: "link"
+        "data-type": "addcss"
       }).appendTo("head");
     });
   },
@@ -56,7 +56,7 @@ var build = {
   html: function(mark, data, page) {
     var setHtml = {
       nav: function(data) {
-        var data = data.nav,
+        var data = data[mark],
           nav = $(".nav"),
           html = "";
         $.each(data, function(i, n) {
@@ -93,19 +93,35 @@ var build = {
         html = '<ul>' + html + '</ul>';
         sid.html(html);
       },
-      main: function(data) {
-        if (!data) {
-          data = "#error..."
+      setlist: function() {
+        var rancolor = function() {
+          var scolor = "rgba(" + (Math.random() * 255 >>> 0) + "," + (Math.random() * 255 >>> 0) + "," + (Math.random() * 255 >>> 0) + "," + "0.65)";
+          return scolor;
         }
+        $("[data-list]").each(function(index, elem) {
+          var $this = $(this),
+            html = "",
+            _id = $this.attr("data-list"),
+            data = build.data[_id];
+          if (data != undefined) {
+            for (p in data) {
+              html += '<a href="' + "?mod=" + _id + "&id=" + p + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
+            }
+          }
+          $(this).html(html);
+        });
+      },
+      main: function(data) {
+        !data && (data = "#error...")
         var main = $("#main");
         var html = build.mdToHtml(data);
         main.html(html);
         // Highlight syntax
         $("code").each(function(i) {
           hljs.highlightBlock(this);
-        });
+        }).attr("contentEditable", true)
         //add blue
-        build.setlist();
+        this.setlist();
         //add sib
         this.sidebar();
       }
@@ -135,25 +151,6 @@ var build = {
     //生成主体内容
     this.html("main", smain);
     this.html("sidebar", this.data[p]);
-
-  },
-  setlist: function() {
-    var rancolor = function() {
-      var scolor = "rgba(" + (Math.random() * 255 >>> 0) + "," + (Math.random() * 255 >>> 0) + "," + (Math.random() * 255 >>> 0) + "," + "0.65)";
-      return scolor;
-    }
-    $("[data-list]").each(function(index, elem) {
-      var $this = $(this),
-        html = "",
-        _id = $this.attr("data-list"),
-        data = build.data[_id];
-      if (data != undefined) {
-        for (p in data) {
-          html += '<a href="' + "?mod=" + _id + "&id=" + p + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
-        }
-      }
-      $(this).html(html);
-    });
 
   },
   init: function(url) {
