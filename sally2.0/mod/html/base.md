@@ -32,7 +32,7 @@ ins, a { text-decoration:none; }
 .clearfix:after {display: table;line-height: 0;content: "";}
 .clearfix:after {clear: both;}
 ```
-详情参见<a href="assets/reset.css">reset.css</a>文件
+详情参见[reset.css](assets/reset.css)文件
 
 ###grid 布局系统:990像素定宽25栅格布局。
 
@@ -88,5 +88,5 @@ ps：可以观察出，所有一栏的数字相加为25.
 .g-25 {width:990px;} /* 最大页面宽度 */
 ```
 
-###<a href="examples/g-row.html" >查看具体演示 </a>
+###[查看具体演示](examples/g-row.html)
 
