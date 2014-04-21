@@ -24,13 +24,15 @@
 		"title": "代码片段"
 	}],
 	"m": {
+		"state":"模块",
+		"updatedata": "2014.04.09",
 		"box": {
 			"title": "通用盒子",
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
 			"style": "btn"
 		},
-		"form": {
+		"from": {
 			"title": "表单模块",
 			"version": "1.0",
 			"description": "定义了基础的表单模型",
