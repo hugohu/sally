@@ -1,37 +1,68 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Document</title>
 </head>
 <body>
-	<input type="file" id="Files" name="files[]" webkitdirectory/>
-<div id="Lists"></div>
+  <input type="file" id="Files" name="files[]" webkitdirectory/>
+  <div id="Lists"></div>
 
-<script>
-	function fileSelect(e) {
+  <script>
+  function fileSelect(e) {
     e = e || window.event;
     var files = e.target.files;  //FileList Objects    
     var a = [];
+    var time=new Date();
+    var dir={
+  state: "导航资源",
+  data: time,
+  htmlfile: "mod/html/",
+  codefile: "mod/code/",
+  cssfile: "mod/libs/",
+  nav:[]
+    };
+    //初始化导航
+
+
+    var without=["mod","libs"];
     for(var i = 0, f; f = files[i]; i++) {
-        a.push(f.webkitRelativePath);
-    }  
-   var b=[];
-  function bubbleSort(array){  
-          var i = 0, len = array.length,  
-              j, d;  
-          for(; i<len; i++){  
-              for(j=0; j<len; j++){  
-                  if(array[i] < array[j]){  
-                      d = array[j];  
-                      array[j] = array[i];  
-                      array[i] = d;  
-                  }  
-              }  
-          }  
-          return array;  
+      var b=f.webkitRelativePath.split("/");
+      var len=b.length;
+      var obj={};
+
+      //生成文件数组
+      if(b.indexOf(".")==-1){
+      var d=b[len-2];
+      var name=b[len-1].slice(0,-3);
+      if( !(d in dir) ){
+        if(d=="html"){
+          var obj={};
+          obj["id"]=name;
+          obj["title"]=name;
+          dir["nav"].push(obj);
+        }else{
+          if(without.indexOf(d)==-1){
+          dir[d]={}; 
+          dir[d][name]={};
+          dir[d][name]["title"]="";
+          dir[d][name]["version"]="";
+          dir[d][name]["description"]="";
+          dir[d][name]["style"]="";
+           }
+        }   
       }
-   console.log(bubbleSort(a))
+         
+      }
+      // 遍历数组组织文件
+
+        //a.push(f.webkitRelativePath);
+    }  
+ var data=JSON.stringify(dir)
+  console.log(data)
+
+
+
 }
 
 
