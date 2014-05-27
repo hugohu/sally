@@ -8,11 +8,11 @@
 		"id": "index",
 		"title": "通用样式库"
 	}, {
-		"id": "base",
-		"title": "基础框架"
-	}, {
 		"id": "js",
 		"title": "JavaScript插件"
+	}, {
+		"id": "base",
+		"title": "基础框架"
 	}, {
 		"id": "rule",
 		"title": "规范"

@@ -64,13 +64,6 @@ var build = {
           html += "<a href=\"?p=" + id + "\"data-page=" + id + ">" + title + "</a>";
         });
         nav.html(html);
-        // $("a", nav).on("click", function(e) {
-        //   var $this = $(this),
-        //     page = $this.attr("data-page");
-        //   build.setpage(page, 0);
-        //   $this.addClass("active").siblings().removeClass("active");
-        //   return false;
-        // })
       },
       sidebar: function() {
         var sid = $(".m-sidebar"),
