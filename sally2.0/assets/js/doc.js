@@ -109,7 +109,7 @@ var build = {
               }
             }
           }
-          $(this).html(html);
+          $(this).html(html).addClass("show");
         });
       },
       main: function(data) {

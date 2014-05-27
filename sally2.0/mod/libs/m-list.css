@@ -1,9 +1,0 @@
-/*文字列表相关样式*/
-.m-list,.m-list li{overflow:hidden;}
-.m-list li{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADAQMAAABs5if8AAAAA1BMVEXFxcVtnXxFAAAACklEQVR4XmMAAwAABgAB1LUZKAAAAABJRU5ErkJggg==) 0 50% no-repeat;
-*background:url(http://meta.bmlink.com/images/d.png) 0 50%  no-repeat;
-height:1.8em;line-height:1.8em;padding-left: 10px;
-/*去除点,缩进填充*/
-.f-nodot li {background:none;padding-left: 0;}
-/*右侧浮动,可以配合无标点一起使用*/
-.m-list-r{float: right;margin-left: 5px;}

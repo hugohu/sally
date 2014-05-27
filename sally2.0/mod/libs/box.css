@@ -1,9 +1,0 @@
-.m-box { border: 1px solid #ddd; zoom: 1; font-size: 12px; margin: 0; padding: 0; }
-.m-box:after { clear: both; content: " "; display: block; font-size: 0; height: 0; visibility: hidden }
-.m-box-follow { border-top: 0 }
-.m-box-head{border-bottom: 1px solid #ddd; position: relative ; height: 14px; line-height: 16px; overflow: hidden; padding: 10px; background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f1f1f1)); background: -moz-linear-gradient(top, #fcfcfc, #f1f1f1); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f1f1f1');
-background: -o-linear-gradient(top, #fcfcfc, #f1f1f1); background: linear-gradient(top, #fcfcfc, #f1f1f1) }
-.m-box-head .m-box-head-title { color: #4d4d4d; font-size: 14px; font-weight: 700; float: left; display: inline; margin: 0; padding: 0 }
-.m-box-head .m-box-head-more { float: right }
-.m-box-head .m-box-head-text { margin-left: 10px; color: gray; float: left }
-.m-box-content { background: #fff;  padding: 10px }
