@@ -10,24 +10,25 @@ var build = {
       async: false
     }).responseText;
   },
-  addCss: function(mod, id) {
-    //可能有点问题
-    var cssfile = this.data.cssfile;
+  addRelate: function(mod, id) {
     if (this.data[mod][id] == undefined) {
       return false;
     };
-    var a = this.data[mod][id].style.split(";"),
-      b = [];
-    $.each(a, function(i, n) {
-      b[i] = cssfile + n + ".css"
-    })
-    $("link[data-type='addcss']").remove();
-    $.each(b, function(index, value) {
-      $("<link>").attr({
-        rel: "stylesheet",
-        href: value,
-        "data-type": "addcss"
-      }).appendTo("head");
+    var a = this.data[mod][id].style; //获取资源
+    $("[data-type='addRelate']").remove();
+    $.each(a, function(index, value) {
+      if (value.indexOf(".css") != -1) {
+        $("<link>").attr({
+          rel: "stylesheet",
+          href: value,
+          "data-type": "addRelate"
+        }).appendTo("head");
+      } else {
+        $("<script>").attr({
+          src: value,
+          "data-type": "addRelate"
+        }).appendTo("body");
+      }
     });
   },
   params: function(s) {
@@ -59,9 +60,9 @@ var build = {
           nav = $(".nav"),
           html = "";
         $.each(data, function(i, n) {
-          var id = n.id;
+          var url = n.url || ("?p=" + n.id);
           var title = n.title;
-          html += "<a href=\"?p=" + id + "\"data-page=" + id + ">" + title + "</a>";
+          html += "<a href="+url+">" + title + "</a>";
         });
         nav.html(html);
       },
@@ -77,7 +78,7 @@ var build = {
         }
         anchor.each(function(i, n) {
           var $this = $(this);
-          var title = $this.text()
+          var title = $this.text();
           var anchor = "anc" + i;
           $this.attr("id", anchor);
           html += "<li><a href=#" + anchor + ">" + title + "</a></li>";
@@ -97,8 +98,8 @@ var build = {
             data = build.data[_id];
           if (data != undefined) {
             for (p in data) {
-              if(typeof data[p] =="object"){
-              html += '<a href="' + "?mod=" + _id + "&id=" + p + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
+              if (typeof data[p] == "object") {
+                html += '<a href="' + "?mod=" + _id + "&id=" + p + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
               }
             }
           }
@@ -122,7 +123,7 @@ var build = {
     }
     setHtml.page = page;
     //set page 
-    !! setHtml[mark] && setHtml[mark](data);
+    !!setHtml[mark] && setHtml[mark](data);
   },
   mdToHtml: function(md) {
     // require showdown.js 
@@ -130,16 +131,18 @@ var build = {
     return converter.makeHtml(md);
   },
   setpage: function(p, mod) {
+    //解析当前地址
     var o = this.params();
     var p = p || o.p;
     var mod = mod == 0 ? undefined : o.mod;
     if (mod != undefined) {
       var id = o.id;
-      var file = this.data.codefile + mod + "/" + id + ".md";
-      this.addCss(mod, id)
+      //设置页面文件请求路径,优先选择模块内定义的路径, 没有则用全局的
+      var modfile = this.data[mod][id]["file"] || (this.data.modfile + mod + "/")
+      var file = modfile + id + ".md";
+      this.addRelate(mod, id)
     } else {
-      var file = this.data.htmlfile + p + ".md";
-
+      var file = this.data.navfile + p + ".md";
     }
     var smain = this.code(file);
     //生成主体内容
@@ -156,5 +159,4 @@ var build = {
   }
 };
 //start
-var url = "mod/nav.json";
-build.init(url);
+build.init("config.json");
