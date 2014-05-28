@@ -44,30 +44,26 @@ $(function() {
       }
       return ret;
     },
-    addCss: function(mod, id) {
-      //可能有点问题
-      var cssfile = this.codedata.cssfile;
-      if (this.codedata[mod][id] == undefined) {
-        return false;
-      }
-      var a = this.codedata[mod][id].style.split(";"),
-        b = [];
-      $.each(a, function(i, n) {
-        b[i] = cssfile + n + ".css"
-      })
-      var link = $("link");
-      var exp = $(".explain");
-      $.each(b, function(index, value) {
-        $("<a>").attr("href", value).html(value).appendTo(exp);
+  addRelate: function(mod, id) {
+    if (this.codedata[mod][id] == undefined) {
+      return false;
+    };
+    var a = this.codedata[mod][id].relate; //获取资源
+    $("[data-type='addRelate']").remove();
+    $.each(a, function(index, value) {
+      if (value.indexOf(".css") != -1) {
         $("<link>").attr({
           rel: "stylesheet",
-          type: "text/css",
-          href: value
+          href: value,
+          "data-type": "addRelate"
         }).appendTo("head");
-      });
-    },
-    setpage: function(p, mod) {
-      var code = "mod/nav.json";
+      } else {
+        $.getScript(value);
+      }
+    });
+  },
+  setpage: function(p, mod) {
+      var code = "config.json";
       var o = this.params();
       var p = p || o.p;
       var mod = mod == 0 ? undefined : o.mod;
@@ -77,9 +73,9 @@ $(function() {
           var data = this.code(code);
           this.codedata = $.parseJSON(data);
         };
-        var htmlfile = this.codedata.codefile + mod + "/" + id + ".md";
+        var htmlfile = this.codedata[mod][id]["file"] || (this.codedata.modfile + mod + "/"+ id + ".md");
         var cssfile = this.codedata.cssfile + id + ".css"
-        this.addCss(mod, id)
+        this.addRelate(mod, id)
       } else {
         return false;
       }
@@ -105,7 +101,7 @@ $(function() {
   cssCode && css.setValue(cssCode)
 });
 
-
+//菜单栏构成
 $(".explain").on("mousedown", function(e) {
   var _h = $(".CodeMirror").height(),
     timeOut, n = 0,

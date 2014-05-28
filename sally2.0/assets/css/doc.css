@@ -12,7 +12,7 @@ a:hover,a:focus{color:#f84858;text-decoration:underline;}
 ins,a,a:hover{text-decoration:none;}
 h1,h2,h3{line-height:40px;}
 h1{font-size:38.5px;}
-h2{font-size:31.5px;}
+h2{font-size:31.5px;font-family: 'mm';}
 h3{font-size:24.5px;}
 h4{font-size:17.5px;}
 h5{font-size:14px;}
@@ -29,11 +29,19 @@ ol{margin:0 0 10px 25px;padding:0;}
 .clearfix:after,.m-main:after{content:"";display:block;clear:both;height:0;}
 .clearfix,.m-main{*zoom:1;}
 body{background: #f1f2f6;color: #6f6f6f}
+
+
+@font-face {
+  font-family: 'mm';
+  font-style: normal;
+  font-weight: 400;
+  src: local('mm'), local('mm'), url(img/mm.woff) format('woff');
+}
 /*nav*/
-.m-nav{height:40px;background:#dd4250;line-height:40px;position:fixed;top:0;z-index:999;width:100%}
+.m-nav{height:40px;background:#dd4250;line-height:40px;position:fixed;top:0;z-index:999;width:100%;color: #fff;}
 .m-nav a{display:inline-block;padding:0 15px;color:#fff}
 .m-nav a:hover,.m-nav a.active{background: #ed5466;}
-
+.logo{position: absolute;left: 10px;top: 0}
 /*cent*/
 #row{margin-top:60px;position:relative;}
 .sid{float: right;width:200px;position: absolute;right: 0;top: 0}
@@ -42,6 +50,7 @@ body{background: #f1f2f6;color: #6f6f6f}
 .m-sidebar a:hover,.m-sidebar li.active a{background:#fef4f5;border-color: #fd8291;}
 .m-main{margin-right:230px; background: #fff;padding:20px;}
 .m-main{border-radius:3px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.17);}
+.m-main .show{overflow: hidden;}
 .gquote{border-bottom:1px solid #DDDDDD;display:none;margin:10px 0;padding:10px;}
 .example{position:relative;margin:15px 0;padding:39px 19px 14px;*padding-top:19px;background-color:#fff;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
 
@@ -69,8 +78,8 @@ a.module-name{display:inline-block;font-size:18px;line-height:1;max-width:145px;
 .side-area ul li ul{display:none;}
 .side-area .side-highlight a{background:none repeat scroll 0 0 #FBFFD7;font-weight:bold;text-shadow:none;transition:background-color 0.8s ease-out 0s;}
 .side-area .side-highlight a:hover{background:none repeat scroll 0 0 #FBFFD7;}
-.side-loading{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#DDDDDD #DDDDDD -moz-use-text-color;border-image:none;border-style:solid solid none;border-width:1px 1px medium;height:100px;line-height:100px;text-align:center;}
-.side-area a{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#DDDDDD #DDDDDD -moz-use-text-color;border-image:none;border-style:solid solid none;border-width:1px 1px medium;display:block;font-size:14px;padding:8px 15px;position:relative;text-shadow:0 1px 2px #EEEEEE;}
+.side-loading{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#DDDDDD #DDDDDD; -moz-use-text-color;border-image:none;border-style:solid solid none;border-width:1px 1px medium;height:100px;line-height:100px;text-align:center;}
+.side-area a{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#DDDDDD #DDDDDD; -moz-use-text-color;border-image:none;border-style:solid solid none;border-width:1px 1px medium;display:block;font-size:14px;padding:8px 15px;position:relative;text-shadow:0 1px 2px #EEEEEE;}
 .side-area a .iconfont{color:#AAAAAA;font-size:12px;line-height:14px;position:absolute;right:12px;top:11px;}
 .side-area a:hover{background:none repeat scroll 0 0 #F8F8F8;text-decoration:none;}
 .side-area a:hover .iconfont{color:#AAAAAA;}
@@ -101,7 +110,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .diff .hljs-change{background:#0086b3}
 .hljs-chunk{color:#aaa}
 
-.sid,.m-main,.body,a ,.hljs{
+.sid,.m-main,.body,a,.hljs{
 -webkit-transition: 0.35s;
 -moz-transition: 0.35s;
 -ms-transition: 0.35s;
