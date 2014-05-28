@@ -24,10 +24,7 @@ var build = {
           "data-type": "addRelate"
         }).appendTo("head");
       } else {
-        $("<script>").attr({
-          src: value,
-          "data-type": "addRelate"
-        }).appendTo("body");
+        $.getScript(value);
       }
     });
   },
@@ -138,8 +135,7 @@ var build = {
     if (mod != undefined) {
       var id = o.id;
       //设置页面文件请求路径,优先选择模块内定义的路径, 没有则用全局的
-      var modfile = this.data[mod][id]["file"] || (this.data.modfile + mod + "/")
-      var file = modfile + id + ".md";
+      var file = this.data[mod][id]["file"] || (this.data.modfile + mod + "/"+ id + ".md")
       this.addRelate(mod, id)
     } else {
       var file = this.data.navfile + p + ".md";
