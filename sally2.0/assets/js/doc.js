@@ -14,7 +14,7 @@ var build = {
     if (this.data[mod][id] == undefined) {
       return false;
     };
-    var a = this.data[mod][id].style; //获取资源
+    var a = this.data[mod][id].relate; //获取资源
     $("[data-type='addRelate']").remove();
     $.each(a, function(index, value) {
       if (value.indexOf(".css") != -1) {
