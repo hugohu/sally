@@ -1,8 +1,8 @@
 {
 	"state": "导航资源",
 	"data": "2014.04.09",
-	"navfile": "mod/html/nav/",
-	"modfile": "mod/html/",
+	"navfile": "html/nav/",
+	"modfile": "html/",
 	"nav": [{
 		"id": "index",
 		"title": "通用组件库"
@@ -23,14 +23,14 @@
 		"title": "关于sally"
 	}],
 	"m": {
-		"state": "模块",
-		"updatedata": "2014.04.09",
+		"state": "常用模块",
+		"updatedata": "2014.05.22",
 		"description": "定义了一些常用的模块",
 		"box": {
 			"title": "通用盒子",
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
-			"relate": ["mod/libs/btn.css"]
+			"relate": ["html/libs/btn.css"]
 		}
 	}
 }
