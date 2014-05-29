@@ -27,12 +27,11 @@
 		"state": "常用模块",
 		"updatedata": "2014.05.22",
 		"description": "定义了一些常用的模块",
-		"box": {
+		"box": {	
 			"title": "通用盒子",
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
-			"relate": ["html/libs/btn.css"],
-			"url":"htttp://baidu.com"
+			"relate": ["html/libs/btn.css"]
 		}
 	}
 }
