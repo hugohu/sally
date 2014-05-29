@@ -8,8 +8,8 @@
 		"title": "通用组件库"
 	}, {
 		"id": "js",
-		"url":"http://sallyjs.huugle.org",
-		"title": "插件库"
+		"title": "插件库",
+		"url":"http://sallyjs.huugle.org"
 	}, {
 		"id": "base",
 		"title": "基础框架"
