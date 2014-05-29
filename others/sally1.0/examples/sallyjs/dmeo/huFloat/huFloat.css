@@ -1,0 +1,6 @@
+@charset "utf-8";
+/*跟随滚动基础模块*/
+.hu-float{position:fixed;top:0;}
+
+/*跟随滚动用户配置*/
+#box{}

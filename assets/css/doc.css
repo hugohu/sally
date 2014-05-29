@@ -1,0 +1,119 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+body,button,input,select,textarea{font:14px/1.8 arial,"Hiragino Sans GB","Microsoft Yahei",sans-serif;}
+input,select,textarea{font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+th{text-align:inherit;}
+fieldset,img{border:0;vertical-align:middle;}
+iframe{display:block;}
+ol,ul{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
+a{color:#0088cc;text-decoration:none;}
+a:hover,a:focus{color:#f84858;text-decoration:underline;}
+ins,a,a:hover{text-decoration:none;}
+h1,h2,h3{line-height:40px;}
+h1{font-size:38.5px;}
+h2{font-size:31.5px;font-family: 'mm';}
+h3{font-size:24.5px;}
+h4{font-size:17.5px;}
+h5{font-size:14px;}
+h6{font-size:11.9px;}
+h1,h2,h3,h4,h5,h6{font-weight:700;margin:10px 0;}
+p{margin:10px;}
+ol{margin:0 0 10px 25px;padding:0;}
+.row{max-width:1180px;margin:0 auto;*zoom:1;}
+.row:after{clear:both;content:"";display:block;font-size:0;height:0;visibility:hidden;}
+.fl{float:left;}
+.fr{float:right;}
+
+/* 清理浮动 */
+.clearfix:after,.m-main:after{content:"";display:block;clear:both;height:0;}
+.clearfix,.m-main{*zoom:1;}
+body{background: #f1f2f6;color: #6f6f6f}
+
+
+@font-face {
+  font-family: 'mm';
+  font-style: normal;
+  font-weight: 400;
+  src: local('mm'), local('mm'), url(img/mm.woff) format('woff');
+}
+/*nav*/
+.m-nav{height:40px;background:#dd4250;line-height:40px;position:fixed;top:0;z-index:999;width:100%;color: #fff;}
+.m-nav a{display:inline-block;padding:0 15px;color:#fff}
+.m-nav a:hover,.m-nav a.active{background: #ed5466;}
+.logo{position: absolute;left: 10px;top: 0}
+/*cent*/
+#row{margin-top:60px;position:relative;}
+.sid{float: right;width:200px;position: absolute;right: 0;top: 0}
+.m-sidebar{background:#fff;width:200px;position:fixed;line-height:25px;padding:20px 0;font-size:14px;}
+.m-sidebar a{color:#716B7A;display:block;padding:5px 20px;border-right:2px solid #f6f6f6}
+.m-sidebar a:hover,.m-sidebar li.active a{background:#fef4f5;border-color: #fd8291;}
+.m-main{margin-right:230px; background: #fff;padding:20px;}
+.m-main{border-radius:3px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.17);}
+.m-main .show{overflow: hidden;}
+.gquote{border-bottom:1px solid #DDDDDD;display:none;margin:10px 0;padding:10px;}
+.example{position:relative;margin:15px 0;padding:39px 19px 14px;*padding-top:19px;background-color:#fff;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+
+/* Echo out a label for the example */
+.example:after{content:"Example";position:absolute;top:-1px;left:-1px;padding:3px 7px;font-size:12px;font-weight:bold;background-color:#f5f5f5;border:1px solid #ddd;color:#9da0a4;-webkit-border-radius:4px 0 4px 0;-moz-border-radius:4px 0 4px 0;border-radius:4px 0 4px 0;}
+.module{background:none repeat scroll 0 0 #FFFFFF;border-left:5px solid #B4D0EE;box-shadow:0 0 1px rgba(0,0,0,0.3);color:#999999;display:inline;float:left;font-family:tahoma;min-height:60px;margin-bottom:15px;margin-right:20px;overflow:hidden;padding:4px 6px 6px 10px;position:relative;width:170px;
+/* border-radius: 6px;*/
+ box-shadow:1px 1px 0 rgba(0,0,0,0.05);}
+.module:hover{box-shadow:0 1px 2px rgba(0,0,0,0.4);color:#666666;}
+.module img{height:13px;left:74px;opacity:0.7;position:absolute;top:-20px;transform:rotate(45deg);width:80px;}
+a.module-name{display:inline-block;font-size:18px;line-height:1;max-width:145px;overflow:hidden;text-overflow:ellipsis;text-transform:capitalize;vertical-align:bottom;white-space:nowrap;}
+.module-name:hover{text-decoration:underline;}
+.module-version{color:#AAAAAA;display:none;font-size:12px;}
+.module:hover .module-name{color:#0088CC;max-width:108px;}
+.module:hover .module-version{display:inline;font-family:Menlo,Courier;}
+.module-description{font-size:12px;line-height:1.5;margin:6px 0 0;}
+
+/*f-page*/
+
+.f-page .sid{visibility: hidden;opacity: 0;top: -230px}
+.f-page .m-main{margin-right: 0;}
+.side-area{background:none repeat scroll 0 0 #FFFFFF;border-bottom:1px solid #DDDDDD;float:left;overflow:hidden;position:absolute;top:0;width:220px;}
+.side-area ul{list-style:none outside none;margin:0;padding:0;}
+.side-area li{list-style:none outside none;}
+.side-area ul li ul{display:none;}
+.side-area .side-highlight a{background:none repeat scroll 0 0 #FBFFD7;font-weight:bold;text-shadow:none;transition:background-color 0.8s ease-out 0s;}
+.side-area .side-highlight a:hover{background:none repeat scroll 0 0 #FBFFD7;}
+.side-loading{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#DDDDDD #DDDDDD; -moz-use-text-color;border-image:none;border-style:solid solid none;border-width:1px 1px medium;height:100px;line-height:100px;text-align:center;}
+.side-area a{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#DDDDDD #DDDDDD; -moz-use-text-color;border-image:none;border-style:solid solid none;border-width:1px 1px medium;display:block;font-size:14px;padding:8px 15px;position:relative;text-shadow:0 1px 2px #EEEEEE;}
+.side-area a .iconfont{color:#AAAAAA;font-size:12px;line-height:14px;position:absolute;right:12px;top:11px;}
+.side-area a:hover{background:none repeat scroll 0 0 #F8F8F8;text-decoration:none;}
+.side-area a:hover .iconfont{color:#AAAAAA;}
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+.hljs{display:block;padding:9px 14px;margin-bottom:14px;background-color:#fefefe;border:1px solid #eee;border-radius:4px;overflow-y: auto;word-wrap: break-word;/*box-shadow:0 0  3px rgba(0,0,0,0.05)*/}
+.hljs:hover{border-color: #ddd;}
+.hljs:focus{background: #fefcfc;outline:0;border-color: #fd8291;}
+.hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}
+.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.javascript .hljs-title,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}
+.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:#099;}
+.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.tex .hljs-formula{color:#d14}
+.hljs-title,.hljs-id,.coffeescript .hljs-params,.scss .hljs-preprocessor{color:#900;font-weight:bold}
+.javascript .hljs-title,.lisp .hljs-title,.clojure .hljs-title,.hljs-subst{font-weight:normal}
+.hljs-class .hljs-title,.haskell .hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}
+.hljs-tag,.hljs-tag .hljs-title,.hljs-rules .hljs-property,.django .hljs-tag .hljs-keyword{color:#000080;font-weight:normal}
+.hljs-attribute,.hljs-variable,.lisp .hljs-body{color:#008080}
+.hljs-regexp{color:#009926}
+.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}
+.hljs-built_in,.lisp .hljs-title,.clojure .hljs-built_in{color:#0086b3}
+.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}
+.hljs-deletion{background:#fdd}
+.hljs-addition{background:#dfd}
+.diff .hljs-change{background:#0086b3}
+.hljs-chunk{color:#aaa}
+
+.sid,.m-main,.body,a,.hljs{
+-webkit-transition: 0.35s;
+-moz-transition: 0.35s;
+-ms-transition: 0.35s;
+-o-transition: 0.35s;
+transition: 0.35s;
+}

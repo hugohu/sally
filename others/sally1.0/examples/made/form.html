@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<head>
+  <meta charset="utf-8">
+  <title>sally表单构建器</title>
+
+  <link href="http://cdnjs.bootcss.com/ajax/libs/twitter-bootstrap/2.0.4/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+/*hack*/
+label, input, button, select, textarea {font-size: 12px;}
+label{display: inline-block;}
+body{font-size: 12px;}
+p{padding: 0;margin: 0}
+
+/* 简易表单 */
+.m-form{line-height:29px;color:#555;}
+.m-form legend{font-size:14px;font-weight:bold;}
+.m-form .formitm{padding:20px 0 0;line-height:30px;}
+.m-form .formitm-1{padding-left:100px;}
+.m-form .lab{float:left;width:90px;margin-right:-90px;text-align:right;font-weight:bold;}
+.m-form .ipt{margin-left:100px;}
+.m-form .ipt *{vertical-align:middle;}
+.m-form .ipt a,.m-form .ipt a:hover{text-decoration:none;color:#3891eb;}
+.m-form .ipt img{height:32px;margin:0 15px 0 5px;}
+.m-form .ipt .domain{margin:0 0 0 5px;font-weight:bold;color:#777;}
+.m-form .ipt p{height:22px;line-height:22px;color:#999;}
+.m-form .tip{padding-top:10px;}
+.m-form .tip input{margin:0 5px 3px 0;}
+
+/* 依赖相关文本框模块 */
+.u-ipt{width:180px;padding:5px;height:17px;border:1px solid #D9D9D9;border-top-color:#c0c0c0;line-height:17px;font-size:14px;color:#777;background:#fff;}
+/* 文本输入框-窄 */
+.u-ipt-1{width:90px;}
+/* 文本输入框-出错 */
+.u-ipt-err{border-color:#c00 #e00 #e00;}
+
+/*依赖模块 按钮*/
+/*原色*/
+.u-btn {background: #eee;display: inline-block;vertical-align: middle;*vertical-align: auto;zoom: 1;*overflow:visible;*display: inline;padding:0 12px;height:28px;line-height:28px;font-weight: 300;font-size: 12px;color: #666666;margin: 0;text-decoration: none;text-align: center;}
+.u-btn:hover {background-color: #eeeeee}
+.u-btn:active {background: #eeeeee;color: #bbbbbb;}
+input.u-btn,button.u-btn{height: 34px;cursor: pointer;}
+/* 蓝色 */
+.u-btn-blue {background: #00a1cb;color: white;border: none;}
+.u-btn-blue:hover {background: #00b5e5;}
+.u-btn-blue:active {background: #1495b7;color: #00647f;}
+
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-bottom: 10px;
+      }
+      #components{
+        min-height: 600px;
+      }
+      #target{
+        min-height: 200px;
+        border: 1px solid #ccc;
+        padding: 5px;
+      }
+      #target .component{
+        border: 1px solid #fff;
+      }
+      #temp{
+        width: 500px;
+        background: white;
+        border: 1px dotted #ccc;
+        border-radius: 10px;
+      }
+
+      .popover-content form {
+        margin: 0 auto;
+        width: 213px;
+      }
+      .popover-content form .btn{
+        margin-right: 10px
+      }
+      #source{
+        min-height: 500px;
+      }
+    </style>
+
+  <!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">sally表单构建器</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="span6">
+        <div class="clearfix">
+          <h2>你的表单</h2>
+          <hr>
+          <div id="build">
+            <div class="m-form" id="target">
+            <form  name='' method='post' action='#'>
+              <fieldset>欢迎注册账户</fieldset>
+            </form>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="span6">
+        <h2>拖拽下面的组件到左侧</h2>
+        <hr>
+        <div class="tabbable">
+          <ul class="nav nav-tabs" id="navtab">
+            <li class="active">
+              <a href="#1" data-toggle="tab">输入框</a>
+            </li>
+            <li class>
+              <a href="#2" data-toggle="tab">Select</a>
+            </li>
+            <li class>
+              <a href="#3" data-toggle="tab">Checkbox / Radio</a>
+            </li>
+            <li class>
+              <a href="#4" data-toggle="tab">文件 / 按钮</a>
+            </li>
+            <li class>
+              <a id="sourcetab" href="#5" data-toggle="tab">生成代码</a>
+            </li>
+          </ul>
+          <div class='m-form'>
+          <form  name='' method='post' action='#' id="components">
+            <fieldset>
+              <div class="tab-content">
+
+                <div class="tab-pane active" id="1">
+                  
+              <!-- Text input-->
+                 <div class="formitm component">
+                <label class="lab">通用：</label>
+                <div class="ipt">
+                    <input type="text" class="u-ipt"/>
+                </div>
+            </div>
+                  <div class="formitm component">
+                <label class="lab">账号：</label>
+                <div class="ipt">
+                    <input type="text" class="u-ipt"/><span class="domain">@163.com</span>
+                    <p contenteditable="true">6~8个字符，包括字母，数字，下划线以字母开头，字母或数字结尾</p>
+                </div>
+            </div>
+
+                  <!-- Text input-->
+                  <div class="formitm component">
+                <label class="lab">初始密码：</label>
+                <div class="ipt">
+                    <input type="text" class="u-ipt"/>
+                    <p>6~8个字符，区分大小写</p>
+                </div>
+            </div>
+
+<div class="formitm component">
+                <label class="lab">确认密码：</label>
+                <div class="ipt">
+                    <input type="text" class="u-ipt"/>
+                    <p>再次输入密码</p>
+                </div>
+            </div>
+<!--      
+                  <div class="m-form-item m-form-item-error component">
+                    <label for="" class="m-label">表单项文本</label>
+                    <input class="m-input" type="text">
+                    <span class="m-form-other">
+                      <a href="#">表单项其他</a>
+                    </span>
+                    <p class="m-form-explain m-tiptext m-tiptext-error"> <i class="m-tiptext-icon iconfont" title="出错">&#xF045;</i>
+                      此在DOM上保存属性值，请使用data-xxx的形式。
+                    </p>
+                  </div>
+         
+                  <div class="m-form-item m-form-item-error m-form-item-focus component">
+                    <label for="" class="m-label">表单项文本</label>
+                    <input class="m-input" type="text">
+                    <span class="m-form-other">
+                      <a href="#">表单项其他</a>
+                    </span>
+                    <p class="m-form-explain m-tiptext m-tiptext-error"> <i class="m-tiptext-icon iconfont" title="出错">&#xF045;</i>
+                      m-form-item-focus 的效果。
+                    </p>
+                  </div> -->
+
+                  <!-- Text 验证码-->
+            <div class="formitm component">
+                <label class="lab">验证码：</label>
+                <div class="ipt">
+                    <input type="text" class="u-ipt"/><img class="code-img" src="http://reg.email.163.com/mailregAll/regvf1/verifyCodeImgF.jsp?env=488381217144&type=en&t=1333003692444" alt="验证码"/><a href="#" class="f-ib">换一张</a>
+                    <p class="tip"><input type="checkbox" id="agree"/><label for="agree">同意“服务条款”和“隐私权保护和个人信息利用政策”</label></p>
+                </div>
+            </div>
+
+
+                  <!-- Text 文本域-->
+                  <div class="formitm  component">
+                    <label class="lab">表单项文本</label>
+                    <div class="ipt">
+                      <textarea class="m-textarea">一二三四五六七八九十</textarea>
+                    </div>
+                    
+                  </div>
+
+                </div>
+                <!-- Text 下拉菜单-->
+                <div class="tab-pane" id="2">
+
+                  <div class="formitm component">
+                    <label class="lab">下拉选择</label>
+  
+                        <div class="ipt">
+                            <select id="province" name="province">
+                      <option value="">请选择</option>
+                      <option value="北京">北京</option>
+                      <option value="上海">上海</option>
+                      <option value="天津">天津</option>
+                      <option value="浙江">浙江</option>
+                    </select>
+                    <p class="m-form-explain">更多地区即将开通，敬请期待。</p>
+                        </div>
+                  
+                  </div>
+
+                </div>
+
+                <div class="tab-pane" id="3">
+
+111
+                </div>
+
+                <div class="tab-pane" id="4">
+                  <!-- Text 按钮-->
+             <div class="formitm formitm-1 component"><button class="u-btn u-btn-blue" type="button">立即注册</button> <button class="u-btn" type="button">取消</button></div>
+           </div>
+
+                <div class="tab-pane" id="5">
+                  <textarea id="source" class="span6"></textarea>
+                </div>
+              </fieldset>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../assets/js/jquery.js"></script>
+  <script src="http://cdnjs.bootcss.com/ajax/libs/twitter-bootstrap/2.0.4/bootstrap.min.js"></script>
+  <script src="../../assets/js/fb.js"></script>
+
+</body>
+</html>

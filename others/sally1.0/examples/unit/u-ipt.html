@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <title>sally调试器</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../dist/codemirror.css" />
+  <script src="../dist/codemirror.min.js"></script>
+  <script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{width: 600px; margin: 50px auto}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+  <div id="say">
+    <h3>sally编辑器1.0.1</h3>
+    <p>内置emmet,快捷键tab展开缩写</p>
+  </div>
+  <!--  页面结构部分 -->
+  <textarea id="code" name="code">
+    <!--代码部分 可以任意编辑-->
+    <input type="text" class="u-ipt"/>
+    <input type="text" class="u-ipt u-ipt-err"/>
+    <input type="text" class="u-ipt u-ipt-1"/>
+    <input type="text" class="u-ipt u-ipt-1 u-ipt-err"/>
+  </textarea>
+  <!-- 样式部分 -->
+  <textarea id="css" name="css">
+    /* 文本输入框 */
+.u-ipt{width:180px;padding:5px;height:17px;border:1px solid #D9D9D9;border-top-color:#c0c0c0;line-height:17px;font-size:14px;color:#777;background:#fff; transition: all 0.5s ease-in;}
+/* 文本输入框-窄 */
+.u-ipt-1{width:90px;}
+/* 文本输入框-出错 */
+.u-ipt-err{border-color:#c00 #e00 #e00;}
+.u-ipt:focus{ box-shadow:inset #e1e1e1 1px 2px 3px; border-radius:2px; border: #666 1px solid; width: 205px; color: #333;}
+  </textarea>
+  <div id="demo"></div>
+  <script src="../dist/edit.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally调试器</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{width:300px;margin: 100px auto}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>sally编辑器1.0.1</h3>
+   <p>内置emmet,快捷键tab展开缩写</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+<span class="u-badge">默认效果</span>
+<span class="u-badge s-bg-green">10</span>
+<span class="u-badge s-bg-orange ">成功</span>
+<span class="u-badge s-bg-red" >失败</span>
+<span class="u-badge s-bg-blue">好不好</span>
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+.u-badge{border-radius:2px;background-color: #999999;color: #FFFFFF;display: inline-block;font-weight: 700;line-height: 14px;padding:2px 4px;vertical-align: baseline;white-space: nowrap;}
+/*多重颜色*/
+.s-bg-green { background-color: #5cb85c;}
+.s-bg-orange { background-color: #f0ad4e;}
+.s-bg-red { background-color: #d9534f;}
+.s-bg-blue { background-color: #428bca;}
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+</body>
+</html>

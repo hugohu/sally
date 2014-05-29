@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<title>sally调试器</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="../dist/codemirror.css" />
+	<script src="../dist/codemirror.min.js"></script>
+	<script src="../dist/emmet.min.js"></script>
+  <style>
+#say{position: fixed;right:20px;top: 20px;opacity: 0.2;width: 300px}
+.CodeMirror{width:50%;border: 1px solid #ddd;position: fixed;bottom: 0;height: 200px;background:rgba(255,255,255,0.8);z-index: 4}
+.CodeMirror:nth-of-type(2){left:0;}
+.CodeMirror:nth-of-type(3){right:0;}
+#demo{width: 600px;margin:50px auto}
+#demo a{margin-left: 10px;}
+  </style>
+  <style id="editcss"></style>
+</head>
+<body>
+	<div id="say">
+   <h3>sally编辑器1.0.1</h3>
+   <p>内置emmet,快捷键tab展开缩写</p> 
+  </div>
+ <!--  页面结构部分 -->
+<textarea id="code" name="code">
+<!--代码部分 可以任意编辑-->
+<a href="#" class="u-btn ">确定</a>
+<a href="#" class="u-btn u-btn-blue">确定</a>
+<a href="#" class="u-btn u-btn-green">确定</a>
+<a href="#" class="u-btn u-btn-orange">确定</a>
+<a href="#" class="u-btn u-btn-red">确定</a>
+<a href="#" class="u-btn u-btn-purple">确定</a>
+<a href="#" class="u-btn u-btn-red u-btn-lg">较大的</a>
+<a href="#" class="u-btn u-btn-purple u-btn-sm">娇小的</a>
+</textarea>
+<!-- 样式部分 -->
+<textarea id="css" name="css">
+/*原色*/
+.u-btn {background: #ddd;display: inline-block;vertical-align: middle;*vertical-align: auto;zoom: 1;*overflow:visible;*display: inline;padding:0 12px;height:28px;line-height:28px;font-size: 12px;color: #666666;margin: 0;text-decoration: none;text-align: center; border:0;}
+.u-btn:hover {opacity: .7;filter: alpha(opacity=70);}
+.u-btn:active {position:relative;top:1px}
+input.u-btn,button.u-btn{height: 34px;cursor: pointer;}
+/* 蓝色 */
+.u-btn-blue,.u-btn-blue:hover {background: #428bca;color:#fff;border: none;}
+/* 绿色 */
+.u-btn-green,.u-btn-green:hover { background: #47a447;color:#fff;}
+/* 橙色 */
+.u-btn-orange,.u-btn-orange:hover {background: #f0ad4e;color:#fff;;}
+/* 红色 */
+.u-btn-red,.u-btn-red:hover {background: #d9534f;color:#fff;}
+/* 紫色 */
+.u-btn-purple,.u-btn-purple:hover { background: #87318c;color:#fff;}
+
+/* 较大 */
+.u-btn-lg{padding:0 15px;height:36px;line-height:36px;font-size:18px;}
+button.u-btn-lg{*height:38px;_line-height:33px;}
+/* 较小 */
+.u-btn-sm{padding:0 10px;height:22px;line-height:22px;}
+button.u-btn-sm{*height:24px;_line-height:19px;}
+</textarea>
+    <div id="demo"></div>
+<script src="../dist/edit.js"></script>
+</body>
+</html>
