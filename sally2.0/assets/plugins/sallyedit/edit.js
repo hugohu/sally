@@ -45,10 +45,10 @@ $(function() {
       return ret;
     },
   addRelate: function(mod, id) {
-    if (this.codedata[mod][id] == undefined) {
+    if (this.data[mod][id] == undefined) {
       return false;
     };
-    var a = this.codedata[mod][id].relate; //获取资源
+    var a = this.data[mod][id].relate; //获取资源
     $("[data-type='addRelate']").remove();
     $.each(a, function(index, value) {
       if (value.indexOf(".css") != -1) {
@@ -60,6 +60,8 @@ $(function() {
       } else {
         $.getScript(value);
       }
+      var alink="<a href="+value+">"+value+"</a>";
+      $(".explain").append(alink)
     });
   },
   setpage: function(p, mod) {
@@ -69,19 +71,22 @@ $(function() {
       var mod = mod == 0 ? undefined : o.mod;
       if (mod != undefined) {
         var id = o.id;
-        if (this.codedata == undefined) {
+        if (this.data == undefined) {
           var data = this.code(code);
-          this.codedata = $.parseJSON(data);
+          this.data = $.parseJSON(data);
         };
-        var htmlfile = this.codedata[mod][id]["file"] || (this.codedata.modfile + mod + "/"+ id + ".md");
-        var cssfile = this.codedata.cssfile + id + ".css"
-        this.addRelate(mod, id)
+        var htmlfile = this.data[mod][id]["file"] || (this.data.modfile + mod + "/"+ id + ".md");
+        this.addRelate(mod, id);
+        var html=this.code(htmlfile);
+        $("#description").html(html);
       } else {
         return false;
       }
+
+
       return {
-        html: this.code(htmlfile),
-        css: this.code(cssfile)
+        html: $("#modhtml").html(),
+        css: $("#modcss").html()
       }
     }
   }
