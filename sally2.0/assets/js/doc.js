@@ -5,10 +5,41 @@
    */
 var build = {
   code: function(url) {
+
     return $.ajax({
-      url: url,
-      async: false
-    }).responseText;
+        url: url,
+        async: false
+      }).responseText;
+    
+
+    // //localStorage
+    // if (!window.localStorage) {
+    //   return $.ajax({
+    //     url: url,
+    //     async: false
+    //   }).responseText;
+    // };
+    // var lastData = localStorage.getItem("lastData");
+    // var upData = this.data["data"] || 0;
+    // var value = localStorage.getItem(url);
+    // //debug
+    // console.log({
+    //   "value": value,
+    //   "lastData": lastData,
+    //   "upData": upData
+    // })
+
+    // if (!value || lastData != upData) {
+
+    //   var html = $.ajax({
+    //     url: url,
+    //     async: false
+    //   }).responseText;
+    //   localStorage.setItem("lastData", upData);
+    //   localStorage.setItem(url, html);
+    // }
+    // return localStorage.getItem(url);
+
   },
   addRelate: function(mod, id) {
     if (this.data[mod][id] == undefined) {
@@ -59,7 +90,7 @@ var build = {
         $.each(data, function(i, n) {
           var url = n.url || ("?p=" + n.id);
           var title = n.title;
-          html += "<a href="+url+">" + title + "</a>";
+          html += "<a href=" + url + ">" + title + "</a>";
         });
         nav.html(html);
       },
@@ -135,7 +166,7 @@ var build = {
     if (mod != undefined) {
       var id = o.id;
       //设置页面文件请求路径,优先选择模块内定义的路径, 没有则用全局的
-      var file = this.data[mod][id]["file"] || (this.data.modfile + mod + "/"+ id + ".md")
+      var file = this.data[mod][id]["file"] || (this.data.modfile + mod + "/" + id + ".md")
       this.addRelate(mod, id)
     } else {
       var file = this.data.navfile + p + ".md";
@@ -147,7 +178,10 @@ var build = {
 
   },
   init: function(url) {
-    var data = this.code(url);
+    var data = $.ajax({
+      url: url,
+      async: false
+    }).responseText;
     this.data = $.parseJSON(data);
     //生成导航
     this.html("nav", this.data);
