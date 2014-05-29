@@ -8,6 +8,7 @@
 		"title": "通用组件库"
 	}, {
 		"id": "js",
+		"url":"http://sallyjs.huugle.org",
 		"title": "插件库"
 	}, {
 		"id": "base",
@@ -30,7 +31,8 @@
 			"title": "通用盒子",
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
-			"relate": ["html/libs/btn.css"]
+			"relate": ["html/libs/btn.css"],
+			"url":"htttp://baidu.com"
 		}
 	}
 }

@@ -127,7 +127,9 @@ var build = {
           if (data != undefined) {
             for (p in data) {
               if (typeof data[p] == "object") {
-                html += '<a href="' + "?mod=" + _id + "&id=" + p + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
+                //有写地址就读地址,没有地址就读模块
+                var url=data[p]["url"] ? data[p]["url"]: ("?mod=" + _id + "&id=" + p)
+                html += '<a href="' +url+ '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
               }
             }
           }
