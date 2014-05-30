@@ -7,10 +7,10 @@ var build = {
   code: function(url) {
 
     return $.ajax({
-        url: url,
-        async: false
-      }).responseText;
-    
+      url: url,
+      async: false
+    }).responseText;
+
 
     // //localStorage
     // if (!window.localStorage) {
@@ -128,13 +128,28 @@ var build = {
             for (p in data) {
               if (typeof data[p] == "object") {
                 //有写地址就读地址,没有地址就读模块
-                var url=data[p]["url"] ? data[p]["url"]: ("?mod=" + _id + "&id=" + p)
-                html += '<a href="' +url+ '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
+                var url = data[p]["url"] ? data[p]["url"] : ("?mod=" + _id + "&id=" + p)
+                html += '<a href="' + url + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
               }
             }
           }
           $(this).html(html).addClass("show");
         });
+      },
+      loadiframe:function(){
+        $("[data-loadiframe]").each(function (index, elem) {
+          var $this = $(this),
+            apage = $this.attr("data-loadiframe"),
+            height=$this.attr("data-setheight") || "100%";
+          var url=build.file+apage+".html"
+           var html = $('<iframe src="'+url+'" frameborder="0" style="width: 100%;height:'+height+'"></iframe>'); 
+           $this.append(html)
+        })
+      },
+      Highlight: function() {
+        $("code:not('[contentEditable]')").each(function(i) {
+          hljs.highlightBlock(this);
+        }).attr("contentEditable", true);
       },
       main: function(data) {
         !data && (data = "#error...")
@@ -142,11 +157,11 @@ var build = {
         var html = build.mdToHtml(data);
         main.html(html);
         // Highlight syntax
-        $("code").each(function(i) {
-          hljs.highlightBlock(this);
-        }).attr("contentEditable", true)
+        this.Highlight();
         //add blue
         this.setlist();
+        //loadiframe
+        this.loadiframe();
         //add sib
         this.sidebar();
       }
@@ -173,6 +188,9 @@ var build = {
     } else {
       var file = this.data.navfile + p + ".md";
     }
+    var afile = file.split("/");
+    afile.pop();
+    this.file = afile.join("/") + "/";
     var smain = this.code(file);
     //生成主体内容
     this.html("main", smain);
