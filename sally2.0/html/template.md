@@ -1,21 +1,3 @@
-##概述
-
-###示例
-<div class="example">
-
-</div>
-
-###html:
-
-```html
-```
-###css
-
-```css
-```
-
-
-[查看实例](edit.html?mod=m&id=box)
 <script id="modhtml" type="text/Template">
 <div class="m-box">
     <div class="m-box-head">
@@ -36,4 +18,25 @@
 .m-box-head .u-txt { margin-left: 10px; color: gray; float: left }
 .m-cent { background: #fff;  padding: 10px }
 </script>
-<!-- 模块内容 end -->
+
+##概述
+
+###示例
+<div class="example">
+
+</div>
+
+###html:
+
+```html
+```
+###css
+
+```css
+```
+
+<div data-loadiframe="dd"></div>
+
+
+[查看实例](edit.html?mod=m&id=box)
+

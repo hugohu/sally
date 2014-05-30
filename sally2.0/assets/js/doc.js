@@ -42,7 +42,7 @@ var build = {
 
   },
   addRelate: function(mod, id) {
-    if (this.data[mod][id] == undefined) {
+    if (this.data[mod][id].relate == undefined) {
       return false;
     };
     var a = this.data[mod][id].relate; //获取资源
@@ -141,8 +141,9 @@ var build = {
           var $this = $(this),
             apage = $this.attr("data-loadiframe"),
             height=$this.attr("data-setheight") || "100%";
-          var url=build.file+apage+".html"
-           var html = $('<iframe src="'+url+'" frameborder="0" style="width: 100%;height:'+height+'"></iframe>'); 
+          var url=build.file+apage+".html";
+          var scss=build.file+apage+".css";
+           var html = $('<iframe src="'+url+'" frameborder="0" style="width: 100%;height:'+height+'"></iframe><a href="'+url+'">查看页面</a><a href="'+scss+'">查看样式</a>');
            $this.append(html)
         })
       },
