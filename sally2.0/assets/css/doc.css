@@ -11,12 +11,12 @@ a{color:#0088cc;text-decoration:none;}
 a:hover,a:focus{color:#f84858;text-decoration:underline;}
 ins,a,a:hover{text-decoration:none;}
 h1,h2,h3{line-height:40px;}
-h1{font-size:28px;}
-h2{font-size:24px;}
+h1{font-size:24px;}
+h2{font-size:20px;}
 h3{font-size:18px;}
 h4{font-size:16px;}
-h5{font-size:14px;}
-h6{font-size:12px;}
+h5{font-size:12px;}
+h6{font-size:10px;}
 h1,h2,h3,h4,h5,h6{font-weight:700;margin:10px 0;}
 p{margin:10px;}
 ol{margin:0 0 10px 25px;padding:0;}
@@ -52,10 +52,10 @@ body{background: #f1f2f6;color: #6f6f6f}
 .m-main{border-radius:3px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.17);}
 .m-main .show{overflow: hidden;}
 .gquote{border-bottom:1px solid #DDDDDD;display:none;margin:10px 0;padding:10px;}
-.example{position:relative;margin:15px 0;padding:39px 19px 14px;*padding-top:19px;background-color:#fff;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}
+.example{position:relative;padding:39px 19px 14px;background-color:#fff;border:1px solid #eee;}
 
 /* Echo out a label for the example */
-.example:after{content:"Example";position:absolute;top:-1px;left:-1px;padding:3px 7px;font-size:12px;font-weight:bold;background-color:#f5f5f5;border:1px solid #ddd;color:#9da0a4;-webkit-border-radius:4px 0 4px 0;-moz-border-radius:4px 0 4px 0;border-radius:4px 0 4px 0;}
+.example:after{content:"Example";position:absolute;top:-1px;left:-1px;padding:3px 7px;font-size:12px;font-weight:bold;color:#9da0a4;}
 .module{background:none repeat scroll 0 0 #FFFFFF;border-left:5px solid #B4D0EE;box-shadow:0 0 1px rgba(0,0,0,0.3);color:#999999;display:inline;float:left;font-family:tahoma;min-height:60px;margin-bottom:15px;margin-right:20px;overflow:hidden;padding:4px 6px 6px 10px;position:relative;width:170px;
 /* border-radius: 6px;*/
  box-shadow:1px 1px 0 rgba(0,0,0,0.05);}
@@ -89,7 +89,7 @@ a.module-name{display:inline-block;font-size:18px;line-height:1;max-width:145px;
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
-.hljs{display:block;padding:9px 14px;margin-bottom:14px;background-color:#fefefe;border:1px solid #eee;border-radius:4px;overflow-y: auto;word-wrap: break-word;/*box-shadow:0 0  3px rgba(0,0,0,0.05)*/}
+.hljs{display:block;padding:9px 14px;margin-bottom:14px;background-color:#f8f8f8;border:1px solid #eee;overflow-y: auto;word-wrap: break-word;margin-top: -1px;position: relative; z-index: 2;}
 .hljs:hover{border-color: #ddd;}
 .hljs:focus{background: #fefcfc;outline:0;border-color: #fd8291;}
 .hljs-comment,.hljs-template_comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}

@@ -23,6 +23,16 @@
 		"id": "about",
 		"title": "关于sally"
 	}],
+		"u": {
+		"state": "基础元件",
+		"updatedata": "2014.05.",
+		"description": "定义了一些常用的模块",
+		"box": {	
+			"title": "通用盒子",
+			"version": "1.0",
+			"description": "通用的盒子模型,快速构建模块"
+		}
+	},
 	"m": {
 		"state": "常用模块",
 		"updatedata": "2014.05.22",
@@ -31,7 +41,7 @@
 			"title": "通用盒子",
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
-			"relate": ["html/libs/btn.css"]
+			"relate": ["html/m/box.css"]
 		}
 	}
 }

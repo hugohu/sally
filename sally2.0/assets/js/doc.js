@@ -152,12 +152,26 @@ var build = {
           hljs.highlightBlock(this);
         }).attr("contentEditable", true);
       },
+      loadMod:function(){
+         var css=$("#modcss").html();
+          $("head").append("<style>"+css+"</style>");
+          $("[data-load]").each(function (index, elem) {
+            var _this=$(this);
+            var _id=_this.attr("data-load");
+            var html=$(_id).html();
+            _this.html(html);
+            var html=build.mdToHtml("```html\n"+html+"\n```");
+            _this.after(html)
+          })      
+      },
       main: function(data) {
         !data && (data = "#error...")
         var main = $("#main");
         var html = build.mdToHtml(data);
         main.html(html);
-        // Highlight syntax
+       
+        this.loadMod();
+         // Highlight syntax
         this.Highlight();
         //add blue
         this.setlist();

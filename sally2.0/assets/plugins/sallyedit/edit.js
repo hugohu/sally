@@ -82,11 +82,21 @@ $(function() {
       } else {
         return false;
       }
-
-
+    var hash=window.location.hash;
+    if(hash){
+      var url=hash.replace("#","");
+      var omod=this.params(url);
+      var cssId=omod.css;
+      var modId=omod.mod;
+      var modcss=$(cssId).html();
+      var modHtml=$(modId).html();
+    }else{
+     var modHtml=$("#modhtml").html();
+    var modcss=$("#modcss").html(); 
+  }
       return {
-        html: $("#modhtml").html(),
-        css: $("#modcss").html()
+        html:modHtml,
+        css:modcss 
       }
     }
   }

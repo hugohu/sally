@@ -18,9 +18,7 @@
 .m-box-head .u-txt { margin-left: 10px; color: gray; float: left }
 .m-cent { background: #fff;  padding: 10px }
 </script>
+<div class="example" data-load="#modhtml"></div>
 
 
-
-<div data-loadiframe="dd"></div>
-
-[查看实例](edit.html?mod=m&id=box)
+[查看实例](edit.html?mod=&id=box)
