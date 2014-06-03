@@ -11,7 +11,9 @@ $(function() {
         this.delay = setTimeout(updatehtml, 300);
       });
       function updatehtml() {
+
         upe.innerHTML = editor.getValue();
+
       }
       setTimeout(updatehtml, 300);
       return editor;
@@ -45,7 +47,7 @@ $(function() {
       return ret;
     },
   addRelate: function(mod, id) {
-    if (this.data[mod][id] == undefined) {
+    if (this.data[mod][id].relate == undefined) {
       return false;
     };
     var a = this.data[mod][id].relate; //获取资源
@@ -87,9 +89,9 @@ $(function() {
       var url=hash.replace("#","");
       var omod=this.params(url);
       var cssId=omod.css;
-      var modId=omod.mod;
+      var htmlId=omod.html;
       var modcss=$(cssId).html();
-      var modHtml=$(modId).html();
+      var modHtml=$(htmlId).html();
     }else{
      var modHtml=$("#modhtml").html();
     var modcss=$("#modcss").html(); 
@@ -103,10 +105,10 @@ $(function() {
   // 初始化设置
   var code = document.getElementById('code'),
     previewFrame = document.getElementById('demo'),
-    css = document.getElementById('css'),
+    mcss = document.getElementById('mcss'),
     editcss = document.getElementById('editcss');
   var html = edit.add(code, 'text/html', previewFrame);
-  var css = edit.add(css, 'text/css', editcss);
+  var css = edit.add(mcss, 'text/css', editcss);
 
   //动态获取内容
   var setpage = edit.setpage();

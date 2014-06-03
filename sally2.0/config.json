@@ -26,11 +26,20 @@
 		"u": {
 		"state": "基础元件",
 		"updatedata": "2014.05.",
-		"description": "定义了一些常用的模块",
-		"box": {	
-			"title": "通用盒子",
+		"description": "定义了一些常用的模块 可用模块:title,version,description,url,relate",
+		"btn": {	
+			"title": "按钮",
 			"version": "1.0",
-			"description": "通用的盒子模型,快速构建模块"
+			"description": "基础按钮",
+			"url":"edit.html?mod=u&id=badge"
+		},"ipt": {	
+			"title": "文本框",
+			"version": "1.0",
+			"description": "基础文本框"
+		},"badge": {	
+			"title": "标记",
+			"version": "1.0",
+			"description": "标记"
 		}
 	},
 	"m": {
@@ -45,3 +54,5 @@
 		}
 	}
 }
+
+
