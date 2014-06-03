@@ -26,7 +26,7 @@
 		"u": {
 		"state": "基础元件",
 		"updatedata": "2014.05.",
-		"description": "定义了一些常用的模块 可用模块:title,version,description,url,relate",
+		"description": "定义了一些常用的模块.可用参数:title,version,description,url,relate",
 		"btn": {	
 			"title": "按钮",
 			"version": "1.0",
