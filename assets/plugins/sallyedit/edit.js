@@ -11,7 +11,9 @@ $(function() {
         this.delay = setTimeout(updatehtml, 300);
       });
       function updatehtml() {
+
         upe.innerHTML = editor.getValue();
+
       }
       setTimeout(updatehtml, 300);
       return editor;
@@ -45,10 +47,10 @@ $(function() {
       return ret;
     },
   addRelate: function(mod, id) {
-    if (this.codedata[mod][id] == undefined) {
+    if (this.data[mod][id].relate == undefined) {
       return false;
     };
-    var a = this.codedata[mod][id].relate; //获取资源
+    var a = this.data[mod][id].relate; //获取资源
     $("[data-type='addRelate']").remove();
     $.each(a, function(index, value) {
       if (value.indexOf(".css") != -1) {
@@ -60,6 +62,8 @@ $(function() {
       } else {
         $.getScript(value);
       }
+      var alink="<a href="+value+">"+value+"</a>";
+      $(".explain").append(alink)
     });
   },
   setpage: function(p, mod) {
@@ -69,29 +73,42 @@ $(function() {
       var mod = mod == 0 ? undefined : o.mod;
       if (mod != undefined) {
         var id = o.id;
-        if (this.codedata == undefined) {
+        if (this.data == undefined) {
           var data = this.code(code);
-          this.codedata = $.parseJSON(data);
+          this.data = $.parseJSON(data);
         };
-        var htmlfile = this.codedata[mod][id]["file"] || (this.codedata.modfile + mod + "/"+ id + ".md");
-        var cssfile = this.codedata.cssfile + id + ".css"
-        this.addRelate(mod, id)
+        var htmlfile = this.data[mod][id]["file"] || (this.data.modfile + mod + "/"+ id + ".md");
+        this.addRelate(mod, id);
+        var html=this.code(htmlfile);
+        $("#description").html(html);
       } else {
         return false;
       }
+    var hash=window.location.hash;
+    if(hash){
+      var url=hash.replace("#","");
+      var omod=this.params(url);
+      var cssId=omod.css;
+      var htmlId=omod.html;
+      var modcss=$(cssId).html();
+      var modHtml=$(htmlId).html();
+    }else{
+     var modHtml=$("#modhtml").html();
+    var modcss=$("#modcss").html(); 
+  }
       return {
-        html: this.code(htmlfile),
-        css: this.code(cssfile)
+        html:modHtml,
+        css:modcss 
       }
     }
   }
   // 初始化设置
   var code = document.getElementById('code'),
     previewFrame = document.getElementById('demo'),
-    css = document.getElementById('css'),
+    mcss = document.getElementById('mcss'),
     editcss = document.getElementById('editcss');
   var html = edit.add(code, 'text/html', previewFrame);
-  var css = edit.add(css, 'text/css', editcss);
+  var css = edit.add(mcss, 'text/css', editcss);
 
   //动态获取内容
   var setpage = edit.setpage();

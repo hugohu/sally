@@ -5,13 +5,44 @@
    */
 var build = {
   code: function(url) {
+
     return $.ajax({
       url: url,
       async: false
     }).responseText;
+
+
+    // //localStorage
+    // if (!window.localStorage) {
+    //   return $.ajax({
+    //     url: url,
+    //     async: false
+    //   }).responseText;
+    // };
+    // var lastData = localStorage.getItem("lastData");
+    // var upData = this.data["data"] || 0;
+    // var value = localStorage.getItem(url);
+    // //debug
+    // console.log({
+    //   "value": value,
+    //   "lastData": lastData,
+    //   "upData": upData
+    // })
+
+    // if (!value || lastData != upData) {
+
+    //   var html = $.ajax({
+    //     url: url,
+    //     async: false
+    //   }).responseText;
+    //   localStorage.setItem("lastData", upData);
+    //   localStorage.setItem(url, html);
+    // }
+    // return localStorage.getItem(url);
+
   },
   addRelate: function(mod, id) {
-    if (this.data[mod][id] == undefined) {
+    if (this.data[mod][id].relate == undefined) {
       return false;
     };
     var a = this.data[mod][id].relate; //获取资源
@@ -59,7 +90,7 @@ var build = {
         $.each(data, function(i, n) {
           var url = n.url || ("?p=" + n.id);
           var title = n.title;
-          html += "<a href="+url+">" + title + "</a>";
+          html += "<a href=" + url + ">" + title + "</a>";
         });
         nav.html(html);
       },
@@ -96,24 +127,56 @@ var build = {
           if (data != undefined) {
             for (p in data) {
               if (typeof data[p] == "object") {
-                html += '<a href="' + "?mod=" + _id + "&id=" + p + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
+                //有写地址就读地址,没有地址就读模块
+                var url = data[p]["url"] ? data[p]["url"] : ("?mod=" + _id + "&id=" + p)
+                html += '<a href="' + url + '" class="module" style="border-left-color: ' + rancolor() + ';"><span class="module-name" title="' + data[p]["title"] + '">' + data[p]["title"] + '</span><span class="module-version">' + data[p]["version"] + '</span><p class="module-description" title="' + data[p]["description"] + '">' + data[p]["description"] + '</p></a>';
               }
             }
           }
           $(this).html(html).addClass("show");
         });
       },
+      loadiframe:function(){
+        $("[data-loadiframe]").each(function (index, elem) {
+          var $this = $(this),
+            apage = $this.attr("data-loadiframe"),
+            height=$this.attr("data-setheight") || "100%";
+          var url=build.file+apage+".html";
+          var scss=build.file+apage+".css";
+           var html = $('<iframe src="'+url+'" frameborder="0" style="width: 100%;height:'+height+'"></iframe><a href="'+url+'">查看页面</a><a href="'+scss+'">查看样式</a>');
+           $this.append(html)
+        })
+      },
+      Highlight: function() {
+        $("code:not('[contentEditable]')").each(function(i) {
+          hljs.highlightBlock(this);
+        }).attr("contentEditable", true);
+      },
+      loadMod:function(){
+         var css=$("#modcss").html();
+          $("head").append("<style>"+css+"</style>");
+          $("[data-load]").each(function (index, elem) {
+            var _this=$(this);
+            var _id=_this.attr("data-load");
+            var html=$(_id).html();
+            _this.html(html);
+            var html=build.mdToHtml("```html\n"+html+"\n```");
+            _this.after(html)
+          })      
+      },
       main: function(data) {
         !data && (data = "#error...")
         var main = $("#main");
         var html = build.mdToHtml(data);
         main.html(html);
-        // Highlight syntax
-        $("code").each(function(i) {
-          hljs.highlightBlock(this);
-        }).attr("contentEditable", true)
+       
+        this.loadMod();
+         // Highlight syntax
+        this.Highlight();
         //add blue
         this.setlist();
+        //loadiframe
+        this.loadiframe();
         //add sib
         this.sidebar();
       }
@@ -135,11 +198,14 @@ var build = {
     if (mod != undefined) {
       var id = o.id;
       //设置页面文件请求路径,优先选择模块内定义的路径, 没有则用全局的
-      var file = this.data[mod][id]["file"] || (this.data.modfile + mod + "/"+ id + ".md")
+      var file = this.data[mod][id]["file"] || (this.data.modfile + mod + "/" + id + ".md")
       this.addRelate(mod, id)
     } else {
       var file = this.data.navfile + p + ".md";
     }
+    var afile = file.split("/");
+    afile.pop();
+    this.file = afile.join("/") + "/";
     var smain = this.code(file);
     //生成主体内容
     this.html("main", smain);
@@ -147,7 +213,10 @@ var build = {
 
   },
   init: function(url) {
-    var data = this.code(url);
+    var data = $.ajax({
+      url: url,
+      async: false
+    }).responseText;
     this.data = $.parseJSON(data);
     //生成导航
     this.html("nav", this.data);

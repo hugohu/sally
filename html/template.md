@@ -19,8 +19,24 @@
 .m-cent { background: #fff;  padding: 10px }
 </script>
 
+##概述
 
-<div class="example" data-load="#modhtml"></div>
+###示例
+<div class="example">
+
+</div>
+
+###html:
+
+```html
+```
+###css
+
+```css
+```
+
+<div data-loadiframe="dd"></div>
 
 
-[查看实例](edit.html?mod=&id=box)
+[查看实例](edit.html?mod=m&id=box)
+

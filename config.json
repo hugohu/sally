@@ -8,7 +8,8 @@
 		"title": "通用组件库"
 	}, {
 		"id": "js",
-		"title": "插件库"
+		"title": "插件库",
+		"url":"http://sallyjs.huugle.org"
 	}, {
 		"id": "base",
 		"title": "基础框架"
@@ -22,15 +23,36 @@
 		"id": "about",
 		"title": "关于sally"
 	}],
+		"u": {
+		"state": "基础元件",
+		"updatedata": "2014.05.",
+		"description": "定义了一些常用的模块 可用模块:title,version,description,url,relate",
+		"btn": {	
+			"title": "按钮",
+			"version": "1.0",
+			"description": "基础按钮",
+			"url":"edit.html?mod=u&id=badge"
+		},"ipt": {	
+			"title": "文本框",
+			"version": "1.0",
+			"description": "基础文本框"
+		},"badge": {	
+			"title": "标记",
+			"version": "1.0",
+			"description": "标记"
+		}
+	},
 	"m": {
 		"state": "常用模块",
 		"updatedata": "2014.05.22",
 		"description": "定义了一些常用的模块",
-		"box": {
+		"box": {	
 			"title": "通用盒子",
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
-			"relate": ["html/libs/btn.css"]
+			"relate": ["html/m/box.css"]
 		}
 	}
 }
+
+
