@@ -23,4 +23,4 @@
 <div class="example" data-load="#modhtml"></div>
 
 
-[查看实例](edit.html?mod=&id=box)
+[查看实例](edit.html?mod=m&id=box)
