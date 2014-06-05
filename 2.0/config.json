@@ -62,6 +62,21 @@
 			"version": "1.0",
 			"description": "定义了一些常用的鼠标划过的效果"
 		}
+	},
+	"rule": {
+		"state": "规范类文章",
+		"updatedata": "2014.06.5",
+		"description": "定义了一些开发过程中统一性的规范",
+		"work": {	
+			"title": "工作流规范",
+			"version": "1.0",
+			"description": "定义了工作流程已经文件命名相关"
+		},
+		"seo": {	
+			"title": "前端seo规范",
+			"version": "1.0",
+			"description": "定义跟seo相关的内容"
+		}
 	}
 }
 

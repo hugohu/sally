@@ -1,3 +1,5 @@
+<img src="assets/img/ylsb.jpg" alt="伊丽莎白"  />
+
 ##what is sally?
 恩,sally是个前端的组件库,以及一些建议性的规范.夹带了强烈的个人色彩.
 为什么要重复造轮子?
