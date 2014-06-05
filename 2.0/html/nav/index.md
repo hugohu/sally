@@ -20,8 +20,8 @@
 
 ##js组件
 一些常用的js组件,可以很方便的调用
-<div data-list="j"></div>
+<div data-list="js"></div>
 
 ##css实验室
 一些css的东西
-<div data-list="j"></div>
+<div data-list="lab"></div>
