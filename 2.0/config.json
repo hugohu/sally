@@ -31,7 +31,7 @@
 			"title": "按钮",
 			"version": "1.0",
 			"description": "基础按钮",
-			"url":"edit.html?mod=u&id=badge"
+			"url":"edit.html?mod=u&id=btn"
 		},"ipt": {	
 			"title": "文本框",
 			"version": "1.0",
