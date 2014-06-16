@@ -68,7 +68,7 @@
 	"rule": {
 		"state": "规范类文章",
 		"updatedata": "2014.06.5",
-		"description"+: "定义了一些开发过程中统一性的规范",
+		"description": "定义了一些开发过程中统一性的规范",
 		"work": {
 			"title": "工作流规范",
 			"version": "1.0",
