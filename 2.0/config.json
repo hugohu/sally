@@ -9,7 +9,7 @@
 	}, {
 		"id": "js",
 		"title": "插件库",
-		"url":"http://sallyjs.huugle.org"
+		"url": "http://sallyjs.huugle.org"
 	}, {
 		"id": "base",
 		"title": "基础框架"
@@ -23,20 +23,22 @@
 		"id": "about",
 		"title": "关于sally"
 	}],
-		"u": {
+	"u": {
 		"state": "基础元件",
 		"updatedata": "2014.05.",
 		"description": "定义了一些常用的模块.可用参数:title,version,description,url,relate",
-		"btn": {	
+		"btn": {
 			"title": "按钮",
 			"version": "1.0",
 			"description": "基础按钮",
-			"url":"edit.html?mod=u&id=btn"
-		},"ipt": {	
+			"url": "edit.html?mod=u&id=btn"
+		},
+		"ipt": {
 			"title": "文本框",
 			"version": "1.0",
 			"description": "基础文本框"
-		},"badge": {	
+		},
+		"badge": {
 			"title": "标记",
 			"version": "1.0",
 			"description": "标记"
@@ -46,7 +48,7 @@
 		"state": "常用模块",
 		"updatedata": "2014.05.22",
 		"description": "定义了一些常用的模块",
-		"box": {	
+		"box": {
 			"title": "通用盒子",
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
@@ -57,7 +59,7 @@
 		"state": "css实验室",
 		"updatedata": "2014.06.5",
 		"description": "定义了一些常用的鼠标划过的效果",
-		"hover": {	
+		"hover": {
 			"title": "鼠标划过",
 			"version": "1.0",
 			"description": "定义了一些常用的鼠标划过的效果"
@@ -67,17 +69,15 @@
 		"state": "规范类文章",
 		"updatedata": "2014.06.5",
 		"description": "定义了一些开发过程中统一性的规范",
-		"work": {	
+		"work": {
 			"title": "工作流规范",
 			"version": "1.0",
 			"description": "定义了工作流程已经文件命名相关"
 		},
-		"seo": {	
+		"seo": {
 			"title": "前端seo规范",
 			"version": "1.0",
 			"description": "定义跟seo相关的内容"
 		}
 	}
 }
-
-

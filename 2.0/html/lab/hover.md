@@ -65,4 +65,4 @@ transition: all 0.35s linear;
 
 
 
-[查看实例](edit.html?mod=u&id=badge)
+[查看实例](edit.html?mod=lab&id=hover)

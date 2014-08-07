@@ -10,8 +10,6 @@ var build = {
       url: url,
       async: false
     }).responseText;
-
-
     // //localStorage
     // if (!window.localStorage) {
     //   return $.ajax({
@@ -39,7 +37,6 @@ var build = {
     //   localStorage.setItem(url, html);
     // }
     // return localStorage.getItem(url);
-
   },
   addRelate: function(mod, id) {
     if (this.data[mod][id].relate == undefined) {
