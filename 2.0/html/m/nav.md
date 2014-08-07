@@ -12,15 +12,6 @@
 </div>
 </script>
 <script id="modcss" type="text/Template">
-
-</script>
-
-
-<div class="example" data-load="#modhtml"></div>
-
-
-[查看实例](edit.html?mod=m&id=nav)
-<style>
 .r-s-show{visibility: hidden;opacity: 0}
 .r-s-hide{visibility: visible;opacity: 1;
 -webkit-transition: 0.35s;
@@ -31,10 +22,16 @@ transition: 0.35s;
 }
 @media only screen and (max-width:768px) {
 .r-s-show{visibility: visible;opacity: 1}
-.r-s-hide,.f-show{visibility: hidden;opacity: 0}
+.r-s-hide,.-show{visibility: hidden;opacity: 0}
 .nav{float: none;display: block;}
 .nav li{display: block;}
 }
 .toggle-nav{float: left;}
 .nav li{display: inline-block;margin-left: 10px;float: left;}
-</style>
+</script>
+
+
+<div class="example" data-load="#modhtml"></div>
+
+
+[查看实例](edit.html?mod=m&id=nav)
