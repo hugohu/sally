@@ -53,6 +53,11 @@
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
 			"relate": ["html/m/box.css"]
+		},
+		"nav": {
+			"title": "响应式导航",
+			"version": "1.0",
+			"description": "通用的盒子模型,快速构建模块"
 		}
 	},
 	"lab": {
