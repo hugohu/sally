@@ -5,20 +5,20 @@
 	"modfile": "html/",
 	"nav": [{
 		"id": "index",
-		"title": "通用组件库"
+		"title": "常用组件" 
 	}, {
 		"id": "js",
-		"title": "插件库",
+		"title": "js插件",
 		"url": "http://sallyjs.huugle.org"
 	}, {
 		"id": "base",
 		"title": "基础框架"
 	}, {
-		"id": "rule",
-		"title": "规范类"
-	}, {
 		"id": "snippet",
 		"title": "代码片段"
+	}, {
+		"id": "rule",
+		"title": "规范类"
 	}, {
 		"id": "about",
 		"title": "关于sally"
