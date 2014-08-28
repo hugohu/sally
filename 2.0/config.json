@@ -5,14 +5,14 @@
 	"modfile": "html/",
 	"nav": [{
 		"id": "index",
-		"title": "常用组件" 
+		"title": "常用组件"
+	},{
+		"id": "base",
+		"title": "基础框架"
 	}, {
 		"id": "js",
 		"title": "js插件",
 		"url": "http://sallyjs.huugle.org"
-	}, {
-		"id": "base",
-		"title": "基础框架"
 	}, {
 		"id": "snippet",
 		"title": "代码片段"
@@ -42,22 +42,83 @@
 			"title": "标记",
 			"version": "1.0",
 			"description": "标记"
+		},
+		"loading": {
+			"title": "载入动画",
+			"version": "1.0",
+			"description": "ajax载入动画",
+			"url": "edit.html?mod=u&id=loading"
+		},
+		"closed": {
+			"title": "关闭按钮",
+			"version": "1.0",
+			"description": "各种形式的关闭按钮"
 		}
 	},
 	"m": {
 		"state": "常用模块",
 		"updatedata": "2014.05.22",
 		"description": "定义了一些常用的模块",
+		"nav": {
+			"title": "响应式导航",
+			"version": "1.0",
+			"description": "通用的盒子模型,快速构建模块"
+		},
 		"box": {
 			"title": "通用盒子",
 			"version": "1.0",
 			"description": "通用的盒子模型,快速构建模块",
 			"relate": ["html/m/box.css"]
 		},
-		"nav": {
-			"title": "响应式导航",
+		"table": {
+			"title": "表格",
 			"version": "1.0",
-			"description": "通用的盒子模型,快速构建模块"
+			"description": "常用表格类型"
+		},
+		"breadcrumb": {
+			"title": "面包削导航",
+			"version": "1.0",
+			"description": "面包削导航"
+		},
+		"list": {
+			"title": "列表",
+			"version": "1.0",
+			"description": "文字列表"
+		},
+		"page": {
+			"title": "分页",
+			"version": "1.0",
+			"description": "分页"
+		},
+		"alert": {
+			"title": "通知框",
+			"version": "1.0",
+			"description": "通知框"
+		},
+		"ilist": {
+			"title": "图文列表",
+			"version": "1.0",
+			"description": "图文列表"
+		}
+	},
+	"template": {
+		"state": "web组件",
+		"updatedata": "2014.06.5",
+		"description": "模板由模块跟元件构成的固定的结构,不常用但是典型",
+		"comment": {
+			"title": "评论列表",
+			"version": "1.0",
+			"description": "定义了一组评论列表的模块"
+		},
+		"navbar": {
+			"title": "导航条",
+			"version": "1.0",
+			"description": "导航条"
+		},
+		"topnav": {
+			"title": "顶部导航",
+			"version": "1.0",
+			"description": "顶部导航"
 		}
 	},
 	"lab": {
