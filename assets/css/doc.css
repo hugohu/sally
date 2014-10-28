@@ -38,9 +38,9 @@ body{background: #f1f2f6;color: #6f6f6f}
   src: local('mm'), local('mm'), url(img/mm.woff) format('woff');
 }*/
 /*nav*/
-.m-nav{height:40px;background:#dd4250;line-height:40px;position:fixed;top:0;z-index:999;width:100%;color: #fff;}
+.m-nav{height:40px;background:#000;line-height:40px;position:fixed;top:0;z-index:999;width:100%;color: #fff;}
 .m-nav a{display:inline-block;padding:0 15px;color:#fff}
-.m-nav a:hover,.m-nav a.active{background: #ed5466;}
+.m-nav a:hover,.m-nav a.active{background: #fc6471;}
 .logo{position: absolute;left: 10px;top: 0}
 /*cent*/
 #row{margin-top:60px;position:relative;}

@@ -8,6 +8,16 @@
      <div class="m-cent">m-cent 有默认内边距</div>
 </div>
 </script>
+<script id="modhtml" type="text/Template">
+<div class="m-box">
+    <div class="m-box-head">
+            <h3 class="u-tt">区块标题</h3>
+            <span class="u-txt">其他文字</span>
+            <a href="#" class="more">更多</a>
+    </div>
+     <div class="m-cent">m-cent 有默认内边距</div>
+</div>
+</script>
 <script id="modcss" type="text/Template">
 .m-box { border: 1px solid #ddd; zoom: 1; font-size: 12px; margin: 0; padding: 0; }
 .m-box:after { clear: both; content: " "; display: block; font-size: 0; height: 0; visibility: hidden }
@@ -23,4 +33,4 @@
 <div class="example" data-load="#modhtml"></div>
 
 
-[查看实例](edit.html?mod=&id=box)
+[查看实例](edit.html?mod=m&id=box)
